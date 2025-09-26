@@ -20,4 +20,15 @@
         flex-direction: column;
         gap: 32px;
     }
+
+}
+
+a.privacy-policy{
+    color:$light-gray !important;
+
+    @include isHover{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }

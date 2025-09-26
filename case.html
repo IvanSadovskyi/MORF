@@ -39,7 +39,7 @@
                     </button>
                 </div>
                 <div class="header__right">
-                    <a class="" href="">
+                    <a href="/contacts.html">
                         <span><strong>Hire us</strong></span>
                         <div>
                             <svg width="28" height="28">
@@ -83,11 +83,12 @@
                                     <a class="h1" href="/about.html"><strong>About</strong></a>
                                 </li>
                                 <li>
-                                    <a class="h1 scroll-link" href="#form"><strong>Contacts</strong></a>
+                                    <a class="h1" href="/contacts.html"><strong>Contacts</strong></a>
                                 </li>
                                 <li>
                                     <a class="h1" href="/career.html"><strong>Career</strong></a>
                                 </li>
+                                <li><a href="/privacy-policy.html" class="p-small privacy-policy">Privacy policy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -97,9 +98,6 @@
                             <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                     </div>
-                    <div class="col-1" style="margin-top: 32px;">
-                        <a class="p-small privacy-policy" href="/privacy-policy.html">Privacy Policy</a>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -107,13 +105,9 @@
             <div id="smooth-content">
                 <main>
                     <section class="breadcrumbs-heading container" data-section="light">
-                        <div class="section-texts">
                             <span>Work</span>
-                            <div class="section-texts">
-                                <h1><strong>NUORI</strong></h1>
-                            </div>
+                            <h1><strong>NUORI</strong></h1>
                             <p>A fresh look for a skin care brand</p>
-                        </div>
                     </section>
                     <section class="pictures container">
                         <div class="picture embed-responsive embed-responsive--1-1">
@@ -258,11 +252,11 @@
                 </main>
                 <footer class="footer container" data-footer data-theme="dark">
                     <div class="footer__right">
-                        <p>Contacts</p>
                         <div class="section-texts">
-                            <h2 class="h1">Let's <i>talk</i></h2>
-                            <p>Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
-                            <span>Mail us <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a></span>
+                            <p>Contacts</p>
+                            <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
+                            <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
+                            <a class="h3" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                         <div class="section-texts">
                             <p><strong>New York</strong></p>
@@ -275,19 +269,19 @@
                                 <p><strong>Interested in</strong></p>
                                 <div class="btn-container--selected" data-section="dark">
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Websites" checked>
+                                        <input type="checkbox" name="Interested" id="Websites" checked>
                                         <label for="Websites" class="btn btn--selected">
                                             <span>Websites</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Applications">
+                                        <input type="checkbox" name="Interested" id="Applications">
                                         <label for="Applications" class="btn btn--selected">
                                             <span>Applications</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Branding">
+                                        <input type="checkbox" name="Interested" id="Branding">
                                         <label for="Branding" class="btn btn--selected">
                                             <span>Branding</span>
                                         </label>
@@ -299,11 +293,11 @@
                                 <span class="error-message" id="name-error">An error has occurred</span>
                             </div>
                             <div class="form__group">
-                                <input class="" type="email" name="email" id="email" placeholder="email" required>
+                                <input class="" type="email" name="email" id="email" placeholder="Email" required>
                                 <span class="error-message" id="email-error">An error has occurred</span>
                             </div>
                             <div class="form__group">
-                                <input class="" type="project-description" name="project-description" id="project-description" placeholder="Project description">
+                                <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
                             <div class="flex-between flex-align-center">
                                 <div class="form__group file-upload-wrapper p-small" data-text="Attach CV">

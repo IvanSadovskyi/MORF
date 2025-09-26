@@ -1,10 +1,12 @@
 @use '../abstracts' as *;
 
+.header.header--contacts{
+    position: absolute;
+}
 .header {
     position: fixed;
     margin: 0 auto;
     width: 100%;
-    backdrop-filter: blur(32px);
     z-index: $header-layer;
     transition: background-color .3s, transform 0.2s;
 
@@ -22,8 +24,14 @@
         transition: all .5s;
     }
 
-    &[data-theme="light"]{
+    &:not(.header--contacts).scrolling-started[data-theme="light"]{
         background-color: rgba($color: $white, $alpha: 0.50);
+    }
+    &:not(.header--contacts).scrolling-started[data-theme="dark"]{
+        background-color: rgba($color: #000, $alpha: 0.08);
+    }
+    &:not(.header--contacts).scrolling-started{
+        backdrop-filter: blur(32px);
     }
     &.active{
         background-color: rgba($color: $white, $alpha: 1.0) !important;
@@ -49,9 +57,7 @@
             }
         }
     }
-    &[data-theme="dark"]{
-        background-color: rgba($color: #000, $alpha: 0.08);
-        
+    &[data-theme="dark"]{        
         .header__left{
             & svg{
                 color:$white;

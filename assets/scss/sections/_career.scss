@@ -11,6 +11,15 @@
         & li{
             position: relative;
 
+            & a{
+                color: $black;
+                @include isHover(){
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
             &:not(:last-child)::after{
                 content: '';
                 width: 100%;

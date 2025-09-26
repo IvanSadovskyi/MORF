@@ -9,6 +9,7 @@
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="stylesheet" href="assets/css/nprogress.css">
         <link rel="stylesheet" href="assets/css/styles.css" media="all">
 
         <!-- <link rel="stylesheet" href="module/owl-carousel/owl.carousel.min.css" media="all"> -->
@@ -25,6 +26,56 @@
         <meta name="msapplication-TileColor" content="#175fff">
     </head>
     <body>
+        <script src="assets/js/nprogress.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 1000);
+            });
+        </script>
+        <style type="text/css">
+            .preloader{width: 100vw;height: 100vh;position: fixed;z-index: 8888;background-color:#F5F5FA}
+            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100px;height:100px;}
+            .preloader__wrap hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite;}
+
+            .preloader__wrap :first-child{background:#175FFF;animation-delay:-1.5s}
+            .preloader__wrap :nth-child(2){background:#4e9ddd;animation-delay:-1s}
+            .preloader__wrap :nth-child(3){background:#1923b4;animation-delay:-0.5s}
+            .preloader__wrap :last-child{background:#193B48}
+
+            @keyframes spin{
+                0%,100%{transform:translate(0)}
+                25%{transform:translate(160%)}
+                50%{transform:translate(160%, 160%)}
+                75%{transform:translate(0, 160%)}
+            }
+        </style>
+        <div class="preloader">
+            <div class="preloader__wrap">
+                <hr/><hr/><hr/><hr/>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var hellopreloader = document.querySelector('.preloader');
+            function fadeOutnojquery(el) {
+                el.style.opacity = 1;
+                var interhellopreloader = setInterval(function() {
+                    el.style.opacity = parseFloat(el.style.opacity) - 0.05;
+                    if (el.style.opacity <= 0.05) {
+                        clearInterval(interhellopreloader);
+                        el.style.display = "none";
+                    }
+                }, 16);
+            }
+            window.onload = function(){
+                setTimeout(function(){
+                    fadeOutnojquery(hellopreloader);
+                },1000);
+            };
+        </script>
         <header class="header " data-header data-theme="dark">
             <div class="header__wrap container">
                 <div class="header__left">
@@ -41,7 +92,7 @@
                     </button>
                 </div>
                 <div class="header__right">
-                    <a class="" href="">
+                    <a href="/contacts.html">
                         <span><strong>Hire us</strong></span>
                         <div>
                             <svg width="28" height="28">
@@ -85,11 +136,12 @@
                                     <a class="h1" href="/about.html"><strong>About</strong></a>
                                 </li>
                                 <li>
-                                    <a class="h1 scroll-link" href="#form"><strong>Contacts</strong></a>
+                                    <a class="h1" href="/contacts.html"><strong>Contacts</strong></a>
                                 </li>
                                 <li>
                                     <a class="h1" href="/career.html"><strong>Career</strong></a>
                                 </li>
+                                <li><a href="/privacy-policy.html" class="p-small privacy-policy">Privacy policy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,9 +150,6 @@
                             <p>Get in touch</p>
                             <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
-                    </div>
-                    <div class="col-1" style="margin-top: 32px;">
-                        <a class="p-small privacy-policy" href="/privacy-policy.html">Privacy Policy</a>
                     </div>
                 </div>
             </div>
@@ -114,11 +163,7 @@
                         </div>
                     </div>
                     <section class="breadcrumbs-heading container container--1300" style="color:#fff" data-section="dark">
-                        <div class="section-texts">
-                            <div class="section-texts">
-                                <h1><strong>Explore<br>our</strong> <i>latest work</i></h1>
-                            </div>
-                        </div>
+                        <h1><strong>Explore<br>our</strong> <i>latest work</i></h1>
                     </section>
                     <section class="cases container container--1300">
                         <div class="row row-g96">
@@ -173,13 +218,17 @@
                                     <a href="/case.html" class="case__link"></a>
                                 </div>
                             </div>
-                            <div style="text-align: center;">
-                                <a href="#" style="margin: 0 auto;" class="btn btn--primary">See More</a>
+                            <div style="margin: 0 auto;">
+                                <a href="#" class="btn btn--primary">See More</a>
                             </div>
                         </div>
                     </section>
-                    <section  data-section="light">
-                        <marquee style="font-size: 96px;" behavior="" scrollamount="20"><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</marquee>
+                    <section class="marquee" data-section="light">
+                        <div class="marquee__inner">
+                            <span style="font-size: 96px;"><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
+                            <span style="font-size: 96px;"><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
+                            <span style="font-size: 96px;"><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
+                        </div>
                     </section>
                     <section class="our-services content-grid content-grid--shuffle container" data-section="light">
                         <div class="content-grid__wrap row row-g64">
@@ -192,9 +241,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="content-grid__texts">
                                     <div class="section-texts">
-                                        <h3>Websites and Platforms</h3>
+                                        <h3><strong>Websites and Platforms</strong></h3>
                                         <p>Websites and platforms are crucial for businesses as they help establish an online presence and reach a broader audience. They offer a platform to display products and services, connect with customers, enhance brand recognition, and enable e-commerce, driving revenue and growth.</p>
                                     </div>
                                 </div>
@@ -208,9 +257,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="content-grid__texts">
                                     <div class="section-texts">
-                                        <h3>Mobile Applications</h3>
+                                        <h3><strong>Mobile Applications</strong></h3>
                                         <p>Mobile applications help businesses reach and engage customers, increase their brand visibility, and provide easy access to products and services anywhere, anytime. They also help companies analyze user data and improve customer experience, leading to increased revenue, customer loyalty, and business growth.</p>
                                     </div>
                                 </div>
@@ -224,9 +273,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="content-grid__texts">
                                     <div class="section-texts">
-                                        <h3>Strategy and Branding</h3>
+                                        <h3><strong>Strategy and Branding</strong></h3>
                                         <p>Branding creates a unique identity for a business, conveying its personality, values, and purpose to the target audience. It builds brand recognition, establishes customer loyalty, and differentiates the business from its competitors, ultimately driving revenue and business growth.</p>
                                     </div>
                                 </div>
@@ -281,11 +330,11 @@
                 </main>
                 <footer class="footer container" data-footer data-theme="dark">
                     <div class="footer__right">
-                        <p>Contacts</p>
                         <div class="section-texts">
-                            <h2 class="h1">Let's <i>talk</i></h2>
-                            <p>Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
-                            <span>Mail us <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a></span>
+                            <p>Contacts</p>
+                            <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
+                            <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
+                            <a class="h3" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                         <div class="section-texts">
                             <p><strong>New York</strong></p>
@@ -298,19 +347,19 @@
                                 <p><strong>Interested in</strong></p>
                                 <div class="btn-container--selected" data-section="dark">
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Websites" checked>
+                                        <input type="checkbox" name="Interested" id="Websites" checked>
                                         <label for="Websites" class="btn btn--selected">
                                             <span>Websites</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Applications">
+                                        <input type="checkbox" name="Interested" id="Applications">
                                         <label for="Applications" class="btn btn--selected">
                                             <span>Applications</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="radio" name="Interested" id="Branding">
+                                        <input type="checkbox" name="Interested" id="Branding">
                                         <label for="Branding" class="btn btn--selected">
                                             <span>Branding</span>
                                         </label>
@@ -322,11 +371,12 @@
                                 <span class="error-message" id="name-error">An error has occurred</span>
                             </div>
                             <div class="form__group">
-                                <input class="" type="email" name="email" id="email" placeholder="email" required>
+                                <input class="" type="email" name="email" id="email" placeholder="Email" required>
                                 <span class="error-message" id="email-error">An error has occurred</span>
                             </div>
                             <div class="form__group">
-                                <input class="" type="project-description" name="project-description" id="project-description" placeholder="Project description">
+                                <!-- <input class="" type="text" name="project-description" id="project-description" placeholder="Project description"> -->
+                                <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
                             <div class="flex-between flex-align-center">
                                 <div class="form__group file-upload-wrapper p-small" data-text="Attach CV">

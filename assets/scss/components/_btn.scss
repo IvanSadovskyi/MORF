@@ -218,4 +218,25 @@
     &-container--selected input[type="radio"]{
         display: none;
     }
+
+    [data-section="dark"] &-wrap--selected input[type="checkbox"]:checked + &--selected,
+    [data-theme="dark"] &-wrap--selected input[type="checkbox"]:checked + &--selected {
+        background: $white;
+    }
+    [data-section="dark"] &-wrap--selected input[type="checkbox"]:checked + &--selected span,
+    [data-theme="dark"] &-wrap--selected input[type="checkbox"]:checked + &--selected span {
+        color: $primary !important;
+    }
+
+    [data-section="light"] &-wrap--selected input[type="checkbox"]:checked + &--selected,
+    [data-theme="light"] &-wrap--selected input[type="checkbox"]:checked + &--selected {
+        background: $primary;
+    }
+    [data-section="light"] &-wrap--selected input[type="checkbox"]:checked + &--selected span,
+    [data-theme="light"] &-wrap--selected input[type="checkbox"]:checked + &--selected span {
+        color: $white !important;
+    }
+    &-container--selected input[type="checkbox"]{
+        display: none;
+    }
 }

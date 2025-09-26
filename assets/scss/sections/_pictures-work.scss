@@ -30,7 +30,7 @@
 .picture{
     position: relative;
 
-    @include breakpoint(tablet, mim){
+    @include breakpoint(tablet, min){
         &.picture--t96{
             top: -96px;
         }

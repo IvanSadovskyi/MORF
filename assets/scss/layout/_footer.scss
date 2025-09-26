@@ -7,6 +7,10 @@
     flex-wrap: wrap;
     z-index: 10;
 
+    &.footer--contacts{
+        padding-top: calc(128px + 118px);
+    }
+
     &:has(.footer__bottom:only-child){
         padding-top: 24px;
         padding-bottom: 24px;
@@ -14,8 +18,8 @@
 
     &.container{
         margin: 0;
-        padding-left: calc(50% - $max-width-container-desktop/2);
-        padding-right: calc(50% - $max-width-container-desktop/2);
+        padding-left: calc(50% - ($max-width-container-desktop/2 - 32px));
+        padding-right: calc(50% - ($max-width-container-desktop/2 - 32px));
         max-width: none;
 
     @include breakpoint(1758px){
@@ -46,7 +50,7 @@
         width: 50%;
         flex: 0 0 50%;
     }
-    &__left, &__bottom {
+    &__left{
         max-width: 611px;
     }
 
@@ -63,17 +67,19 @@
 
     &__bottom {
         display: flex;
-        flex: 1 0 100%;
-        max-width: 100%;
+        width: 100%;
         
         & .socials{
             margin-left: auto;
         }
+        & > a{
+            font-weight: 500;
+            font-size: 18px;
+        }
     }
     div ~ &__bottom {
         margin-top: 64px;
-        width: 50%;
-        flex: 1 0 50%;
+        width: calc(50% - 96px);
     }
 
     @include breakpoint(tablet){
@@ -84,8 +90,11 @@
             width: 100%;
             flex: 0 0 100%;
         }
-        &__left, &__bottom {
+        &__left {
             max-width: none;
+        }
+        div ~ .footer__bottom{
+            width: 100%;
         }
         /*&.container {
             max-width: 768px;
@@ -96,6 +105,8 @@
         position: absolute;
         inset: 0;
         z-index: 1;
+        height: 100vh;
+        min-height: 1050px;
     }
 }
 

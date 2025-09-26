@@ -11,7 +11,7 @@
         }
     }
 
-    & input{
+    & input, & textarea{
         background-color: transparent;
         border: 0;
         border-bottom: 1px solid rgba($color: $white, $alpha: 0.45);
@@ -35,14 +35,31 @@
         &.error {
             border-color: #e63946 !important;
         }
+    }
+    & textarea{
+        resize:none;
+        overflow:auto;
+        max-height: 200px;
 
+        &::-webkit-scrollbar {
+            width: 8px;
+            background: transparent;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent; /* трек тоже прозрачный */
+            margin: 16px 0;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+        }
     }
 
     @include breakpoint(mobile1){
         gap: 32px;
     }
     [data-section="dark"] &, [data-theme="dark"] &{
-        & input{
+        & input, & textarea{
             border-color: rgba($color: $white, $alpha: 0.45);
 
             &::placeholder{
@@ -58,16 +75,19 @@
         &:disabled::placeholder{
             color: rgba($color: $white, $alpha: 0.15);
         }
+        & textarea::-webkit-scrollbar-thumb {
+            background-color: rgba($color: $white, $alpha: 0.6);
+        }
     }
     [data-section="light"] &, [data-theme="light"] &{
-        & input{
+        & input, & textarea{
             border-color: $divider;
             
             &::placeholder{
                 color: rgba($color: $black, $alpha: 0.45);
             }
             &:focus{
-                border-color:$black;
+                border-color:$primary;
             }
         }
         & *:not(button, button *, input){
@@ -75,6 +95,9 @@
         }
         &:disabled::placeholder{
             color: rgba($color: $black, $alpha: 0.15);
+        }
+        & textarea::-webkit-scrollbar-thumb {
+            background-color: rgba($color: $primary, $alpha: 0.6);
         }
     }
 }

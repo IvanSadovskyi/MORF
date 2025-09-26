@@ -6,11 +6,6 @@
     & > div:last-child{
         margin-bottom: 0 !important;
     }
-    @include breakpoint(tablet, min){
-        & > div:nth-last-child(-n+3){
-            margin-bottom: 0 !important;
-        }
-    }
 
     &-m16{
         @include breakpoint(tablet, min){
@@ -126,6 +121,7 @@
     @include breakpoint(desktop2, min){
         flex: 0 0 25%;
         max-width: 25%;
+        
     }
 }
 
@@ -142,6 +138,11 @@
         flex: 0 0 33.33333%;
         max-width: 33.33333%;
     }
+    @include breakpoint(tablet, min){
+        &:nth-last-child(-n+3){
+            margin-bottom: 0 !important;
+        }
+    }
 }
 
 
@@ -152,6 +153,11 @@
     @include breakpoint(tablet, min){
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    @include breakpoint(tablet, min){
+        &:nth-last-child(-n+2){
+            margin-bottom: 0 !important;
+        }
     }
 }
 .col-1{
@@ -325,4 +331,26 @@
 .flex-align-center{
     display: flex;
     align-items: center;
+}
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 110px;
+
+    &__inner {
+        display: inline-block;
+        animation: marquee 10s linear infinite;
+        font-size: 96px;
+        line-height: normal;
+    }
+    &__inner span{
+        margin-right: 128px;
+    }
+}
+
+
+@keyframes marquee {
+    from { transform: translateX(-0.033%); }
+    to   { transform: translateX(-33.333%); }
 }

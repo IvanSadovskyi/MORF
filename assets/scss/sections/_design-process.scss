@@ -8,6 +8,9 @@
     &__row:not(:last-child){
         margin-bottom: 40px;
     }
+    &__row:last-child{
+        margin-bottom: 2px;
+    }
     &__row{
         // display: flex;
         // gap: 48px;

@@ -32,7 +32,9 @@ ScrollTrigger.create({
 	start: 0,
 	end: "max",
 	onUpdate: self => {
+        if (header.classList.contains("header--contacts")) return;
 		let currentScroll = self.scroll();
+
 		if (currentScroll > lastScroll && currentScroll > 100 && !header.classList.contains("active")) {
 			gsap.to(header, { yPercent: -100, duration: 0.2, ease: "none" });
 		} else {
@@ -94,7 +96,7 @@ function HorizontalScrollSteps(){
 }
 
 
-
+if (header.classList.contains("header--contacts")){
 const sectionToTheme = {
     light: 'light',
     dark: 'dark',
@@ -123,7 +125,7 @@ function checkThemeOnScroll() {
 
 checkThemeOnScroll();
 window.addEventListener('scroll', checkThemeOnScroll);
-
+}
 
 
 btnMenu.addEventListener("click", function() {
@@ -310,3 +312,16 @@ if(document.getElementById("form")){
         document.getElementById("successForm").style.display = "block"; // показать блок
     });
 }
+
+
+let classAdded = false;
+
+ScrollTrigger.create({
+    start: "top top",
+    onUpdate: (self) => {
+        if (!classAdded && self.scroll() > 0) {
+            header.classList.add('scrolling-started');
+            classAdded = true;
+        }
+    }
+});
