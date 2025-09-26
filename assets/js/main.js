@@ -314,14 +314,26 @@ if(document.getElementById("form")){
 }
 
 
-let classAdded = false;
-
 ScrollTrigger.create({
     start: "top top",
     onUpdate: (self) => {
-        if (!classAdded && self.scroll() > 0) {
+        if (self.scroll() > 0) {
             header.classList.add('scrolling-started');
-            classAdded = true;
+        } else {
+            header.classList.remove('scrolling-started');
         }
     }
 });
+
+
+
+
+
+
+
+        // trigger: ".hero-wrap",
+        // start: "top top",
+        // endTrigger: ".hero-end-trigger",
+        // end: "center bottom",
+        // pin: ".hero-main",
+        // pinSpacing: false,

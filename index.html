@@ -9,9 +9,14 @@
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="assets/css/nprogress.css">
-        <link rel="stylesheet" href="assets/css/styles.css" media="all">
 
+        <link rel="stylesheet" href="assets/css/nprogress.css">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="assets/css/font.css">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
         <!-- <link rel="stylesheet" href="module/owl-carousel/owl.carousel.min.css" media="all"> -->
         <!-- <link rel="stylesheet" href="module/fancybox/jquery.fancybox.min.css" media="all"> -->
 
@@ -40,12 +45,6 @@
         <style type="text/css">
             .preloader{width: 100vw;height: 100vh;position: fixed;z-index: 8888;background-color:#F5F5FA}
             .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100px;height:100px;}
-            .preloader__wrap hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite;}
-
-            .preloader__wrap :first-child{background:#175FFF;animation-delay:-1.5s}
-            .preloader__wrap :nth-child(2){background:#4e9ddd;animation-delay:-1s}
-            .preloader__wrap :nth-child(3){background:#1923b4;animation-delay:-0.5s}
-            .preloader__wrap :last-child{background:#193B48}
 
             @keyframes spin{
                 0%,100%{transform:translate(0)}
@@ -53,10 +52,40 @@
                 50%{transform:translate(160%, 160%)}
                 75%{transform:translate(0, 160%)}
             }
+            .loader {
+                width: 100px;
+                aspect-ratio: 1;
+                padding: 10px;
+                box-sizing: border-box;
+                display: grid;
+                background: #f5f5f5;
+                filter: blur(5px) contrast(10) hue-rotate(240deg);
+                /* mix-blend-mode: darken; */
+            }
+                .loader:before,
+                .loader:after{ 
+                content: "";
+                grid-area: 1/1; 
+                width: 40px;
+                height: 40px;
+                background: #ff0000;
+                animation: l7 2s infinite;
+            }
+                .loader:after{ 
+                animation-delay: -1s;
+            }
+            @keyframes l7{
+                0%   {transform: translate(   0,0)}
+                25%  {transform: translate(75%,0)}
+                50%  {transform: translate(75%,75%)}
+                75%  {transform: translate(   0,75%)}
+                100% {transform: translate(   0,0)}
+            }
         </style>
         <div class="preloader">
             <div class="preloader__wrap">
-                <hr/><hr/><hr/><hr/>
+                
+                <div class="loader"></div>
             </div>
         </div>
         <script type="text/javascript">
@@ -118,7 +147,7 @@
                                     <a href="">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="">Dribble</a>
+                                    <a href="">Dribbble</a>
                                 </li>
                                 <li>
                                     <a href="">Behance</a>
@@ -127,7 +156,7 @@
                         </div>
                     </div>
                     <div class="col-1-2-3">
-                        <div>
+                        <div class="nav__menu">
                             <p>Menu</p>
                             <ul class="unstyled">
                                 <li>
@@ -142,7 +171,7 @@
                                 <li>
                                     <a class="h1" href="/career.html"><strong>Career</strong></a>
                                 </li>
-                                <li><a href="/privacy-policy.html" class="p-small privacy-policy">Privacy policy</a></li>
+                                <li class="privacy-policy"><a href="/privacy-policy.html" class="p-small privacy-policy">Privacy policy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -152,6 +181,9 @@
                             <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                     </div>
+                    <div class="col-1 privacy-policy">
+                        <a class="privacy-policy p-small" href="/privacy-policy.html">Privacy policy</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -160,7 +192,7 @@
                 <main>
                     <div class="hero-wrap">
                         <div class="hero-main">
-                            <spline-viewer url="/assets/animations/hero.splinecode.json"></spline-viewer>
+                            <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
                         </div>
                     </div>
                     <section class="breadcrumbs-heading container container--1300" style="color:#fff" data-section="dark">
@@ -345,7 +377,7 @@
                     <div class="footer__left">
                         <form class="form" id="form" action="" method="post">
                             <div class="form__group">
-                                <p><strong>Interested in</strong></p>
+                                <p>Interested in</p>
                                 <div class="btn-container--selected" data-section="dark">
                                     <div class="btn-wrap--selected">
                                         <input type="checkbox" name="Interested" id="Websites" checked>
@@ -380,7 +412,7 @@
                                 <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
                             <div class="flex-between flex-align-center">
-                                <div class="form__group file-upload-wrapper p-small" data-text="Attach CV">
+                                <div class="form__group file-upload-wrapper p-small" data-text="Attach file">
                                     <input name="file-upload-field" type="file" class="file-upload-field" value="">
                                     <span class="error-message" id="file-upload-field-error">An error has occurred</span>
                                 </div>
@@ -420,7 +452,7 @@
                             <li>
                                 <a href="">
                                     <svg width="24" height="24">
-                                        <use xlink:href="/assets/img/sprite-svg.svg#dribble"/>
+                                        <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
                                     </svg>
                                 </a>
                             </li>

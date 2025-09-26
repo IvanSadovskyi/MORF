@@ -1,3 +1,170 @@
+// @use '../abstracts' as *;
+
+// html {
+//   height: 100%;
+//   touch-action: manipulation;
+//   -webkit-overflow-scrolling: touch;
+// }
+
+// body {
+//   position: relative;
+//   min-width: 320px;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+// //   background-color: #fff;
+
+//   &.no-scroll {
+//     overflow: hidden;
+//   }
+// }
+
+// .preload * {
+//   transition: none !important;
+// }
+
+// section{
+//     margin-top: 128px;
+//     margin-bottom: 128px;
+
+//     &:not(.marquee):first-child{
+//         padding-top: calc(128px + 118px);
+//         margin-top: 0;
+//     }
+//     &.marquee:first-child{
+//         padding-top: 64px;
+//         margin-top: 0;
+//         @include breakpoint(tablet){
+//             padding-top: 48px;
+//         }
+//         @include breakpoint(mobile1){
+//             padding-top: 32px;
+//         }
+//     }
+//     &:not(.cases):last-child{
+//         padding-bottom: 128px;
+//         margin-bottom: 0;
+//     }
+//     &.cases:last-child{
+//         padding-bottom: 64px;
+//         margin-bottom: 0;
+//         @include breakpoint(tablet){
+//             padding-bottom: 48px;
+//         }
+//         @include breakpoint(mobile1){
+//             padding-bottom: 32px;
+//         }
+//     }
+
+//     @include breakpoint(tablet){
+//         margin-top: 96px;
+//         margin-bottom: 96px;
+        
+//         &:last-child{
+//             padding-bottom: 96px;
+//             margin-bottom: 0;
+//         }
+//     }
+//     @include breakpoint(mobile1){
+//         margin-top: 64px;
+//         margin-bottom: 64px;
+        
+//         &:last-child{
+//             padding-bottom: 64px;
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+// .page {
+//   background-color: $background;
+// }
+// .page::-webkit-scrollbar{
+//     display: none;
+// }
+
+// .container {
+//   position: relative;
+//   width: 100%;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: $gap;
+//   padding-left: $gap;
+//   max-width: $max-width-container-desktop;
+
+// //   &[data-section="dark"]{
+// //     color:$white;
+// //   }
+// //   &[data-section="light"]{
+// //     color:$black;
+// //   }
+//   @include breakpoint(laptop, min){
+//     &--1300{
+//       max-width: 1317px;
+//     }
+//   }
+
+//   @include breakpoint(laptop){
+//     max-width: $max-width-container-laptop;
+//   }
+//   @include breakpoint(mobile1){
+//     max-width: $max-width-container-tablet;
+//   }
+//   @include breakpoint(mobile2){
+//     max-width: $max-width-container-mobile;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+// .light-section{
+//     background-color: $white;
+
+//     & > :first-child{
+//         margin-top: 0;
+//         padding-top: 128px;
+//     }
+// }
+
+// .blur{
+//     &--32{
+//         filter: blur(16px);
+//     }
+//     &--150{
+//         filter: blur(75px);
+//     }
+//     &--700{
+//         filter: blur(350px);
+//     }
+// }
+
+
+
+
+// #smooth-content {
+//   overflow: visible;
+//   width: 100%;
+//   /* set a height because the contents are position: absolute, thus natively there's no height */
+// //   height: 2000px;
+// //   background-image:
+// //     linear-gradient(rgba(255,255,255,.07) 2px, transparent 2px),
+// //     linear-gradient(90deg, rgba(255,255,255,.07) 2px, transparent 2px),
+// //     linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+// //     linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+// //   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+// //   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+// }
+
+
+
+
 @use '../abstracts' as *;
 
 html {

@@ -7,4 +7,15 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 96px;
+
+    & ~ section{
+        margin-top: 96px;
+    }
+    @include breakpoint(laptop){
+        margin-bottom: 64px;
+        & ~ section{
+            margin-top: 64px;
+        }
+    }
 }

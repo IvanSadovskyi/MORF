@@ -86,7 +86,7 @@ ul:not(.unstyled).checklist li + li {
 }
 
 body {
-  font-family: "TTCommons";
+  font-family: "TTCommons", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-wrap: break-word;
@@ -98,7 +98,6 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
   font-weight: 400;
-  font-family: "TTCommons";
 }
 
 em, i {
@@ -295,132 +294,6 @@ fieldset {
   border: none;
 }
 
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Thin.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-ThinItalic.ttf") format("truetype");
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-ExtraLightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-DemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-DemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TTCommons";
-  src: url("../fonts/TTCommons/TTCommons-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
 .header.header--contacts {
   position: absolute;
 }
@@ -443,7 +316,7 @@ fieldset {
   transition: all 0.5s;
 }
 .header:not(.header--contacts).scrolling-started[data-theme=light] {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(245, 245, 245, 0.5);
 }
 .header:not(.header--contacts).scrolling-started[data-theme=dark] {
   background-color: rgba(0, 0, 0, 0.08);
@@ -611,38 +484,76 @@ fieldset {
     max-width: 33.333%;
   }
 }
+@media (max-width: 1365px) {
+  .nav__wrap {
+    max-width: 1302px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .nav__wrap > .row {
+    gap: 48px;
+    max-width: none;
+    max-height: calc(100vh - 118px);
+    overflow-y: auto;
+  }
+  .nav__wrap > .row::-webkit-scrollbar {
+    visibility: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .nav__wrap {
+    max-width: 612px;
+  }
+}
 @media (max-width: 576px) {
   .nav__wrap {
     max-width: 407px;
-    margin: 0 auto;
-    padding: 0 32px;
   }
 }
 .nav__wrap .col-1-2-3 div > :first-child {
   margin-bottom: 32px;
   color: #175FFF;
 }
-.nav__wrap .col-1-2-3:nth-child(1) div li:not(:last-child) {
+.nav__wrap .col-1-2-3:nth-child(1) div li:not(:nth-last-child(2)) {
   margin-bottom: 16px;
 }
-.nav__wrap .col-1-2-3:nth-child(2) div li:not(:last-child) {
+.nav__wrap .col-1-2-3:nth-child(2) div li:not(:nth-last-child(2)) {
   margin-bottom: 32px;
 }
 .nav__wrap .col-1 {
   text-align: center;
 }
+.nav__wrap li.privacy-policy {
+  margin-bottom: 0 !important;
+  margin-top: 64px;
+}
+.nav__wrap .col-1.privacy-policy {
+  margin-bottom: 32px !important;
+}
+@media (max-width: 1365px) {
+  .nav__menu li.privacy-policy {
+    display: none;
+  }
+}
+@media (min-width: 1366px) {
+  .nav .col-1.privacy-policy {
+    display: none;
+  }
+}
 @media (max-width: 1365px) {
   .nav {
-    padding: 32px;
+    padding: 0;
   }
   .nav__wrap .col-1-2-3 div > :first-child {
     margin-bottom: 24px;
   }
   .nav__wrap .col-1-2-3:nth-child(2) {
     order: -2;
+    flex-basis: calc(50% - 48px);
   }
   .nav__wrap .col-1-2-3:nth-child(3) {
     order: -1;
+    flex-basis: calc(50% - 48px);
   }
   .nav__wrap .col-1-2-3:nth-child(1) {
     flex: 0 0 100%;
@@ -678,7 +589,6 @@ fieldset {
 @media (max-width: 767px) {
   .nav {
     height: calc(100% - 118px);
-    padding: 48px;
   }
   .nav__wrap .col-1-2-3 div > :first-child {
     margin-bottom: 16px;
@@ -816,8 +726,8 @@ section:last-child {
 }
 .footer.footer--contacts {
   padding-top: 246px;
-  align-content: flex-end;
-  align-items: flex-end;
+  align-content: flex-start;
+  align-items: flex-start;
   min-height: 100vh;
 }
 .footer:has(.footer__bottom:only-child) {
@@ -838,6 +748,7 @@ section:last-child {
 }
 @media (max-width: 767px) {
   .footer.container {
+    padding-top: 64px;
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -1303,6 +1214,7 @@ div ~ .footer__bottom {
   display: block;
   flex-shrink: 0;
   width: 103px;
+  margin: auto 0;
 }
 .logo img {
   display: block;
@@ -1810,15 +1722,30 @@ div ~ .footer__bottom {
     flex-direction: column;
     align-items: center;
   }
+  .who-we-are > div .section-texts {
+    text-align: center;
+  }
 }
 
 .breadcrumbs-heading {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 96px;
 }
 .breadcrumbs-heading span {
   color: #175FFF;
+}
+.breadcrumbs-heading ~ section {
+  margin-top: 96px;
+}
+@media (max-width: 1365px) {
+  .breadcrumbs-heading {
+    margin-bottom: 64px;
+  }
+  .breadcrumbs-heading ~ section {
+    margin-top: 64px;
+  }
 }
 
 @media (min-width: 1024px) {

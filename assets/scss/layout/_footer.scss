@@ -9,8 +9,8 @@
 
     &.footer--contacts{
         padding-top: calc(128px + 118px);
-        align-content: flex-end;
-        align-items: flex-end;
+        align-content: flex-start;
+        align-items: flex-start;
         min-height: 100vh;
     }
 
@@ -30,6 +30,7 @@
         padding-right: 64px;
     }
     @include breakpoint(mobile1){
+        padding-top: 64px;
         padding-left: 32px;
         padding-right: 32px;
     }
