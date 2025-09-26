@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.hero-wrap {
+  position: relative;
+}
+
+.hero-main {
+  min-height: 100vh;
+}

@@ -1,0 +1,53 @@
+// Colors
+// Primary Colors
+$primary: #175FFF;
+$dark-blue: #1F1F1F;
+$red: #FF3F0A;
+// Grayscale
+$light-gray: #B0B6BF;
+$divider: #E0E0E0;
+$background:#f5f5f5;
+// Black & White
+$black: #080808;
+$white: #fff;
+
+$text-color: $black;
+$link-color: $primary;
+
+// Typography
+$primary-font-family: 'TTCommons', sans-serif;
+
+// Layout
+$gap: 32px;
+// $header-height-desktop: 78px;
+// $header-height-mobile: 72px;
+$container-max-width: 1130px + $gap * 2;
+$max-width-container-desktop: 1600px + $gap * 2;
+$max-width-container-laptop: 1238px + $gap * 2;
+$max-width-container-tablet: 548px + $gap * 2;
+$max-width-container-mobile: 343px + $gap * 2;
+
+
+// Breakpoints
+$breakpoints: (
+    desktop: 1920px,
+    desktop2: 1600px,
+    laptop: 1365px,
+
+    tablet: 1023px,
+
+    mobile1: 767px,
+    mobile2: 576px,
+
+    mobile3: 360px
+);
+
+// Layers
+$filter-layer: 10;
+$menu-layer: 20;
+$header-layer: 30;
+$modal-layer: 40;
+
+// Other
+//$transition-func: cubic-bezier(.25, .1, .25, 1);
+//$transition: 0.3s $transition-func;

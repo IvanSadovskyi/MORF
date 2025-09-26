@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+@include breakpoint(tablet, min){
+    .our-services > div > div{
+        &:nth-child(2n + 2) > div .section-texts{
+            margin-left: auto;
+        }
+        .section-texts{
+            max-width: 611px;
+        }
+    }
+}
+@include breakpoint(tablet){
+    :not(.who-we-are) > .col-1-1-2{
+        flex-direction: column;
+    }
+}

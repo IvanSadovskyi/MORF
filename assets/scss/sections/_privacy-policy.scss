@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.privacy-policy{
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        
+        @include breakpoint(laptop, min){
+            max-width: 38%;
+        }
+
+        & span:first-child{
+            color:$primary;
+        }
+    }
+
+    &__row > div{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

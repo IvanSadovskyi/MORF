@@ -1,0 +1,128 @@
+@use '../abstracts' as *;
+
+body {
+    font-family: $primary-font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: $text-color;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    // margin-bottom: .4em;
+    font-weight: 400;
+    font-family: $primary-font-family;
+}
+
+em, i{
+    text-decoration: underline;
+}
+
+h1 > b, .h1 > b,
+h2 > b, .h2 > b,
+h3 > b, .h3 > b,
+h1 > strong, .h1 > strong,
+h2 > strong, .h2 > strong,
+h3 > strong, .h3 > strong {
+    font-weight: 700
+}
+
+h1, .h1 {
+    @extend %h1;
+}
+
+h2, .h2 {
+    @extend %h2;
+}
+
+h3, .h3 {
+    @extend %h3;
+}
+
+p, a, span, div input,div::after, ul:not(.unstyled){
+    @extend %p-l;
+}
+
+p.p-small, a.p-small, span.p-small, div input.p-small,div.p-small::after, ul:not(.unstyled).p-small{
+    @extend %p-s;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &[href^='tel'],
+    &[href^='mailto'] {
+        white-space: nowrap;
+    }
+}
+
+a,
+img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul {
+    &:not(.unstyled) {
+        padding-left: 12px;
+
+        li {
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+                content: '\2022';
+                position: absolute;
+                font-size: 0.8em;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &.checklist {
+            @extend %checklist;
+        }
+    }
+}
+a.privacy-policy{
+    color:$light-gray;
+
+    @include isHover{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+ol {
+    &:not(.unstyled) {
+    counter-reset: list;
+
+        li {
+            position: relative;
+            padding-left: 32px;
+
+            &::before {
+                counter-increment: list;
+                content: counter(list) '.';
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

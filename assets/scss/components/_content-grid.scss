@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.content-grid{
+    // overflow-x: hidden;
+    &__wrap > div{
+        @include breakpoint(tablet){
+            & > div{
+                width: 100%;
+                padding: 0;
+            }
+
+        }
+    }
+    @include breakpoint(tablet, min){
+        &--shuffle > div > div{
+            &:nth-child(2n + 2) > div:has(.section-texts){
+                order: -1;
+            }
+        }
+    }
+}

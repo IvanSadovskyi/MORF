@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.works{
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+
+    & .row > div{
+        margin-bottom: 96px;
+    }
+    @include breakpoint(laptop){
+        gap:64px;
+
+        & .row > div{
+            margin-bottom: 64px;
+        }
+        & .row > div{
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.vacancies{   
+    &__content{
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        position: relative;
+
+        & > .section-texts{
+            max-width: 600px;
+        }
+
+        & > a{
+            position: static;
+            &::after{
+                display: block;
+                content: '';
+                position: absolute;
+                inset: 0;
+            }
+            @media (hover: hover) {
+                transform: none !important;
+            }
+        }
+    }
+
+    & .col-1-2{
+        position: relative;
+        margin-bottom: 96px;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -48px;
+            background-color: $divider;
+            height: 2px;
+            width: 100%;
+
+            @include breakpoint(tablet, min){
+                left: 48px;
+                width: calc(100% - 48px*2);
+            }
+        }
+       &.col-1-2:last-child::after{
+            background-color: transparent;
+        }
+        @include breakpoint(tablet, min){
+            &.col-1-2:nth-last-child(-n+2)::after{
+                background-color: transparent;
+            }
+        }
+    }
+}

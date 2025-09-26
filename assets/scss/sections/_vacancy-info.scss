@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.vacancy-info{
+    & .section-texts > h2{
+        height: 48px;
+    }
+}

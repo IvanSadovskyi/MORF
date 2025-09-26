@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.career{
+    &__list{
+        flex: 0 1 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+
+        & li{
+            position: relative;
+
+            &:not(:last-child)::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $divider;
+                position: absolute;
+                left: 0;
+                bottom: -14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base href="[[++site_url]]">
+        <title>MORF - Styleguide</title>
+
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="#">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+        <!-- <link rel="stylesheet" href="module/owl-carousel/owl.carousel.min.css" media="all"> -->
+        <!-- <link rel="stylesheet" href="module/fancybox/jquery.fancybox.min.css" media="all"> -->
+
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#175fff">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#175fff">
+    </head>
+    <body>
+        <div style="background-color: #f5f5f5;margin: 16px;border-radius: 16px;width: fit-content;">
+            <div class="wrap" style="width: fit-content;">
+                <div class="row" style="gap:10px">
+                    <h1><b>Headline h1</b></h1>
+                    <h2><strong>Headline h2</strong></h2>
+                    <h3><strong>Headline h3</strong></h3>
+                    
+                    <h1><i><strong>Headline h1</strong></i></h1>
+                    <div class="text">
+                        <p><b>Large Paragraph</b></p>
+                        <p class="p-small"><strong>Small Paragraph</strong></p>
+                    </div>
+                </div>
+                <div class="row" style="gap:10px">
+                    <h1 class="t-regular">Headline h1</h1>
+                    <h2 class="t-regular">Headline h2</h2>
+                    <h3 class="t-regular">Headline h3</h3>
+
+                    <h1><i>Headline h1</i></h1>
+                    <div class="text">
+                        <p>Large Paragraph Bold</p>
+                        <p class="p-small">Small Paragraph Bold</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .text{
+                margin-top: auto;
+                padding-top: 50px;
+            }
+            body{
+                background: linear-gradient(-90deg, #05F6F5 0%, #6D13BC 35%, #FF1D25 70%, #FF931E 100%);
+            }
+            .wrap{
+                display: flex;
+            }
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+                gap:20px;
+                /* width: 70%; */
+                margin: 100px auto 0;
+                margin: 40px;
+                width: auto;
+                flex-direction: column;
+                padding: 16px;
+                border-radius: 16px;
+            }
+            .item{
+                /* width:calc(50% - 10px); */
+                /* width: 100%; */
+                /* height: 300px; */
+                /* background-color: rgba(255, 255, 255, 0.04); */
+                /* align-items: center; */
+                display: flex;
+                /* justify-content: center; */
+                font-size: 24px;
+                font-style: italic;
+                color: white;
+                display: flex;
+                gap: 20px;
+            }
+            .item-1{
+                backdrop-filter: blur(32px);
+            }
+            .item-2{
+                backdrop-filter: blur(150px);
+            }
+            .item-3{
+                /* filter: blur(700px); */
+                backdrop-filter: blur(700px);
+            }
+        </style>
+        <div class="wrap">
+        <div class="row item-3">
+            <!-- <div class="item item-1">BG Blur Light 32</div>
+            <div class="item item-2">BG Blur Light 150</div>
+            <div class="item item-3">BG Blur Dark +700</div> -->
+            <div class="item">
+                <button class="btn btn--primary">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+
+                
+            </div>
+            <div class="item">
+                <button class="btn btn--primary btn--medium">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--medium btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--medium btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+                <button class="btn btn--primary btn--medium btn--arrow">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="item">
+                <button class="btn btn--primary btn--small">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--small btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--primary btn--small btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+                <button class="btn btn--primary btn--small btn--arrow">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="row" style="background: #175FFF;">
+            <div class="item">
+                <button class="btn btn--secondary">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+                <button class="btn btn--secondary btn--arrow">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="item">
+                <button class="btn btn--secondary btn--medium">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--medium btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--medium btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+                <button class="btn btn--secondary btn--medium btn--arrow">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="item">
+                <button class="btn btn--secondary btn--small">
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--small btn--left">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                    <span>Button</span>
+                </button>
+                <button class="btn btn--secondary btn--small btn--right">
+                    <span>Button</span>
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                </button>
+                <button class="btn btn--secondary btn--small btn--arrow">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-left"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="row" style="background: #f5f5f5;">
+            <div class="item">
+                <button class="btn btn--link">
+                    <span>Learn More</span>
+                    <span class="btn--icon">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                    </span>
+                </button>
+            </div>
+            <div class="item">
+                <button class="btn btn--link" disabled>
+                    <span>Learn More</span>
+                    <span class="btn--icon">
+                    <svg width="24px" height="24px">
+                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                    </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

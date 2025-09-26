@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.pictures{
+    display: flex;
+    gap: 96px;
+
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 96px;
+        width: 100%;
+    }
+
+    @include breakpoint(laptop){
+        &, &__wrap{
+            gap: 64px;
+        }
+    }
+    @include breakpoint(tablet){
+        &, &__wrap{
+            gap: 16px;
+        }
+    }
+    @include breakpoint(mobile1){
+        & {
+            flex-direction: column;
+        }
+    }
+}
+.picture{
+    position: relative;
+
+    @include breakpoint(tablet, mim){
+        &.picture--t96{
+            top: -96px;
+        }
+    }
+}

@@ -1,0 +1,283 @@
+@use '../abstracts' as *;
+
+.header {
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    backdrop-filter: blur(32px);
+    z-index: $header-layer;
+    transition: background-color .3s, transform 0.2s;
+
+    &-out {
+       transform: translateY(-100%);
+       pointer-events: none;
+    }
+
+    &__left, &__right{
+        & svg, & span, & div{
+            transition: all .5s;
+        }
+    }
+    & span{
+        transition: all .5s;
+    }
+
+    &[data-theme="light"]{
+        background-color: rgba($color: $white, $alpha: 0.50);
+    }
+    &.active{
+        background-color: rgba($color: $white, $alpha: 1.0) !important;
+    }
+    &[data-theme="light"], &.active{
+        .header__left{
+            & svg{
+                color:$primary !important;
+            }
+        }
+        .header__center span{
+            background-color: $primary !important;
+        }
+        .header__right {
+            & div{
+                background-color: $primary !important;
+            }
+            & span{
+                color: $primary !important;
+            }
+            & svg{
+                color:$white !important;
+            }
+        }
+    }
+    &[data-theme="dark"]{
+        background-color: rgba($color: #000, $alpha: 0.08);
+        
+        .header__left{
+            & svg{
+                color:$white;
+            }
+        }
+        .header__center span{
+            background-color: $white;
+        }
+        .header__right {
+            & div{
+                background-color: $white;
+            }
+            & span{
+                color: $white;
+            }
+            & svg{
+                color:$primary;
+            }
+        }
+    }
+    
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left, &__center, &__right a{
+        padding: 35px 0;
+        height: 100%;
+        display: flex;
+    }
+
+    &__menu-btn {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        & span{
+            height: 3px;
+            width: 32px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            display: block;
+            position: absolute;
+            top:50%
+        }
+        
+        & span:first-child{
+            transform: translateY(-5px);
+        }
+        & span:last-child{
+            transform: translateY(5px);
+        }
+
+        &.active span:first-child{
+            transform: translateY(0) rotate(-45deg);
+        }
+        &.active span:last-child{
+            transform: translateY(0) rotate(45deg);
+        }
+    }
+    
+    &__right {
+        & span {
+            align-self: center;
+            margin-right: 24px;
+        }
+        & div{
+            height: 48px;
+            width: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: $primary;
+            border-radius: 50%;
+        }
+    }
+
+    @include breakpoint(mobile1){
+        &__wrap{
+            justify-content: end;
+        }
+        &__left{
+            margin-right: auto;
+        }
+        &__center{
+            margin-right: 32px;
+        }
+        &__right span{
+            display: none;
+        }
+    }
+    @include breakpoint(mobile2){
+        &__center{
+            margin: 0;
+        }
+        &__right{
+            display: none;
+        }
+    }
+}
+
+.nav {
+    height: fit-content;
+    padding: 96px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background-color: $white;
+    transform: translateY(-900px);
+    transition: transform 0.4s;
+    z-index: 19;
+
+    &.active{
+        transform: translateY(118px);
+    }
+    &.active::before{
+        position: absolute;
+        inset: 0;
+        content: '';
+        height: 100vh;
+        background-color: white;
+        z-index: 1;
+    }
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        gap:64px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        z-index: 2;
+
+        .row{
+            width: 100%;
+            max-width: 1176px;
+        }
+        .col-1-2-3:nth-child(-n + 2) a{
+            color:$black;
+        }
+        @include breakpoint(laptop, min){
+            .col-1-2-3:not(:nth-child(3)){
+                flex: 0 0 calc(33.333% - 64px);
+                max-width: calc(33.333% - 64px);
+                margin-right: 64px;
+            }
+            .col-1-2-3:nth-child(3){
+                flex: 0 0 33.333%;
+                max-width: 33.333%;
+            }
+        }
+        .col-1-2-3 div > :first-child{
+            margin-bottom: 32px;
+            color: $primary;
+        }
+        .col-1-2-3:nth-child(1) div li:not(:last-child){
+            margin-bottom: 16px;
+        }
+        .col-1-2-3:nth-child(2) div li:not(:last-child){
+            margin-bottom: 32px;
+        }
+        .col-1{
+            text-align: center;
+        }
+    }
+    @include breakpoint(laptop){
+        &__wrap{
+            .col-1-2-3 div > :first-child{
+                margin-bottom: 24px;
+            }
+            .col-1-2-3:nth-child(2){
+                order: -2;
+            }
+            .col-1-2-3:nth-child(3){
+                order: -1;
+            }
+            .col-1-2-3:nth-child(1){
+                flex: 0 0 100%;
+                max-width: 100%;
+                
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                li{
+                    margin-bottom: 0 !important;
+                    &:not(:last-child){
+                        margin-right: 32px;
+                    }
+                }
+            }
+            .col-1{
+                text-align: left;
+            }
+            .row-m16{
+                overflow-y: scroll;
+                height: 70vh;
+            }
+        }
+    }
+    @media(min-width:mobile1) and (max-width:tablet){
+        &__wrap{
+            .col-1-2-3:nth-child(2), .col-1-2-3:nth-child(3){
+                margin-bottom: 32px;
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    }
+    @include breakpoint(mobile1){
+        height: calc(100% - 118px);
+        padding: 48px;
+
+        &__wrap{
+            .col-1-2-3 div > :first-child{
+                margin-bottom: 16px;
+            }
+        }
+    }
+    @include breakpoint(mobile2){
+        padding: 24px;
+    }
+}

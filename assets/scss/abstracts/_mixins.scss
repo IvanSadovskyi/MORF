@@ -1,0 +1,98 @@
+@use 'vars' as *;
+@use 'sass:map';
+// fancybox fix
+//@function max($numbers...) {
+//  @return m#{a}x(#{$numbers});
+//}
+//
+//@function min($numbers...) {
+//  @return m#{i}n(#{$numbers});
+//}
+// end fancybox fix
+
+@mixin font-face($font-name, $path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-name;
+    src: url($path + '.ttf') format('ttf');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin breakpoint($value, $direction: max) {
+  $value: $value;
+
+  @if map.has-key($breakpoints, $value) {
+    $value: if($direction == max, map.get($breakpoints, $value), map.get($breakpoints, $value) + 1);
+  }
+
+  @media (#{$direction}-width: $value) { @content; }
+}
+
+@mixin cover-background($position: center) {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: $position;
+}
+
+@mixin fade($type, $duration: .3s) {
+  @if $type == 'hide' {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility $duration, opacity $duration;
+  } @else if $type == 'show' {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility $duration, opacity $duration;
+  }
+}
+
+@mixin hideScrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+}
+
+@mixin visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin fullwidth {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+}
+
+@mixin isHover {
+
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin isTouch {
+
+  @media (hover: none) {
+    @content;
+  }
+}

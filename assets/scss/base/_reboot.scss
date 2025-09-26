@@ -1,0 +1,138 @@
+@use '../abstracts' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+form,
+section,
+summary {
+  display: block;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+button,
+[role="button"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: 80%;
+}
+
+sup,
+sub {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 65%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+iframe {
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
