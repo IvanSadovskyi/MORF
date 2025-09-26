@@ -96,11 +96,11 @@ function HorizontalScrollSteps(){
 }
 
 
-if (header.classList.contains("header--contacts")){
-const sectionToTheme = {
-    light: 'light',
-    dark: 'dark',
-};
+if (!header.classList.contains("header--contacts")){
+    const sectionToTheme = {
+        light: 'light',
+        dark: 'dark',
+    };
 
 function setTheme(theme) {
     if (header.getAttribute('data-theme') === theme) return;

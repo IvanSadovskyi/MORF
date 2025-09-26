@@ -9,6 +9,9 @@
 
     &.footer--contacts{
         padding-top: calc(128px + 118px);
+        align-content: flex-end;
+        align-items: flex-end;
+        min-height: 100vh;
     }
 
     &:has(.footer__bottom:only-child){
@@ -27,8 +30,8 @@
         padding-right: 64px;
     }
     @include breakpoint(mobile1){
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
     }
 
@@ -103,15 +106,20 @@
 
     spline-viewer{
         position: absolute;
-        inset: 0;
-        z-index: 1;
-        height: 100vh;
-        min-height: 1050px;
-    }
-}
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover; /* ключевой момент */
+        z-index: 0;
 
-.d
-.list {
-    &__item {
+        @include breakpoint(desktop, min){
+            top: 0;
+            transform: translate(-50%, 0);
+            height: 100vh;
+        }
     }
 }

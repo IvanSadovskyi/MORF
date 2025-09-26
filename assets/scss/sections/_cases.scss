@@ -1,12 +1,15 @@
 @use '../abstracts' as *;
 
 .cases{
-    margin-bottom: 256px;
-    & .col-1{
-        &:not(:last-child){
-            // margin-bottom: 96px;
-        }
+    margin-bottom: 128px;
+    @include breakpoint(mobile1){
+        margin-bottom: 64px;
     }
+    // & .col-1{
+    //     &:not(:last-child){
+    //         // margin-bottom: 96px;
+    //     }
+    // }
 }
 
 .case{
