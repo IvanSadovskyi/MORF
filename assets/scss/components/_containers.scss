@@ -241,6 +241,216 @@
 
 
 
+$container-size: 500px;
+$pad: 50px;
+$num-shapes: 4;
+$animation-duration: 20s; // можно менять
+
+@mixin random-position {
+  $max: ($container-size - ($pad * 2));
+  $x: random($max) + $pad;
+  $y: random($max) + $pad;
+  transform: translate(#{$x}px, #{$y}px);
+}
+
+/* Базовый контейнер */
+.illustration__container {
+  position: relative;
+  width: $container-size;
+  height: $container-size;
+  overflow: hidden;
+  margin: 0 auto;
+//   filter: blur(75px)
+}
+
+/* Базовые фигуры */
+.illustration__shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  will-change: transform, opacity;
+  animation: move $animation-duration infinite ease-in-out;
+}
+
+/* Ключевые кадры. random() вычисляется при сборке. */
+@for $i from 1 through 4 {
+  @keyframes move-#{$i} {
+    0%,100% { transform: translate(#{random(400)}px,#{random(400)}px); }
+    25%     { transform: translate(#{random(400)}px,#{random(400)}px); }
+    50%     { transform: translate(#{random(400)}px,#{random(400)}px); }
+    75%     { transform: translate(#{random(400)}px,#{random(400)}px); }
+  }
+  .illustration__shape:nth-child(#{$i}) {
+    animation: move-#{$i} 24s infinite ease-in-out;
+  }
+}
+
+/* ---------------------------
+   Вариант 1 — плавные крупные формы
+   (circle, tall-rect, triangle, hexagon)
+   --------------------------- */
+.illustration__container--1 {
+  .illustration__shape {
+    /* shape 1 - circle */
+    &:nth-child(1) {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2765F5, #44A0FF);
+    }
+
+    /* shape 2 - tall rounded rect */
+    &:nth-child(2) {
+      width: 140px;
+      height: 290px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #FA4011, #FF7A4D);
+      transform-origin: center;
+    }
+
+    /* shape 3 - triangle (point down) */
+    &:nth-child(3) {
+      width: 0;
+      height: 0;
+      border-left: 95px solid transparent;
+      border-right: 95px solid transparent;
+      border-bottom: 190px solid #7311FA;
+      /* triangle is positioned by transform, so keep width/height 0 */
+    }
+
+    /* shape 4 - hexagon via clip-path */
+    &:nth-child(4) {
+      width: 280px;
+      height: 130px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: linear-gradient(90deg, #FA9911, #FFD07A);
+    }
+
+    /* общие задержки для варианта */
+    @for $i from 1 through $num-shapes {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * -($animation-duration / $num-shapes);
+      }
+    }
+  }
+}
+
+/* ---------------------------
+   Вариант 2 — мягкие «блоб»-формы и ромб
+   (blob, pill, rotated-rect, diamond)
+   цвета отличные от варианта 1
+   --------------------------- */
+.illustration__container--2 {
+  .illustration__shape {
+    /* shape 1 - blob (big, high border-radius) */
+    &:nth-child(1) {
+      width: 220px;
+      height: 180px;
+      border-radius: 50% 40% 60% 50% / 55% 60% 40% 45%;
+      background: linear-gradient(135deg, #00C2A8, #60F0D8);
+      transform-origin: center;
+    }
+
+    /* shape 2 - pill horizontal */
+    &:nth-child(2) {
+      width: 300px;
+      height: 90px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #FF4EB2, #FF8AD6);
+    }
+
+    /* shape 3 - rotated rounded rect */
+    &:nth-child(3) {
+      width: 180px;
+      height: 120px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #3A3DFF, #7A7FFF);
+      transform: rotate(20deg);
+    }
+
+    /* shape 4 - diamond using transform rotate on square */
+    &:nth-child(4) {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, #FFD400, #FFB84D);
+      transform: rotate(45deg);
+      border-radius: 12px;
+    }
+
+    @for $i from 1 through $num-shapes {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * -($animation-duration / $num-shapes);
+      }
+    }
+  }
+}
+
+/* ---------------------------
+   Вариант 3 — острые/геометрические формы
+   (semi-circle, inverted-triangle, star-like polygon, slim-pill)
+   цвета отличные от варианта 1 и 2
+   --------------------------- */
+.illustration__container--3 {
+  .illustration__shape {
+    /* shape 1 - semicircle (top) */
+    &:nth-child(1) {
+      width: 220px;
+      height: 110px;
+      border-top-left-radius: 110px;
+      border-top-right-radius: 110px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background: linear-gradient(180deg, #8E44FF, #B76BFF);
+    }
+
+    /* shape 2 - inverted triangle (point up) */
+    &:nth-child(2) {
+      width: 0;
+      height: 0;
+      border-left: 120px solid transparent;
+      border-right: 120px solid transparent;
+      border-top: 210px solid #11C3FA;
+    }
+
+    /* shape 3 - star-ish polygon via clip-path */
+    &:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      background: linear-gradient(135deg, #FF6A00, #FFCF6A);
+    }
+
+    /* shape 4 - slim vertical pill */
+    &:nth-child(4) {
+      width: 80px;
+      height: 320px;
+      border-radius: 40px;
+      background: linear-gradient(180deg, #00A86B, #60E3A8);
+    }
+
+    @for $i from 1 through $num-shapes {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * -($animation-duration / $num-shapes);
+      }
+    }
+  }
+}
+
+
+
+
 
 .embed-responsive{
     position:relative;

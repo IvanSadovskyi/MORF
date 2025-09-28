@@ -656,7 +656,8 @@ section:last-child {
 }
 
 .page {
-  background-color: #f5f5f5;
+  background-color: transparent;
+  z-index: 2;
 }
 
 .page::-webkit-scrollbar {
@@ -677,6 +678,11 @@ section:last-child {
     max-width: 1317px;
   }
 }
+.container__wrap {
+  z-index: 5;
+  position: relative;
+  will-change: transform;
+}
 @media (max-width: 1365px) {
   .container {
     max-width: 1302px;
@@ -691,6 +697,28 @@ section:last-child {
   .container {
     max-width: 407px;
   }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.main__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100% - var(--shift));
+  background-color: #f5f5f5;
+}
+
+.main-bg {
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
 }
 
 .light-section {
@@ -1534,6 +1562,252 @@ div ~ .footer__bottom {
     height: 380px;
     margin: 0 auto;
   }
+}
+
+/* Базовый контейнер */
+.illustration__container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Базовые фигуры */
+.illustration__shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  will-change: transform, opacity;
+  animation: move 20s infinite ease-in-out;
+}
+
+/* Ключевые кадры. random() вычисляется при сборке. */
+@keyframes move-1 {
+  0%, 100% {
+    transform: translate(21px, 207px);
+  }
+  25% {
+    transform: translate(50px, 129px);
+  }
+  50% {
+    transform: translate(238px, 83px);
+  }
+  75% {
+    transform: translate(233px, 334px);
+  }
+}
+.illustration__shape:nth-child(1) {
+  animation: move-1 24s infinite ease-in-out;
+}
+
+@keyframes move-2 {
+  0%, 100% {
+    transform: translate(224px, 9px);
+  }
+  25% {
+    transform: translate(43px, 365px);
+  }
+  50% {
+    transform: translate(338px, 121px);
+  }
+  75% {
+    transform: translate(362px, 79px);
+  }
+}
+.illustration__shape:nth-child(2) {
+  animation: move-2 24s infinite ease-in-out;
+}
+
+@keyframes move-3 {
+  0%, 100% {
+    transform: translate(49px, 215px);
+  }
+  25% {
+    transform: translate(134px, 202px);
+  }
+  50% {
+    transform: translate(15px, 352px);
+  }
+  75% {
+    transform: translate(38px, 36px);
+  }
+}
+.illustration__shape:nth-child(3) {
+  animation: move-3 24s infinite ease-in-out;
+}
+
+@keyframes move-4 {
+  0%, 100% {
+    transform: translate(247px, 111px);
+  }
+  25% {
+    transform: translate(31px, 153px);
+  }
+  50% {
+    transform: translate(162px, 28px);
+  }
+  75% {
+    transform: translate(296px, 173px);
+  }
+}
+.illustration__shape:nth-child(4) {
+  animation: move-4 24s infinite ease-in-out;
+}
+
+/* ---------------------------
+   Вариант 1 — плавные крупные формы
+   (circle, tall-rect, triangle, hexagon)
+   --------------------------- */
+.illustration__container--1 .illustration__shape {
+  /* shape 1 - circle */
+  /* shape 2 - tall rounded rect */
+  /* shape 3 - triangle (point down) */
+  /* shape 4 - hexagon via clip-path */
+  /* общие задержки для варианта */
+}
+.illustration__container--1 .illustration__shape:nth-child(1) {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2765F5, #44A0FF);
+}
+.illustration__container--1 .illustration__shape:nth-child(2) {
+  width: 140px;
+  height: 290px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #FA4011, #FF7A4D);
+  transform-origin: center;
+}
+.illustration__container--1 .illustration__shape:nth-child(3) {
+  width: 0;
+  height: 0;
+  border-left: 95px solid transparent;
+  border-right: 95px solid transparent;
+  border-bottom: 190px solid #7311FA;
+  /* triangle is positioned by transform, so keep width/height 0 */
+}
+.illustration__container--1 .illustration__shape:nth-child(4) {
+  width: 280px;
+  height: 130px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(90deg, #FA9911, #FFD07A);
+}
+.illustration__container--1 .illustration__shape:nth-child(1) {
+  animation-delay: 0s;
+}
+.illustration__container--1 .illustration__shape:nth-child(2) {
+  animation-delay: -5s;
+}
+.illustration__container--1 .illustration__shape:nth-child(3) {
+  animation-delay: -10s;
+}
+.illustration__container--1 .illustration__shape:nth-child(4) {
+  animation-delay: -15s;
+}
+
+/* ---------------------------
+   Вариант 2 — мягкие «блоб»-формы и ромб
+   (blob, pill, rotated-rect, diamond)
+   цвета отличные от варианта 1
+   --------------------------- */
+.illustration__container--2 .illustration__shape {
+  /* shape 1 - blob (big, high border-radius) */
+  /* shape 2 - pill horizontal */
+  /* shape 3 - rotated rounded rect */
+  /* shape 4 - diamond using transform rotate on square */
+}
+.illustration__container--2 .illustration__shape:nth-child(1) {
+  width: 220px;
+  height: 180px;
+  border-radius: 50% 40% 60% 50%/55% 60% 40% 45%;
+  background: linear-gradient(135deg, #00C2A8, #60F0D8);
+  transform-origin: center;
+}
+.illustration__container--2 .illustration__shape:nth-child(2) {
+  width: 300px;
+  height: 90px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #FF4EB2, #FF8AD6);
+}
+.illustration__container--2 .illustration__shape:nth-child(3) {
+  width: 180px;
+  height: 120px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #3A3DFF, #7A7FFF);
+  transform: rotate(20deg);
+}
+.illustration__container--2 .illustration__shape:nth-child(4) {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #FFD400, #FFB84D);
+  transform: rotate(45deg);
+  border-radius: 12px;
+}
+.illustration__container--2 .illustration__shape:nth-child(1) {
+  animation-delay: 0s;
+}
+.illustration__container--2 .illustration__shape:nth-child(2) {
+  animation-delay: -5s;
+}
+.illustration__container--2 .illustration__shape:nth-child(3) {
+  animation-delay: -10s;
+}
+.illustration__container--2 .illustration__shape:nth-child(4) {
+  animation-delay: -15s;
+}
+
+/* ---------------------------
+   Вариант 3 — острые/геометрические формы
+   (semi-circle, inverted-triangle, star-like polygon, slim-pill)
+   цвета отличные от варианта 1 и 2
+   --------------------------- */
+.illustration__container--3 .illustration__shape {
+  /* shape 1 - semicircle (top) */
+  /* shape 2 - inverted triangle (point up) */
+  /* shape 3 - star-ish polygon via clip-path */
+  /* shape 4 - slim vertical pill */
+}
+.illustration__container--3 .illustration__shape:nth-child(1) {
+  width: 220px;
+  height: 110px;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(180deg, #8E44FF, #B76BFF);
+}
+.illustration__container--3 .illustration__shape:nth-child(2) {
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 210px solid #11C3FA;
+}
+.illustration__container--3 .illustration__shape:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background: linear-gradient(135deg, #FF6A00, #FFCF6A);
+}
+.illustration__container--3 .illustration__shape:nth-child(4) {
+  width: 80px;
+  height: 320px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, #00A86B, #60E3A8);
+}
+.illustration__container--3 .illustration__shape:nth-child(1) {
+  animation-delay: 0s;
+}
+.illustration__container--3 .illustration__shape:nth-child(2) {
+  animation-delay: -5s;
+}
+.illustration__container--3 .illustration__shape:nth-child(3) {
+  animation-delay: -10s;
+}
+.illustration__container--3 .illustration__shape:nth-child(4) {
+  animation-delay: -15s;
 }
 
 .embed-responsive {

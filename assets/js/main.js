@@ -9,21 +9,51 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 let smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
-    smooth: 0.1,
+    smooth: 1,
     effects: true,
     normalizeScroll: false
 });
 
-if(document.querySelector(".hero-main")){
-    ScrollTrigger.create({
-        trigger: ".hero-wrap",
-        start: "top top",
-        endTrigger: ".hero-end-trigger",
-        end: "center bottom",
-        pin: ".hero-main",
-        pinSpacing: false,
-    });
+function resizeShift() {
+    const caseWhite = document.querySelector(".case--white");
+    const cases = document.querySelector(".cases");
+    const heroTrigger = document.querySelector(".hero-end-trigger");
+    if (!caseWhite || !cases || !heroTrigger) return 950; // запасной вариант
+
+    let shift = -(
+        caseWhite.offsetHeight
+        + cases.offsetTop
+        - (heroTrigger.offsetHeight / 2)
+    );
+
+    document.querySelector(".main").style.setProperty("--shift", -shift + "px");
+    return shift;
 }
+
+resizeShift();
+
+const tween = gsap.fromTo(".container__wrap",
+    { y: -resizeShift() / 3 },
+    {
+        y: 0,
+        scrollTrigger: {
+            trigger: ".hero-wrap",
+            start: () => `top+=${-resizeShift()} bottom`,
+            end:   () => `bottom+=${-resizeShift() * 1.5} bottom`,
+            scrub: 1,
+        }
+    }
+);
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+    resizeShift();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 120);
+});
+
 
 // header hide/show — используем scroller и self.scroll()
 let lastScroll = 0;
@@ -328,12 +358,3 @@ ScrollTrigger.create({
 
 
 
-
-
-
-        // trigger: ".hero-wrap",
-        // start: "top top",
-        // endTrigger: ".hero-end-trigger",
-        // end: "center bottom",
-        // pin: ".hero-main",
-        // pinSpacing: false,
