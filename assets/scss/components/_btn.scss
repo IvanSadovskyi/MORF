@@ -9,8 +9,8 @@
     vertical-align: middle;
     max-width: 100%;
     width: fit-content;
-    height: 62px;
-    padding: 0 24px;
+    // height: 62px;
+    padding: 12px 24px 8px;
     @extend %p-l;
     text-align: center;
     text-decoration: none;
@@ -31,10 +31,11 @@
     }
 
     &.btn--medium{
-    height: 48px;
+        // height: 48px;
+        padding:8px 24px 4px;
     }
     &.btn--small{
-    height: 32px;
+    // height: 32px;
     padding: 0 8px;
     }
 
@@ -44,7 +45,7 @@
     }
 
     &.btn--medium.btn--arrow{
-    padding: 0 12px;
+    padding: 8px 12px 4px;
     }
     &.btn--small.btn--arrow{
     padding: 0 4px;
@@ -54,14 +55,14 @@
     padding: 0 15px;
     }
     &.btn--medium.btn--arrow{
-    padding: 0 11px;
+    padding: 8px 11px 4px;
     }
     &.btn--small.btn--arrow{
     padding: 0 3px;
     }
 
     &.btn--right, &.btn--left{
-    padding: 0 16px;
+    padding: 8px 16px 4px;
     }
     &.btn--right span, &.btn--left span{
     padding: 0 16px;

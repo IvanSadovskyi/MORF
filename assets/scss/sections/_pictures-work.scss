@@ -11,6 +11,12 @@
         width: 100%;
     }
 
+    & > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
     @include breakpoint(laptop){
         &, &__wrap{
             gap: 64px;
@@ -26,13 +32,22 @@
             flex-direction: column;
         }
     }
+
+    @include breakpoint(mobile1, min){
+        &--50 > div{
+            width: 50%;
+        }
+    }
 }
 .picture{
     position: relative;
 
-    @include breakpoint(tablet, min){
-        &.picture--t96{
-            top: -96px;
+    @include breakpoint(mobile1, min){
+        &--t150{
+            justify-content: start !important;
+            & > div{
+                top: 150px;
+            }
         }
     }
 }

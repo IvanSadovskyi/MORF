@@ -10,7 +10,7 @@ let smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
     smooth: 1,
-    effects: true,
+    // effects: true,
     normalizeScroll: false
 });
 
@@ -56,23 +56,47 @@ window.addEventListener("resize", () => {
 
 
 // header hide/show — используем scroller и self.scroll()
+// let lastScroll = 0;
+
+// ScrollTrigger.create({
+// 	start: 0,
+// 	end: "max",
+// 	onUpdate: self => {
+//         if (header.classList.contains("header--contacts")) return;
+// 		let currentScroll = self.scroll();
+
+// 		if (currentScroll > lastScroll && currentScroll > 100 && !header.classList.contains("active")) {
+// 			gsap.to(header, { yPercent: -100, duration: 0.2, ease: "none" });
+// 		} else {
+// 			gsap.to(header, { yPercent: 0, duration: 0.2, ease: "none" });
+// 		}
+// 		lastScroll = currentScroll;
+// 	}
+// });
+
+
+
+// const header = document.querySelector(".header");
 let lastScroll = 0;
+const hideHeight = 120; // px
 
-ScrollTrigger.create({
-	start: 0,
-	end: "max",
-	onUpdate: self => {
-        if (header.classList.contains("header--contacts")) return;
-		let currentScroll = self.scroll();
+window.addEventListener("scroll", () => {
+    if(!header.classList.contains("active")){
+        let currentScroll = window.scrollY;
 
-		if (currentScroll > lastScroll && currentScroll > 100 && !header.classList.contains("active")) {
-			gsap.to(header, { yPercent: -100, duration: 0.2, ease: "none" });
-		} else {
-			gsap.to(header, { yPercent: 0, duration: 0.2, ease: "none" });
-		}
-		lastScroll = currentScroll;
-	}
+        if (currentScroll > lastScroll && currentScroll > hideHeight) {
+            // скролл вниз — прячем
+            header.classList.add("header--hidden");
+        } else if (currentScroll < lastScroll) {
+            // скролл вверх — показываем
+            header.classList.remove("header--hidden");
+        }
+
+        lastScroll = currentScroll;
+    }
 });
+
+
 
 document.addEventListener("DOMContentLoaded", HorizontalScrollSteps());
 function HorizontalScrollSteps(){

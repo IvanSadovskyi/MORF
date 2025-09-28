@@ -298,12 +298,16 @@ fieldset {
   position: absolute;
 }
 
+.header.header--hidden {
+  transform: translateY(-120px);
+}
+
 .header {
   position: fixed;
   margin: 0 auto;
   width: 100%;
   z-index: 30;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 .header-out {
   transform: translateY(-100%);
@@ -328,6 +332,7 @@ fieldset {
 .header.active {
   background-color: white !important;
   position: fixed !important;
+  transform: translateY(0);
 }
 .header[data-theme=light] .header__left svg, .header.active .header__left svg {
   color: #175FFF !important;
@@ -434,14 +439,11 @@ fieldset {
 }
 
 .nav {
-  height: -moz-fit-content;
-  height: fit-content;
   padding: 96px;
   width: 100%;
   display: flex;
   position: fixed;
   background-color: #fff;
-  transform: translateY(-900px);
   transition: transform 0.4s;
   z-index: 19;
   visibility: hidden;
@@ -514,7 +516,7 @@ fieldset {
   margin-bottom: 32px;
   color: #175FFF;
 }
-.nav__wrap .col-1-2-3:nth-child(1) div li:not(:nth-last-child(2)) {
+.nav__wrap .col-1-2-3:nth-child(1) div li:not(:last-child) {
   margin-bottom: 16px;
 }
 .nav__wrap .col-1-2-3:nth-child(2) div li:not(:nth-last-child(2)) {
@@ -600,6 +602,13 @@ fieldset {
   }
 }
 
+.menu-email {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+}
+
 html {
   height: 100%;
   touch-action: manipulation;
@@ -649,6 +658,10 @@ section:last-child {
     margin-top: 64px;
     margin-bottom: 64px;
   }
+  section:first-child {
+    padding-top: 214px;
+    margin-top: 0;
+  }
   section:last-child {
     padding-bottom: 64px;
     margin-bottom: 0;
@@ -660,8 +673,8 @@ section:last-child {
   z-index: 2;
 }
 
-.page::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  display: none !important;
 }
 
 .container {
@@ -742,7 +755,6 @@ main {
 #smooth-content {
   overflow: visible;
   width: 100%;
-  /* set a height because the contents are position: absolute, thus natively there's no height */
 }
 
 .footer {
@@ -871,8 +883,7 @@ div ~ .footer__bottom {
   max-width: 100%;
   width: -moz-fit-content;
   width: fit-content;
-  height: 62px;
-  padding: 0 24px;
+  padding: 12px 24px 8px;
   text-align: center;
   text-decoration: none;
   border-radius: 32px;
@@ -892,10 +903,9 @@ div ~ .footer__bottom {
   height: 56px;
 }
 .btn.btn--medium {
-  height: 48px;
+  padding: 8px 24px 4px;
 }
 .btn.btn--small {
-  height: 32px;
   padding: 0 8px;
 }
 .btn.btn--medium, .btn.btn--small {
@@ -903,7 +913,7 @@ div ~ .footer__bottom {
   line-height: 32px;
 }
 .btn.btn--medium.btn--arrow {
-  padding: 0 12px;
+  padding: 8px 12px 4px;
 }
 .btn.btn--small.btn--arrow {
   padding: 0 4px;
@@ -912,13 +922,13 @@ div ~ .footer__bottom {
   padding: 0 15px;
 }
 .btn.btn--medium.btn--arrow {
-  padding: 0 11px;
+  padding: 8px 11px 4px;
 }
 .btn.btn--small.btn--arrow {
   padding: 0 3px;
 }
 .btn.btn--right, .btn.btn--left {
-  padding: 0 16px;
+  padding: 8px 16px 4px;
 }
 .btn.btn--right span, .btn.btn--left span {
   padding: 0 16px;
@@ -1239,7 +1249,7 @@ div ~ .footer__bottom {
 }
 
 .logo {
-  display: block;
+  display: flex;
   flex-shrink: 0;
   width: 103px;
   margin: auto 0;
@@ -1587,16 +1597,16 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(352px, 13px);
+    transform: translate(45px, 218px);
   }
   25% {
-    transform: translate(43px, 122px);
+    transform: translate(352px, 224px);
   }
   50% {
-    transform: translate(31px, 256px);
+    transform: translate(301px, 250px);
   }
   75% {
-    transform: translate(398px, 20px);
+    transform: translate(36px, 202px);
   }
 }
 .illustration__shape:nth-child(1) {
@@ -1605,16 +1615,16 @@ div ~ .footer__bottom {
 
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(108px, 192px);
+    transform: translate(354px, 276px);
   }
   25% {
-    transform: translate(76px, 208px);
+    transform: translate(307px, 246px);
   }
   50% {
-    transform: translate(208px, 363px);
+    transform: translate(379px, 243px);
   }
   75% {
-    transform: translate(82px, 140px);
+    transform: translate(101px, 99px);
   }
 }
 .illustration__shape:nth-child(2) {
@@ -1623,16 +1633,16 @@ div ~ .footer__bottom {
 
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(120px, 207px);
+    transform: translate(362px, 35px);
   }
   25% {
-    transform: translate(263px, 173px);
+    transform: translate(338px, 235px);
   }
   50% {
-    transform: translate(275px, 176px);
+    transform: translate(203px, 382px);
   }
   75% {
-    transform: translate(391px, 353px);
+    transform: translate(183px, 373px);
   }
 }
 .illustration__shape:nth-child(3) {
@@ -1641,16 +1651,16 @@ div ~ .footer__bottom {
 
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(293px, 326px);
+    transform: translate(98px, 294px);
   }
   25% {
-    transform: translate(106px, 174px);
+    transform: translate(12px, 213px);
   }
   50% {
-    transform: translate(165px, 71px);
+    transform: translate(361px, 62px);
   }
   75% {
-    transform: translate(318px, 301px);
+    transform: translate(279px, 28px);
   }
 }
 .illustration__shape:nth-child(4) {
@@ -2246,6 +2256,11 @@ div ~ .footer__bottom {
   gap: 96px;
   width: 100%;
 }
+.pictures > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
 @media (max-width: 1365px) {
   .pictures, .pictures__wrap {
     gap: 64px;
@@ -2261,13 +2276,21 @@ div ~ .footer__bottom {
     flex-direction: column;
   }
 }
+@media (min-width: 768px) {
+  .pictures--50 > div {
+    width: 50%;
+  }
+}
 
 .picture {
   position: relative;
 }
-@media (min-width: 1024px) {
-  .picture.picture--t96 {
-    top: -96px;
+@media (min-width: 768px) {
+  .picture--t150 {
+    justify-content: start !important;
+  }
+  .picture--t150 > div {
+    top: 150px;
   }
 }
 

@@ -53,34 +53,17 @@
                 75%{transform:translate(0, 160%)}
             }
             .loader {
-                width: 100px;
-                aspect-ratio: 1;
-                padding: 10px;
-                box-sizing: border-box;
-                display: grid;
-                background: #f5f5f5;
-                filter: blur(5px) contrast(10) hue-rotate(240deg);
-                /* mix-blend-mode: darken; */
-            }
-                .loader:before,
-                .loader:after{ 
-                content: "";
-                grid-area: 1/1; 
-                width: 40px;
-                height: 40px;
-                background: #ff0000;
-                animation: l7 2s infinite;
-            }
-                .loader:after{ 
-                animation-delay: -1s;
-            }
-            @keyframes l7{
-                0%   {transform: translate(   0,0)}
-                25%  {transform: translate(75%,0)}
-                50%  {transform: translate(75%,75%)}
-                75%  {transform: translate(   0,75%)}
-                100% {transform: translate(   0,0)}
-            }
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #175FFF;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+  animation: l1 1s infinite cubic-bezier(0.3,1,0,1);
+}
+@keyframes l1 {
+  33% {border-radius: 0;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+  66% {border-radius: 0;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+}
         </style>
         <div class="preloader">
             <div class="preloader__wrap">
@@ -178,7 +161,7 @@
                     <div class="col-1-2-3">
                         <div>
                             <p>Get in touch</p>
-                            <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                            <a class="menu-email" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                     </div>
                     <div class="col-1 privacy-policy">
@@ -202,13 +185,13 @@
                 <main class="main">
                     <div class="main__bg"></div>
                     <div class="container__wrap">
-                        <section class="breadcrumbs-heading container container--1300" style="color:#fff" data-section="dark">
+                        <section class="breadcrumbs-heading container container--1300" data-section="dark" style="color:#fff">
                             <h1><strong>Explore<br>our</strong> <i>latest work</i></h1>
                         </section>
                         <section class="cases container container--1300">
                             <div class="row row-g96">
-                                <div class="col-1" data-section="dark">
-                                    <div class="case case--white">
+                                <div class="col-1">
+                                    <div class="case case--white" data-section="dark">
                                         <div>
                                             <h3><strong>NUORI Beauty Skin Care Branding</strong></h3>
                                             <div class="hashtag">
@@ -263,14 +246,14 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="marquee" data-section="light">
+                        <section class="marquee">
                             <div class="marquee__inner">
                                 <span><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
                                 <span><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
                                 <span><strong>Your</strong> <i>vision</i> <strong>plus our</strong> <i>expertise</i> <strong>equals new impulse to your</strong> <i>growth</i>.</span>
                             </div>
                         </section>
-                        <section class="our-services content-grid content-grid--shuffle container" data-section="light">
+                        <section class="our-services content-grid content-grid--shuffle container">
                             <div class="content-grid__wrap row row-g64">
                                 <div class="col-1-1-2">
                                     <div class="illustration">
@@ -340,7 +323,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="who-we-are container" data-section="light">
+                        <section class="who-we-are container">
                             <div class="col-1-1-2">
                                 <div class="who-we-are__logo">
                                         <svg width="228px"; viewBox="0 0 186 228">
@@ -390,7 +373,7 @@
                             <p>Contacts</p>
                             <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
                             <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
-                            <a class="h3" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                            <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                         <div class="section-texts">
                             <p><strong>New York</strong></p>
