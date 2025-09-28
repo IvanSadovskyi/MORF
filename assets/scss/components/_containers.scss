@@ -260,7 +260,8 @@ $animation-duration: 20s; // можно менять
   height: $container-size;
   overflow: hidden;
   margin: 0 auto;
-//   filter: blur(75px)
+  
+  filter: blur(75px)
 }
 
 /* Базовые фигуры */

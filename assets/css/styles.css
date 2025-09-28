@@ -1571,6 +1571,7 @@ div ~ .footer__bottom {
   height: 500px;
   overflow: hidden;
   margin: 0 auto;
+  filter: blur(75px);
 }
 
 /* Базовые фигуры */
@@ -1586,16 +1587,16 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(21px, 207px);
+    transform: translate(352px, 13px);
   }
   25% {
-    transform: translate(50px, 129px);
+    transform: translate(43px, 122px);
   }
   50% {
-    transform: translate(238px, 83px);
+    transform: translate(31px, 256px);
   }
   75% {
-    transform: translate(233px, 334px);
+    transform: translate(398px, 20px);
   }
 }
 .illustration__shape:nth-child(1) {
@@ -1604,16 +1605,16 @@ div ~ .footer__bottom {
 
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(224px, 9px);
+    transform: translate(108px, 192px);
   }
   25% {
-    transform: translate(43px, 365px);
+    transform: translate(76px, 208px);
   }
   50% {
-    transform: translate(338px, 121px);
+    transform: translate(208px, 363px);
   }
   75% {
-    transform: translate(362px, 79px);
+    transform: translate(82px, 140px);
   }
 }
 .illustration__shape:nth-child(2) {
@@ -1622,16 +1623,16 @@ div ~ .footer__bottom {
 
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(49px, 215px);
+    transform: translate(120px, 207px);
   }
   25% {
-    transform: translate(134px, 202px);
+    transform: translate(263px, 173px);
   }
   50% {
-    transform: translate(15px, 352px);
+    transform: translate(275px, 176px);
   }
   75% {
-    transform: translate(38px, 36px);
+    transform: translate(391px, 353px);
   }
 }
 .illustration__shape:nth-child(3) {
@@ -1640,16 +1641,16 @@ div ~ .footer__bottom {
 
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(247px, 111px);
+    transform: translate(293px, 326px);
   }
   25% {
-    transform: translate(31px, 153px);
+    transform: translate(106px, 174px);
   }
   50% {
-    transform: translate(162px, 28px);
+    transform: translate(165px, 71px);
   }
   75% {
-    transform: translate(296px, 173px);
+    transform: translate(318px, 301px);
   }
 }
 .illustration__shape:nth-child(4) {
