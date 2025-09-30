@@ -1,9 +1,18 @@
 @use '../abstracts' as *;
 
-.hero-wrap {
+.hero {
   position: relative;
-}
+  overflow: hidden;
 
-.hero-main {
-  min-height: 100vh;
+
+    &-main {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-title{
+        transform: scale(1);
+        padding: 0 24px;
+    }
 }

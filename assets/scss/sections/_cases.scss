@@ -20,17 +20,18 @@
     & .embed-responsive{
         border-radius: 16px;
         overflow: hidden;
+        transition: all 0.2s;
     }
-    &--white h3, &--white .hashtag{
-        color: $white !important;
+    &:hover .embed-responsive{
+        transform: scale(1.01);
     }
+    // &--white h3, &--white .hashtag{
+    //     color: $white !important;
+    // }
 
     &__link::before{
         position: absolute;
         content: "";
         inset: 0;
-    }
-    &:hover h3{
-        text-decoration: underline;
     }
 }

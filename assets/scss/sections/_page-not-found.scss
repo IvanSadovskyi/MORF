@@ -1,13 +1,5 @@
 @use '../abstracts' as *;
 
-.background-404{
-    position: absolute;
-    inset: 0;
-    content: '';
-    z-index: 1;
-    background-color: #722d1a;
-}
-
 .page-not-found{
     position: relative;
     z-index: 2;

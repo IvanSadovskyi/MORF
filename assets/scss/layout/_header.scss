@@ -11,7 +11,7 @@
     margin: 0 auto;
     width: 100%;
     z-index: $header-layer;
-    transition: background-color .3s, transform 0.3s;
+    transition: background-color .4s, transform 0.4s;
 
     &-out {
        transform: translateY(-100%);
@@ -107,7 +107,7 @@
             height: 3px;
             width: 32px;
             border-radius: 6px;
-            transition: all 0.2s;
+            transition: all 0.4s;
             display: block;
             position: absolute;
             top:50%
@@ -171,24 +171,35 @@
 
 .nav {
     // height: fit-content;
-    padding: 96px;
     width: 100%;
     display: flex;
     position: fixed;
-    background-color: $white;
+    background-color: transparent;
     // transform: translateY(-900px);
-    transition: transform 0.4s;
+    transition: max-height .4s, padding-top .4s, padding-bottom .4s, visibility .4s, opacity .4s;
     z-index: 19;
-    visibility: hidden;
-
+    // visibility: hidden;
+    opacity: 0;
+    // transform: translateY(-192px);
+    overflow: hidden;
+    height: 100%;
+    max-height: 0;
+    padding: 0;
+    transform: translateY(118px);
+    
     &.active{
-        transform: translateY(118px);
-        visibility: visible;
+        padding: 0 96px;
+        padding-top: 96px;
+        padding-bottom: 96px;
+        // visibility: visible;
+        max-height: 100%;
+        opacity: 1;
+        // background-color: $white;
     }
-    &.active::before{
+    &::before{
+        content: "";
         position: absolute;
         inset: 0;
-        content: '';
         height: 100vh;
         background-color: white;
         z-index: 1;
@@ -209,6 +220,7 @@
         .col-1-2-3:nth-child(-n + 2) a{
             color:$black;
         }
+        // & .col-1-2-3:nth-child(1),
         @include breakpoint(laptop, min){
             .col-1-2-3:not(:nth-child(3)){
                 flex: 0 0 calc(33.333% - 64px);
@@ -276,7 +288,12 @@
         }
     }
     @include breakpoint(laptop){
-        padding: 0;
+        padding: 0 !important;
+        &.active{
+            padding: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
         &__wrap{
             .col-1-2-3 div > :first-child{
                 margin-bottom: 24px;
@@ -344,4 +361,63 @@
     line-height: 36px;
     font-weight: 700;
     letter-spacing: 0.32px;
+}
+
+
+.col-1-2-3:nth-child(1) div *, .nav__menu *, .col-1-2-3:nth-child(3) div *, .col-1.privacy-policy * {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.nav.active .col-1-2-3:nth-child(1) div *, .nav.active .nav__menu *, .nav.active .col-1-2-3:nth-child(3) div *, .nav.active .col-1.privacy-policy * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav.active .nav__menu > p { transition-delay: 0.1s; }
+.nav.active .nav__menu > ul li:nth-child(1) { transition-delay: 0.15s; }
+.nav.active .nav__menu > ul li:nth-child(2) { transition-delay: 0.2s; }
+.nav.active .nav__menu > ul li:nth-child(3) { transition-delay: 0.25s; }
+.nav.active .nav__menu > ul li:nth-child(4) { transition-delay: 0.3s; }
+
+.nav.active .col-1-2-3:nth-child(3) div > p:nth-child(1) { transition-delay: 0.35s; }
+.nav.active .col-1-2-3:nth-child(3) div > p:nth-child(2) { transition-delay: 0.4s; }
+
+.nav.active .col-1-2-3:nth-child(1) div > p { transition-delay: 0.45s; }
+.nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(1) { transition-delay: 0.5s; }
+.nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(2) { transition-delay: 0.55s; }
+.nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(3) { transition-delay: 0.6s; }
+.nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(4) { transition-delay: 0.65s; }
+
+.nav.active .col-1.privacy-policy > p { transition-delay: 0.7s; }
+
+/* задержка для постепенного появления */
+@media (min-width:742px){
+    .nav.active .col-1-2-3:nth-child(3) div > p:nth-child(1) { transition-delay: 0.1s; }
+    .nav.active .col-1-2-3:nth-child(3) div > p:nth-child(2) { transition-delay: 0.15s; }
+
+    .nav.active .col-1-2-3:nth-child(1) div > p { transition-delay: 0.35s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(1) { transition-delay: 0.4s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(2) { transition-delay: 0.45s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(3) { transition-delay: 0.5s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(4) { transition-delay: 0.55s; }
+
+    .nav.active .col-1.privacy-policy > p { transition-delay: 0.55s; }
+}
+@media (min-width:1366px){
+    .nav.active .nav__menu > p { transition-delay: 0.1s; }
+    .nav.active .nav__menu > ul li:nth-child(1) { transition-delay: 0.15s; }
+    .nav.active .nav__menu > ul li:nth-child(2) { transition-delay: 0.2s; }
+    .nav.active .nav__menu > ul li:nth-child(3) { transition-delay: 0.25s; }
+    .nav.active .nav__menu > ul li:nth-child(4) { transition-delay: 0.3s; }
+    .nav.active .nav__menu > ul li:nth-child(5) { transition-delay: 0.35s; }
+
+    .nav.active .col-1-2-3:nth-child(1) div > p { transition-delay: 0.1s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(1) { transition-delay: 0.15s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(2) { transition-delay: 0.2s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(3) { transition-delay: 0.25s; }
+    .nav.active .col-1-2-3:nth-child(1) div > ul li:nth-child(4) { transition-delay: 0.3s; }
+
+    .nav.active .col-1-2-3:nth-child(3) div > p:nth-child(1) { transition-delay: 0.1s; }
+    .nav.active .col-1-2-3:nth-child(3) div > p:nth-child(2) { transition-delay: 0.15s; }
 }

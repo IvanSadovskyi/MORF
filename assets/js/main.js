@@ -14,66 +14,315 @@ let smoother = ScrollSmoother.create({
     normalizeScroll: false
 });
 
-function resizeShift() {
-    const caseWhite = document.querySelector(".case--white");
-    const cases = document.querySelector(".cases");
-    const heroTrigger = document.querySelector(".hero-end-trigger");
-    if (!caseWhite || !cases || !heroTrigger) return 950; // запасной вариант
-
-    let shift = -(
-        caseWhite.offsetHeight
-        + cases.offsetTop
-        - (heroTrigger.offsetHeight / 2)
-    );
-
-    document.querySelector(".main").style.setProperty("--shift", -shift + "px");
-    return shift;
-}
-
-resizeShift();
-
-const tween = gsap.fromTo(".container__wrap",
-    { y: -resizeShift() / 3 },
-    {
-        y: 0,
-        scrollTrigger: {
-            trigger: ".hero-wrap",
-            start: () => `top+=${-resizeShift()} bottom`,
-            end:   () => `bottom+=${-resizeShift() * 1.5} bottom`,
-            scrub: 1,
-        }
-    }
-);
-
-let resizeTimer;
-window.addEventListener("resize", () => {
-    resizeShift();
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        ScrollTrigger.refresh();
-    }, 120);
-});
 
 
-// header hide/show — используем scroller и self.scroll()
-// let lastScroll = 0;
 
-// ScrollTrigger.create({
-// 	start: 0,
-// 	end: "max",
-// 	onUpdate: self => {
-//         if (header.classList.contains("header--contacts")) return;
-// 		let currentScroll = self.scroll();
 
-// 		if (currentScroll > lastScroll && currentScroll > 100 && !header.classList.contains("active")) {
-// 			gsap.to(header, { yPercent: -100, duration: 0.2, ease: "none" });
-// 		} else {
-// 			gsap.to(header, { yPercent: 0, duration: 0.2, ease: "none" });
-// 		}
-// 		lastScroll = currentScroll;
-// 	}
+// gsap.to(".hero-title", {
+//     x: 900, // translateX(20px)
+//     scale: 90,
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: ".hero",
+//         start: "top top",
+//         end: "bottom top", // длина прокрутки, пока достигается требуемый transform
+//         scrub: true,
+//         pin: true,     // фиксирует .hero пока идёт анимация
+//         pinSpacing: true,
+//         markers:true
+//     }
 // });
 
+
+// Адаптивная GSAP анимация для hero секции
+gsap.registerPlugin(ScrollTrigger);
+
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+// Функция для получения адаптивных значений
+function getResponsiveValues() {
+    const viewportWidth = window.innerWidth;
+    
+    if (viewportWidth >= 1920) {
+        // Desktop
+        return {
+            scaleX: 90,
+            scaleY: 50,
+            x: 1320,
+            containerY: -650,
+            endPoint: "bottom+=90 bottom",
+            pinSpacing: true,
+            scrubValue: true
+        };
+    } else if (viewportWidth >= 1366) {
+        // Laptop
+        return {
+            scaleX: 70,
+            scaleY: 40,
+            x: 700,
+            containerY: -650,
+            endPoint: "bottom+=90 bottom",
+            pinSpacing: true,
+            scrubValue: true
+        };
+    } else if (viewportWidth >= 1024) {
+        // Tablet
+        return {
+            scaleX: 35,
+            scaleY: 30,
+            x: 550,
+            containerY: -650,
+            endPoint: "bottom+=400 bottom",
+            pinSpacing: !isMobile,
+            scrubValue: isMobile ? 1 : true
+        };
+    } else if (viewportWidth >= 768) {
+        // Mobile1
+        return {
+            scaleX: 30,
+            scaleY: 20,
+            x: 390,
+            containerY: -650,
+            endPoint: "bottom+=900 bottom",
+            pinSpacing: false,
+            scrubValue: 1
+        };
+    } else {
+        // Mobile2
+        return {
+            scaleX: 30,
+            scaleY: 15,
+            x: 265,
+            containerY: -450,
+            endPoint: "bottom+=90 bottom",
+            pinSpacing: false,
+            scrubValue: 1
+        };
+    }
+}
+
+// Переменные для отслеживания состояния
+let currentAnimation = null;
+let isAnimating = false;
+
+// Главная функция создания анимации
+function createHeroAnimation() {
+    // Убиваем предыдущие анимации
+    if (currentAnimation) {
+        currentAnimation.kill();
+        currentAnimation = null;
+    }
+    
+    ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars && trigger.vars.trigger === ".hero") {
+            trigger.kill();
+        }
+    });
+
+    const values = getResponsiveValues();
+
+    // Сброс стилей
+    gsap.set(".hero-title", {
+        scaleX: 1,
+        scaleY: 1,
+        x: 0,
+        clearProps: "transform"
+    });
+    
+    gsap.set(".container__wrap", {
+        y: 0,
+        marginBottom: 0,
+        clearProps: "transform"
+    });
+
+    // Специальная логика для мобильных
+    if (isMobile) {
+        createMobileAnimation(values);
+    } else {
+        createDesktopAnimation(values);
+    }
+}
+
+// Анимация для десктопа/планшета
+function createDesktopAnimation(values) {
+    currentAnimation = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: values.endPoint,
+            scrub: values.scrubValue,
+            pin: true,
+            pinSpacing: values.pinSpacing,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+            
+            onLeave: () => {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                gsap.to(".container__wrap", { 
+                    y: values.containerY, 
+                    duration: 0.3, 
+                    ease: "power2.out",
+                    onComplete: () => {
+                        gsap.set(".container__wrap", {
+                            marginBottom: values.containerY
+                        });
+                        isAnimating = false;
+                    }
+                });
+            },
+            
+            onEnterBack: () => {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                gsap.to(".container__wrap", { 
+                    y: 0, 
+                    duration: 0.2, 
+                    ease: "power2.out",
+                    onComplete: () => {
+                        gsap.set(".container__wrap", {
+                            marginBottom: 0
+                        });
+                        isAnimating = false;
+                    }
+                });
+            }
+        }
+    });
+
+    currentAnimation.to(".hero-title", {
+        scaleX: values.scaleX,
+        scaleY: values.scaleY,
+        x: values.x,
+        ease: "none",
+        duration: 1
+    });
+}
+
+// Упрощенная анимация для мобильных
+function createMobileAnimation(values) {
+    let hasTriggered = false;
+
+    currentAnimation = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: values.endPoint,
+            scrub: false, // Отключаем scrub для мобильных
+            pin: false, // Отключаем pin для мобильных
+            pinSpacing: false,
+            invalidateOnRefresh: true,
+            
+            onEnter: () => {
+                if (!hasTriggered) {
+                    hasTriggered = true;
+                    
+                    // Быстрая анимация увеличения
+                    gsap.to(".hero-title", {
+                        scaleX: values.scaleX,
+                        scaleY: values.scaleY,
+                        x: values.x,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                    
+                    // Подъем контейнера
+                    gsap.to(".container__wrap", { 
+                        y: values.containerY, 
+                        duration: 0.4, 
+                        delay: 0.3,
+                        ease: "power2.out"
+                    });
+                }
+            },
+            
+            onLeaveBack: () => {
+                hasTriggered = false;
+                
+                // Возврат в исходное состояние
+                gsap.to(".hero-title", {
+                    scaleX: 1,
+                    scaleY: 1,
+                    x: 0,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+                
+                gsap.to(".container__wrap", { 
+                    y: 0, 
+                    duration: 0.3, 
+                    ease: "power2.out"
+                });
+            }
+        }
+    });
+}
+
+// Функция для правильной инициализации
+function initHeroAnimation() {
+    // Ждем полной загрузки DOM
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', createHeroAnimation);
+    } else {
+        // Небольшая задержка для стабилизации
+        setTimeout(createHeroAnimation, 100);
+    }
+}
+
+// Оптимизированный обработчик ресайза
+let resizeTimeout;
+let lastWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    // Игнорируем изменения только высоты (мобильные браузеры)
+    if (Math.abs(window.innerWidth - lastWidth) < 10) return;
+    
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        lastWidth = window.innerWidth;
+        
+        // Полная перезагрузка для стабильности
+        ScrollTrigger.killAll();
+        
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+            createHeroAnimation();
+        }, 50);
+        
+    }, 300);
+});
+
+// Дополнительная стабилизация для мобильных
+if (isMobile) {
+    // Предотвращение bounce эффекта
+    document.body.addEventListener('touchmove', (e) => {
+        if (e.target === document.body) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    // Обработка изменения ориентации
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+            createHeroAnimation();
+        }, 500);
+    });
+}
+
+// Инициализация
+initHeroAnimation();
+
+// Debug функция
+window.refreshHeroAnimation = () => {
+    ScrollTrigger.killAll();
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+        createHeroAnimation();
+    }, 100);
+};
 
 
 // const header = document.querySelector(".header");
@@ -382,3 +631,18 @@ ScrollTrigger.create({
 
 
 
+window.addEventListener('load', async () => {
+  const waitUntil = (check) => new Promise(resolve => {
+    (function tick(){
+      const v = check();
+      if (v) return resolve(v);
+      requestAnimationFrame(tick);
+    })();
+  });
+  
+  await customElements.whenDefined('spline-viewer');
+  
+  const viewer = await waitUntil(() => document.querySelector('spline-viewer'));
+  const logo   = await waitUntil(() => viewer.shadowRoot?.getElementById('logo'));
+  logo.remove();
+});

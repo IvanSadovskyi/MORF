@@ -44,7 +44,7 @@
         </script>
         <style type="text/css">
             .preloader{width: 100vw;height: 100vh;position: fixed;z-index: 8888;background-color:#F5F5FA}
-            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100px;height:100px;}
+            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:40px;height:40px;}
 
             @keyframes spin{
                 0%,100%{transform:translate(0)}
@@ -53,17 +53,17 @@
                 75%{transform:translate(0, 160%)}
             }
             .loader {
-  width: 40px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #175FFF;
-  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
-  animation: l1 1s infinite cubic-bezier(0.3,1,0,1);
-}
-@keyframes l1 {
-  33% {border-radius: 0;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
-  66% {border-radius: 0;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
-}
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background: #175FFF;
+                clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+                animation: l1 1s infinite cubic-bezier(0.3,1,0,1);
+            }
+                @keyframes l1 {
+                33% {border-radius: 0;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+                66% {border-radius: 0;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+            }
         </style>
         <div class="preloader">
             <div class="preloader__wrap">
@@ -161,11 +161,11 @@
                     <div class="col-1-2-3">
                         <div>
                             <p>Get in touch</p>
-                            <a class="menu-email" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                            <p><a class="menu-email" href="mailto:hey@morf.digital">hey@morf.digital</a></p>
                         </div>
                     </div>
                     <div class="col-1 privacy-policy">
-                        <a class="privacy-policy p-small" href="/privacy-policy.html">Privacy policy</a>
+                        <p><a class="privacy-policy p-small" href="/privacy-policy.html">Privacy policy</a></p>
                     </div>
                 </div>
             </div>
@@ -177,21 +177,20 @@
         </div>
         <div id="smooth-wrapper" class="page" data-scroller>
             <div id="smooth-content">
-                <div class="hero-wrap">
+                <div class="hero" data-section="dark">
                     <div class="hero-main">
-                        <!-- <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer> -->
+                        <img class="hero-title" src="/assets/img/morf-hero.svg" alt="">
                     </div>
                 </div>
                 <main class="main">
-                    <div class="main__bg"></div>
-                    <div class="container__wrap">
-                        <section class="breadcrumbs-heading container container--1300" data-section="dark" style="color:#fff">
+                    <div class="container__wrap" data-section="light">
+                        <div class="breadcrumbs-heading container container--1300">
                             <h1><strong>Explore<br>our</strong> <i>latest work</i></h1>
-                        </section>
+                        </div>
                         <section class="cases container container--1300">
                             <div class="row row-g96">
                                 <div class="col-1">
-                                    <div class="case case--white" data-section="dark">
+                                    <div class="case">
                                         <div>
                                             <h3><strong>NUORI Beauty Skin Care Branding</strong></h3>
                                             <div class="hashtag">
@@ -199,11 +198,11 @@
                                                 <p>#Websites</p>
                                             </div>
                                         </div>
-                                        <div class="embed-responsive embed-responsive--16-9 hero-end-trigger"><img src="/assets/img/cases/Background.png" alt=""></div>
+                                        <div class="embed-responsive embed-responsive--16-9"><img src="/assets/img/cases/Background.png" alt=""></div>
                                         <a href="/case.html" class="case__link"></a>
                                     </div>
                                 </div>
-                                <div class="col-1" data-section="light">
+                                <div class="col-1">
                                     <div class="case">
                                         <div>
                                             <h3><strong>Griffith Observatory Rebranding</strong></h3>
@@ -215,7 +214,7 @@
                                         <a href="/case.html" class="case__link"></a>
                                     </div>
                                 </div>
-                                <div class="col-1" data-section="light">
+                                <div class="col-1">
                                     <div class="case">
                                         <div>
                                             <h3><strong>AZEUM Luxury Ground Transporttion</strong></h3>
@@ -228,7 +227,7 @@
                                         <a href="/case.html" class="case__link"></a>
                                     </div>
                                 </div>
-                                <div class="col-1" data-section="light">
+                                <div class="col-1">
                                     <div class="case">
                                         <div>
                                             <h3><strong>NUORI Beauty Skin Care Branding</strong></h3>
@@ -373,7 +372,7 @@
                             <p>Contacts</p>
                             <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
                             <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today<br>to discuss your project and take the next step<br>towards success.</p>
-                            <a href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                            <a class="menu-email" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
                         </div>
                         <div class="section-texts">
                             <p><strong>New York</strong></p>
