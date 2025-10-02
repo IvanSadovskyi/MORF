@@ -13,9 +13,10 @@
 
             & a{
                 color: $black;
+                transition: color .1s;
                 @include isHover(){
                     &:hover{
-                        text-decoration: underline;
+                        color:$primary;
                     }
                 }
             }

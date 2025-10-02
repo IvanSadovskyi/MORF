@@ -37,8 +37,9 @@ let smoother = ScrollSmoother.create({
 // Адаптивная GSAP анимация для hero секции
 gsap.registerPlugin(ScrollTrigger);
 
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
 
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+if(document.querySelector(".hero-title")){
 // Функция для получения адаптивных значений
 function getResponsiveValues() {
     const viewportWidth = window.innerWidth;
@@ -323,14 +324,14 @@ window.refreshHeroAnimation = () => {
         createHeroAnimation();
     }, 100);
 };
-
+}
 
 // const header = document.querySelector(".header");
 let lastScroll = 0;
 const hideHeight = 120; // px
 
 window.addEventListener("scroll", () => {
-    if(!header.classList.contains("active")){
+    if(!header.classList.contains("active") && !header.classList.contains("header--contacts")){
         let currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll && currentScroll > hideHeight) {
@@ -491,6 +492,7 @@ $(document).ready(function () {
 
 
 const form = document.getElementById('form');
+if(form){
 const btnSubmit = form.querySelector('button[type="submit"]')
 
 const getField = (fieldName) => {
@@ -531,7 +533,7 @@ btnSubmit.addEventListener('click', () => {
         }
     });
 });
-
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -616,10 +618,10 @@ if(document.getElementById("form")){
     });
 }
 
-
 ScrollTrigger.create({
     start: "top top",
     onUpdate: (self) => {
+        if (header.classList.contains("header--contacts")) return;
         if (self.scroll() > 0) {
             header.classList.add('scrolling-started');
         } else {

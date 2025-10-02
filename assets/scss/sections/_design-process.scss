@@ -33,6 +33,12 @@
         }
         @include breakpoint(mobile1){
             flex-direction: column;
+            padding-left: 32px;
+            padding-right: 32px;
+            max-width: 612px;
+        }
+        @include breakpoint(mobile2){
+            max-width: 407px;
         }
     }
     @include breakpoint(mobile1, min){
@@ -73,12 +79,14 @@
     &__step--green &__bottom{
         background: #50B72D;
     }
-    &__wrap:not(.selected){
-        opacity: 0;
-    }
-    &__wrap {
-        transition: opacity .2s ease;
-        opacity: 1;
+    @include breakpoint(mobile1, min){
+        &__wrap:not(.selected){
+            opacity: 0;
+        }
+        &__wrap {
+            transition: opacity .2s ease;
+            opacity: 1;
+        }
     }
     
     &__steps {

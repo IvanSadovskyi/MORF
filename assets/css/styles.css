@@ -448,9 +448,9 @@ fieldset {
   opacity: 0;
   overflow: hidden;
   height: 100%;
-  max-height: 0;
+  max-height: 10px;
   padding: 0;
-  transform: translateY(118px);
+  transform: translateY(117.65px);
 }
 .nav.active {
   padding: 0 96px;
@@ -464,8 +464,8 @@ fieldset {
   position: absolute;
   inset: 0;
   height: 100vh;
-  background-color: white;
   z-index: 1;
+  background-color: white;
 }
 .nav__wrap {
   display: flex;
@@ -474,6 +474,14 @@ fieldset {
   align-items: center;
   width: 100%;
   z-index: 2;
+}
+.nav__wrap .col-1-2-3 li a {
+  transition: color 0.15s;
+}
+@media (hover: hover) {
+  .nav__wrap .col-1-2-3 li a:hover {
+    color: #175FFF;
+  }
 }
 .nav__wrap .row {
   width: 100%;
@@ -913,6 +921,11 @@ main {
   align-content: flex-start;
   align-items: flex-start;
   min-height: 100vh;
+}
+@media (max-width: 767px) {
+  .footer.footer--contacts {
+    padding-top: 150px !important;
+  }
 }
 .footer:has(.footer__bottom:only-child) {
   padding-top: 24px;
@@ -1532,6 +1545,9 @@ div ~ .footer__bottom {
   margin-bottom: 64px;
   flex-shrink: 1 !important;
 }
+.row-g16 {
+  gap: 16px;
+}
 .row-g64 {
   gap: 64px;
 }
@@ -1741,16 +1757,16 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(85px, 162px);
+    transform: translate(166px, 250px);
   }
   25% {
-    transform: translate(100px, 161px);
+    transform: translate(392px, 29px);
   }
   50% {
-    transform: translate(238px, 156px);
+    transform: translate(174px, 16px);
   }
   75% {
-    transform: translate(236px, 160px);
+    transform: translate(73px, 385px);
   }
 }
 .illustration__shape:nth-child(1) {
@@ -1759,16 +1775,16 @@ div ~ .footer__bottom {
 
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(336px, 399px);
+    transform: translate(396px, 223px);
   }
   25% {
-    transform: translate(331px, 289px);
+    transform: translate(157px, 350px);
   }
   50% {
-    transform: translate(77px, 370px);
+    transform: translate(83px, 228px);
   }
   75% {
-    transform: translate(161px, 327px);
+    transform: translate(353px, 131px);
   }
 }
 .illustration__shape:nth-child(2) {
@@ -1777,16 +1793,16 @@ div ~ .footer__bottom {
 
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(119px, 107px);
+    transform: translate(202px, 222px);
   }
   25% {
-    transform: translate(60px, 270px);
+    transform: translate(235px, 225px);
   }
   50% {
-    transform: translate(198px, 101px);
+    transform: translate(361px, 21px);
   }
   75% {
-    transform: translate(145px, 376px);
+    transform: translate(140px, 171px);
   }
 }
 .illustration__shape:nth-child(3) {
@@ -1795,16 +1811,16 @@ div ~ .footer__bottom {
 
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(298px, 331px);
+    transform: translate(18px, 159px);
   }
   25% {
-    transform: translate(143px, 10px);
+    transform: translate(224px, 61px);
   }
   50% {
-    transform: translate(397px, 8px);
+    transform: translate(40px, 329px);
   }
   75% {
-    transform: translate(75px, 213px);
+    transform: translate(363px, 219px);
   }
 }
 .illustration__shape:nth-child(4) {
@@ -2194,6 +2210,10 @@ div ~ .footer__bottom {
     justify-content: center;
   }
 }
+.about-us__logo svg {
+  height: 100%;
+  max-height: 302px;
+}
 
 .design-process {
   display: flex;
@@ -2231,6 +2251,14 @@ div ~ .footer__bottom {
 @media (max-width: 767px) {
   .design-process__wrap {
     flex-direction: column;
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 612px;
+  }
+}
+@media (max-width: 576px) {
+  .design-process__wrap {
+    max-width: 407px;
   }
 }
 @media (min-width: 768px) {
@@ -2271,12 +2299,14 @@ div ~ .footer__bottom {
 .design-process__step--green .design-process__bottom {
   background: #50B72D;
 }
-.design-process__wrap:not(.selected) {
-  opacity: 0;
-}
-.design-process__wrap {
-  transition: opacity 0.2s ease;
-  opacity: 1;
+@media (min-width: 768px) {
+  .design-process__wrap:not(.selected) {
+    opacity: 0;
+  }
+  .design-process__wrap {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+  }
 }
 .design-process__steps {
   width: 0;
@@ -2318,10 +2348,11 @@ div ~ .footer__bottom {
 }
 .career__list li a {
   color: #080808;
+  transition: color 0.1s;
 }
 @media (hover: hover) {
   .career__list li a:hover {
-    text-decoration: underline;
+    color: #175FFF;
   }
 }
 .career__list li:not(:last-child)::after {

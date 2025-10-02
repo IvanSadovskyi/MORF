@@ -12,8 +12,10 @@
         align-content: flex-start;
         align-items: flex-start;
         min-height: 100vh;
+        @media(max-width:767px){
+            padding-top: calc(32px + 118px) !important;
+        }
     }
-
     &:has(.footer__bottom:only-child){
         padding-top: 24px;
         padding-bottom: 24px;

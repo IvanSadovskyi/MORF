@@ -30,24 +30,19 @@
     </head>
     <body>
         <script src="assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
         <script>
             $(document).ready (function () {
                 NProgress.start ();
                 NProgress.set (0.6);
                 setTimeout(function () {
                     NProgress.done ();
-                }, 100);
+                }, 1000);
             });
         </script>
         <style type="text/css">
             .preloader{width: 100vw;height: 100vh;position: fixed;z-index: 8888;background-color:#F5F5FA}
-            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100px;height:100px;}
-            .preloader__wrap hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite;}
-
-            .preloader__wrap :first-child{background:#175FFF;animation-delay:-1.5s}
-            .preloader__wrap :nth-child(2){background:#4e9ddd;animation-delay:-1s}
-            .preloader__wrap :nth-child(3){background:#1923b4;animation-delay:-0.5s}
-            .preloader__wrap :last-child{background:#193B48}
+            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:40px;height:40px;}
 
             @keyframes spin{
                 0%,100%{transform:translate(0)}
@@ -55,10 +50,23 @@
                 50%{transform:translate(160%, 160%)}
                 75%{transform:translate(0, 160%)}
             }
+            .loader {
+                width: 40px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background: #175FFF;
+                clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+                animation: l1 1s infinite cubic-bezier(0.3,1,0,1);
+            }
+                @keyframes l1 {
+                33% {border-radius: 0;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+                66% {border-radius: 0;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+            }
         </style>
         <div class="preloader">
             <div class="preloader__wrap">
-                <hr/><hr/><hr/><hr/>
+                
+                <div class="loader"></div>
             </div>
         </div>
         <script type="text/javascript">
@@ -76,7 +84,7 @@
             window.onload = function(){
                 setTimeout(function(){
                     fadeOutnojquery(hellopreloader);
-                },100);
+                },1000);
             };
         </script>
         <header class="header header--contacts" data-header data-theme="dark">
