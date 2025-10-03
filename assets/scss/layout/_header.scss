@@ -23,6 +23,12 @@
             transition: all .5s;
         }
     }
+    &__right a{
+        transition: transform 0.25s;
+    }
+    &__right a:hover{
+        transform: scale(1.05);
+    }
     & span{
         transition: all .5s;
     }
@@ -40,6 +46,7 @@
         background-color: rgba($color: $white, $alpha: 1.0) !important;
         position: fixed !important;
         transform: translateY(0);
+        // backdrop-filter: blur(0) !important;
     }
     &[data-theme="light"], &.active{
         .header__left{
@@ -184,12 +191,12 @@
     overflow: hidden;
     height: 100%;
     max-height: 10px;
-    padding: 0;
-    transform: translateY(117.65px);
+    padding-bottom: 0;
+    padding-top: 118px;
     
     &.active{
         padding: 0 96px;
-        padding-top: 96px;
+        padding-top: calc(96px + 118px);
         padding-bottom: 96px;
         // visibility: visible;
         max-height: 100%;
@@ -200,7 +207,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        height: 100vh;
+        height: 125vh;
         z-index: 1;
         background-color: white;
     }
@@ -250,7 +257,7 @@
                 gap: 48px;
                 max-width: none;
 
-                max-height: calc(100vh - 118px);
+                max-height: calc(100vh + 118px);
                 overflow-y: auto;
             }
             & > .row::-webkit-scrollbar{
@@ -297,10 +304,10 @@
         }
     }
     @include breakpoint(laptop){
-        padding: 0 !important;
         &.active{
-            padding: 0;
-            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 118px;
             padding-bottom: 0;
         }
         &__wrap{
@@ -351,17 +358,11 @@
         }
     }
     @include breakpoint(mobile1){
-        height: calc(100% - 118px);
-        // padding: 0;
-
         &__wrap{
             .col-1-2-3 div > :first-child{
                 margin-bottom: 16px;
             }
         }
-    }
-    @include breakpoint(mobile2){
-        padding: 0;
     }
 }
 
@@ -373,7 +374,7 @@
 }
 
 
-.col-1-2-3:nth-child(1) div *, .nav__menu *, .col-1-2-3:nth-child(3) div *, .col-1.privacy-policy * {
+.nav .col-1-2-3:nth-child(1) div *, .nav .nav__menu *, .nav .col-1-2-3:nth-child(3) div *, .nav .col-1.privacy-policy * {
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.4s ease, transform 0.4s ease;

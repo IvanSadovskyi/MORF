@@ -46,7 +46,7 @@
             background: transparent;
         }
         &::-webkit-scrollbar-track {
-            background: transparent; /* трек тоже прозрачный */
+            background: transparent;
             margin: 16px 0;
         }
 
@@ -102,7 +102,7 @@
     }
 }
 .error-message {
-    display: none; /* по умолчанию скрыто */
+    display: none;
     position: absolute;
     font-size: 1rem;
     color: #e63946 !important;
@@ -126,10 +126,8 @@
         width: 100%;
         pointer-events: none;
         z-index: 20;
-        // font-size: inherit;
-        // padding-bottom: 17px;
     }
-  
+
     &:before {
         content: url('../img/icon/attachment-icon.svg');
         position: absolute;
@@ -145,7 +143,6 @@
 
     input {
         opacity: 0;
-        // position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
@@ -157,7 +154,6 @@
         cursor: pointer;
         width: 100%;
         border: none;
-        // height: 50px;
     }
 
     [data-section="dark"] &, [data-theme="dark"] &{
@@ -166,11 +162,9 @@
         }
         &::after{
             color: $white;
-            // border-bottom: 1px solid rgba($color: $white, $alpha: 0.45);
         }
         &.selected::after{
             color: $white;
-            // border-color:$white;
         }
     }
     [data-section="light"] &, [data-theme="light"] &{
@@ -179,11 +173,42 @@
         }
         &::after{
             color: $black;
-            // border-bottom: 1px solid rgba($color: $black, $alpha: 0.45);
         }
          &.selected::after{
             color: $black;
-            // border-color:$black;
         }
     }
+}
+.vacancies-form{
+    height: 100%;
+    display: flex;
+    min-height: 789px;
+}
+.vacancies-form.done{
+    transition: min-height .5s;
+    min-height: 300px;
+}
+.form{
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s, visibility .5s;
+    max-width: 611px;
+}
+.form.done{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+.successForm{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    margin: auto 0;
+    transition: opacity .5s;
+}
+.successForm.done{
+    visibility: visible;
+    position: static;
+    opacity: 1;
 }

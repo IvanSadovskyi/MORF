@@ -18,27 +18,10 @@ let smoother = ScrollSmoother.create({
 
 
 
-// gsap.to(".hero-title", {
-//     x: 900, // translateX(20px)
-//     scale: 90,
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: ".hero",
-//         start: "top top",
-//         end: "bottom top", // длина прокрутки, пока достигается требуемый transform
-//         scrub: true,
-//         pin: true,     // фиксирует .hero пока идёт анимация
-//         pinSpacing: true,
-//         markers:true
-//     }
-// });
-
-
-// Адаптивная GSAP анимация для hero секции
 gsap.registerPlugin(ScrollTrigger);
 
 
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+/*const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
 if(document.querySelector(".hero-title")){
 // Функция для получения адаптивных значений
 function getResponsiveValues() {
@@ -325,20 +308,22 @@ window.refreshHeroAnimation = () => {
     }, 100);
 };
 }
+*/
 
-// const header = document.querySelector(".header");
+
+
+
+
 let lastScroll = 0;
-const hideHeight = 120; // px
+const hideHeight = 120;
 
 window.addEventListener("scroll", () => {
     if(!header.classList.contains("active") && !header.classList.contains("header--contacts")){
         let currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll && currentScroll > hideHeight) {
-            // скролл вниз — прячем
             header.classList.add("header--hidden");
         } else if (currentScroll < lastScroll) {
-            // скролл вверх — показываем
             header.classList.remove("header--hidden");
         }
 
@@ -446,48 +431,122 @@ document.querySelectorAll(".nav a").forEach(link =>{
 })
 
 
-$(document).ready(function () {
-    const $btnContainer = $(".des-process-selected-js").first();
-    const $firstButton = $btnContainer.find("button").first();
-    if ($firstButton.length) {
-        $firstButton.trigger("click");
+document.addEventListener("DOMContentLoaded", function () {
+    // делегирование клика по кнопкам внутри контейнеров
+    document.querySelectorAll(".des-process-selected-js").forEach(function (container) {
+        container.addEventListener("click", function (event) {
+            const button = event.target.closest("button");
+            if (button && container.contains(button)) {
+                processSteps(button);
+            }
+        });
+    });
+
+    // клик по первой кнопке (инициализация)
+    const firstButton = document.querySelector(".des-process-selected-js button");
+    if (firstButton) {
+        firstButton.click();
     }
+
+    // отслеживание изменения размера окна
+    let resizeTimeout;
+    window.addEventListener("resize", function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            const selectedButton = document.querySelector(".des-process-selected-js button.selected");
+            if (selectedButton) {
+                applyResponsiveSelection(selectedButton);
+            }
+        }, 150);
+    });
 });
 
 function processSteps(button) {
-    const $btnContainer = $(button).closest(".des-process-selected-js");
-    const id = $(button).attr("id");
-    const $contentContainer = $(button).closest("section").find(".design-process__content").first();
+    if (!button) return;
 
-    $btnContainer.find("button").removeClass("selected");
-    $(button).addClass("selected");
+    const btnContainer = button.closest(".des-process-selected-js");
+    const id = button.id || "";
+    const section = button.closest("section");
+    const contentContainer = section ? section.querySelector(".design-process__content") : null;
 
-    $contentContainer.find(".design-process__steps.selected").removeClass("selected");
-    const $steps = $contentContainer.find('.design-process__steps[data-id="' + id + '"]');
-    $steps.addClass("selected");
-
-    $steps.find(".design-process__row > .design-process__wrap").removeClass("selected");
-
-    setTimeout(() => {
-        $steps.find(".design-process__row").each(function (index, row) {
-            setTimeout(() => {
-                $(row).find(".design-process__wrap").addClass("selected");
-            }, index * 180);
+    if (btnContainer) {
+        btnContainer.querySelectorAll("button").forEach(function (b) {
+            b.classList.remove("selected");
         });
-        HorizontalScrollSteps()
+    }
+    button.classList.add("selected");
+
+    if (!contentContainer) return;
+
+    contentContainer.querySelectorAll(".design-process__steps.selected").forEach(function (el) {
+        el.classList.remove("selected");
+    });
+
+    const steps = Array.from(contentContainer.querySelectorAll('.design-process__steps[data-id="' + CSS.escape(id) + '"]'));
+    steps.forEach(function (step) {
+        step.classList.add("selected");
+        // удаляем все классы selected перед применением новой логики
+        step.querySelectorAll(".design-process__row > .design-process__wrap").forEach(function (wrap) {
+            wrap.classList.remove("selected");
+        });
+        step.querySelectorAll(".design-process__step").forEach(function (stepEl) {
+            stepEl.classList.remove("selected");
+        });
+    });
+
+    setTimeout(function () {
+        applyResponsiveSelection(button);
+
+        if (typeof HorizontalScrollSteps === "function") {
+            HorizontalScrollSteps();
+        }
     }, 200);
 }
 
-$(".des-process-selected-js").on("click", "button", function () {
-    processSteps(this);
-});
+function applyResponsiveSelection(button) {
+    const id = button.id || "";
+    const section = button.closest("section");
+    const contentContainer = section ? section.querySelector(".design-process__content") : null;
+    
+    if (!contentContainer) return;
 
-$(document).ready(function () {
-    const $firstButton = $(".des-process-selected-js button").first();
-    if ($firstButton.length) {
-        processSteps($firstButton);
-    }
-});
+    const steps = Array.from(contentContainer.querySelectorAll('.design-process__steps[data-id="' + CSS.escape(id) + '"]'));
+    const isMobile = window.innerWidth < 768;
+
+    steps.forEach(function (step) {
+        const rows = Array.from(step.querySelectorAll(".design-process__row"));
+        
+        if (isMobile) {
+            // на мобильных (<768px) добавляем selected к каждому design-process__step с интервалом
+            const allSteps = Array.from(step.querySelectorAll(".design-process__step"));
+            allSteps.forEach(function (stepEl, stepIndex) {
+                setTimeout(function () {
+                    stepEl.classList.add("selected");
+                }, stepIndex * 100);
+            });
+            // убираем selected с wrap
+            rows.forEach(function (row) {
+                row.querySelectorAll(".design-process__wrap").forEach(function (wrap) {
+                    wrap.classList.remove("selected");
+                });
+            });
+        } else {
+            // на десктопе (>768px) добавляем selected к design-process__wrap с интервалом по row
+            rows.forEach(function (row, index) {
+                setTimeout(function () {
+                    row.querySelectorAll(".design-process__wrap").forEach(function (wrap) {
+                        wrap.classList.add("selected");
+                    });
+                }, index * 180);
+            });
+            // убираем selected с step
+            step.querySelectorAll(".design-process__step").forEach(function (stepEl) {
+                stepEl.classList.remove("selected");
+            });
+        }
+    });
+}
+
 
 
 
@@ -547,22 +606,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 wrapper.dataset.text = input.files[0].name;
                 wrapper.classList.add("selected");
             } else {
-                wrapper.dataset.text = "Виберіть файл";
+                wrapper.dataset.text = "Attach";
                 wrapper.classList.remove("selected");
             }
         });
     });
 });
 
-$(document).on('af_complete', function (e, response) {
-    if (response.success) {
+document.addEventListener("af_complete", function (e) {
+    if (e.detail && e.detail.success) {
         const wrappers = document.querySelectorAll(".file-upload-wrapper");
         wrappers.forEach(wrapper => {
-            wrapper.dataset.text = "Виберіть файл";
+            wrapper.dataset.text = "Attach";
             wrapper.classList.remove("selected");
         });
     }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const steps = document.querySelectorAll(".design-process__steps");
@@ -576,21 +636,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!firstStep) return;
 
                 if (isDesktop) {
-                    // ставим отступы
                     let marginLeft = 200 * i;
                     firstStep.style.marginLeft = marginLeft + "px";
                 } else {
-                    // сбрасываем отступы
                     firstStep.style.marginLeft = "";
                 }
             });
         });
     }
 
-    // при загрузке
     updateMargins();
 
-    // при ресайзе окна
     window.addEventListener("resize", updateMargins);
 });
 
@@ -612,9 +668,12 @@ document.querySelectorAll('.scroll-link').forEach(link => {
 
 if(document.getElementById("form")){
     document.getElementById("form").addEventListener("submit", function(e) {
-        e.preventDefault(); // блокируем перезагрузку
-        this.style.display = "none"; // скрыть форму
-        document.getElementById("successForm").style.display = "block"; // показать блок
+        e.preventDefault();
+        this.classList.add("done");
+        document.getElementById("successForm").classList.add("done");
+        if(document.querySelector(".vacancies-form")){
+            document.querySelector(".vacancies-form").classList.add("done")
+        }
     });
 }
 
@@ -634,17 +693,17 @@ ScrollTrigger.create({
 
 
 window.addEventListener('load', async () => {
-  const waitUntil = (check) => new Promise(resolve => {
-    (function tick(){
-      const v = check();
-      if (v) return resolve(v);
-      requestAnimationFrame(tick);
-    })();
-  });
-  
-  await customElements.whenDefined('spline-viewer');
-  
-  const viewer = await waitUntil(() => document.querySelector('spline-viewer'));
-  const logo   = await waitUntil(() => viewer.shadowRoot?.getElementById('logo'));
-  logo.remove();
+    const waitUntil = (check) => new Promise(resolve => {
+        (function tick(){
+        const v = check();
+        if (v) return resolve(v);
+        requestAnimationFrame(tick);
+        })();
+    });
+    
+    await customElements.whenDefined('spline-viewer');
+    
+    const viewer = await waitUntil(() => document.querySelector('spline-viewer'));
+    const logo   = await waitUntil(() => viewer.shadowRoot?.getElementById('logo'));
+    logo.remove();
 });

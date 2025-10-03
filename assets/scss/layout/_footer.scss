@@ -58,6 +58,19 @@
     }
     &__left{
         max-width: 611px;
+        min-height: 622px;
+
+        &-text{
+            display: none;
+        }
+        @include breakpoint(tablet){
+            margin-top: 32px;
+
+            &-text{
+                display: block;
+                margin-top: 64px;
+            }
+        }
     }
 
     &__right {
@@ -68,6 +81,9 @@
         }
         & > :last-child{
             margin-top: 64px;
+            @include breakpoint(tablet){
+                display: none;
+            }
         }
     }
 

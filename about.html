@@ -9,14 +9,13 @@
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="stylesheet" href="assets/css/nprogress.css">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
         <link rel="stylesheet" href="assets/css/font.css">
 
         <link rel="stylesheet" href="assets/css/styles.css" media="all">
-        <!-- <link rel="stylesheet" href="module/owl-carousel/owl.carousel.min.css" media="all"> -->
-        <!-- <link rel="stylesheet" href="module/fancybox/jquery.fancybox.min.css" media="all"> -->
 
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -27,6 +26,17 @@
         <meta name="msapplication-TileColor" content="#175fff">
     </head>
     <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 200);
+            });
+        </script>
         <header class="header " data-header data-theme="light">
             <div class="header__wrap container">
                 <div class="header__left">
@@ -108,6 +118,11 @@
                 </div>
             </div>
         </nav>
+        <div class="main-bg">
+            <div class="main-bg__wrap" style="background-color: #f1f1f1;">
+                <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
+            </div>
+        </div>
         <div id="smooth-wrapper" class="page" data-scroller>
             <div id="smooth-content">
                 <main>
@@ -169,7 +184,7 @@
                                 <div class="content-grid__texts">
                                     <div class="section-texts">
                                         <h2><strong>Our Mission</strong></h2>
-                                        <p>Our mission is to create digital solutions that positively impact society and the world, driving meaningful change and contributing to a better future for all.</p>
+                                        <h3>Our mission is to create digital solutions that positively impact society and the world, driving meaningful change and contributing to a better future for all.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +196,7 @@
                                     </div>
                                     
                                 </div>
-                                <div class="col-1-1-2">
+                                <div class="col-1-1-2 row-g96">
                                     <div class="section-texts">
                                         <h3><strong>Competence and responsibility</strong></h3>
                                         <p>We are committed to providing our clients with the highest level of competence and responsibility in our work, ensuring that their needs and objectives are always our top priority.</p>
@@ -194,310 +209,310 @@
                             </div>
                         </div>
                     </section>
-                    <section style="margin-bottom: 64px;" class="design-process" data-section="light">
-                        <div class="design-process__panel container">
-                            <div class="section-texts">
-                                <h2><strong>Scheme of</strong> <i>design process</i></h2>
-                                <p class="h3" style="max-width: 480px;">This is how our design flow from the beginning to completion</p>
-                            </div>
-                            <div class="btn-container--selected des-process-selected-js" data-section="light">
-                                <div class="btn-wrap--selected">
-                                    <button id="des-process_websites" type="button" class="btn btn--selected selected">Websites</button>
-                                </div>
-                                <div class="btn-wrap--selected">
-                                    <button id="des-process_branding" type="button" class="btn btn--selected">Branding</button>
-                                </div>
-                                <div class="btn-wrap--selected">
-                                    <button id="des-process_applications" type="button" class="btn btn--selected">Applications</button>
-                                </div>
-                            </div>
+<section style="margin-bottom: 64px;" class="design-process" data-section="light">
+    <div class="design-process__panel container">
+        <div class="section-texts">
+            <h2><strong>Scheme of</strong> <i>design process</i></h2>
+            <p class="h3" style="max-width: 480px;">This is how our design flow from the beginning to completion</p>
+        </div>
+        <div class="btn-container--selected des-process-selected-js" data-section="light">
+            <div class="btn-wrap--selected">
+                <button id="des-process_websites" type="button" class="btn btn--selected selected">Websites</button>
+            </div>
+            <div class="btn-wrap--selected">
+                <button id="des-process_branding" type="button" class="btn btn--selected">Branding</button>
+            </div>
+            <div class="btn-wrap--selected">
+                <button id="des-process_applications" type="button" class="btn btn--selected">Applications</button>
+            </div>
+        </div>
+    </div>
+    <div class="design-process__content">
+        <div class="design-process__steps selected" data-id="des-process_websites">
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>01</strong></span>
+                            <p>Meet and Audit</p>
                         </div>
-                        <div class="design-process__content">
-                            <div class="design-process__steps selected" data-id="des-process_websites">
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>01</strong></span>
-                                                <p>Meet and Audit</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>02</strong></span>
-                                                <p>Draft Technical Specs</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>03</strong></span>
-                                                <p>Create Sitemap</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>04</strong></span>
-                                                <p>Plan Content & Wireframes</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>05</strong></span>
-                                                <p>Build Prototype</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>06</strong></span>
-                                                <p>Design UI & Visuals</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>07</strong></span>
-                                                <p>Develop Layout & Code</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>08</strong></span>
-                                                <p>Program Backend</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>07</strong></span>
-                                                <p>QA Testing</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--green">
-                                            <div>
-                                                <span><strong>08</strong></span>
-                                                <p>Launch Site</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="design-process__steps" data-id="des-process_branding">
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>01</strong></span>
-                                                <p>Meet and Audit</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>02</strong></span>
-                                                <p>Research Market</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>03</strong></span>
-                                                <p>Define Brand Strategy</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>04</strong></span>
-                                                <p>Ideate Concepts</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>05</strong></span>
-                                                <p>Design Logo & Visuals</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>06</strong></span>
-                                                <p>Colors & Typography</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>07</strong></span>
-                                                <p>Brand Identity & Guidelines</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>08</strong></span>
-                                                <p>Design Collateral</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>09</strong></span>
-                                                <p>Refine with Feedback</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--green">
-                                            <div>
-                                                <span><strong>10</strong></span>
-                                                <p>Deliver & Launch</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="design-process__steps" data-id="des-process_applications">
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>01</strong></span>
-                                                <p>Meet and Audit</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>02</strong></span>
-                                                <p>Draft Specs & Scope</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--yellow">
-                                            <div>
-                                                <span><strong>03</strong></span>
-                                                <p>Plan User Flow</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>04</strong></span>
-                                                <p>Wireframes & UI</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--red">
-                                            <div>
-                                                <span><strong>05</strong></span>
-                                                <p>Build Prototype</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>06</strong></span>
-                                                <p>Code Frontend</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>07</strong></span>
-                                                <p>Develop Backend & APIs</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>08</strong></span>
-                                                <p>Set Up Database</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>09</strong></span>
-                                                <p>Integrate & Program</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="design-process__row">
-                                    <div class="design-process__wrap">
-                                        <div class="design-process__step design-process__step--blue">
-                                            <div>
-                                                <span><strong>10</strong></span>
-                                                <p>QA Testing</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                        <div class="design-process__step design-process__step--green">
-                                            <div>
-                                                <span><strong>11</strong></span>
-                                                <p>Deploy & Maintain</p>
-                                            </div>
-                                            <div class="design-process__bottom"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>02</strong></span>
+                            <p>Draft Technical Specs</p>
                         </div>
-                    </section>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>03</strong></span>
+                            <p>Create Sitemap</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>04</strong></span>
+                            <p>Plan Content & Wireframes</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>05</strong></span>
+                            <p>Build Prototype</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>06</strong></span>
+                            <p>Design UI & Visuals</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>07</strong></span>
+                            <p>Develop Layout & Code</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>08</strong></span>
+                            <p>Program Backend</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>09</strong></span>
+                            <p>QA Testing</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--green">
+                        <div>
+                            <span><strong>10</strong></span>
+                            <p>Launch Site</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="design-process__steps" data-id="des-process_branding">
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>01</strong></span>
+                            <p>Meet and Audit</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>02</strong></span>
+                            <p>Research Market</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>03</strong></span>
+                            <p>Define Brand Strategy</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>04</strong></span>
+                            <p>Ideate Concepts</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>05</strong></span>
+                            <p>Design Logo & Visuals</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>06</strong></span>
+                            <p>Colors & Typography</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>07</strong></span>
+                            <p>Brand Identity & Guidelines</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>08</strong></span>
+                            <p>Design Collateral</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>09</strong></span>
+                            <p>Refine with Feedback</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--green">
+                        <div>
+                            <span><strong>10</strong></span>
+                            <p>Deliver & Launch</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="design-process__steps" data-id="des-process_applications">
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>01</strong></span>
+                            <p>Meet and Audit</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>02</strong></span>
+                            <p>Draft Specs & Scope</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--yellow">
+                        <div>
+                            <span><strong>03</strong></span>
+                            <p>Plan User Flow</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>04</strong></span>
+                            <p>Wireframes & UI</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--red">
+                        <div>
+                            <span><strong>05</strong></span>
+                            <p>Build Prototype</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>06</strong></span>
+                            <p>Code Frontend</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>07</strong></span>
+                            <p>Develop Backend & APIs</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>08</strong></span>
+                            <p>Set Up Database</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>09</strong></span>
+                            <p>Integrate & Program</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="design-process__row">
+                <div class="design-process__wrap">
+                    <div class="design-process__step design-process__step--blue">
+                        <div>
+                            <span><strong>10</strong></span>
+                            <p>QA Testing</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                    <div class="design-process__step design-process__step--green">
+                        <div>
+                            <span><strong>11</strong></span>
+                            <p>Deploy & Maintain</p>
+                        </div>
+                        <div class="design-process__bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                     <section style="margin-top: 64px;" class="impress content-grid content-grid--shuffle container" data-section="light">
                         <div class="content-grid__wrap row row-g64">
                             <div class="col-1">
@@ -583,7 +598,7 @@
                                         <p class="h3">Join our team and work with us to create innovative digital solutions that drive positive change for our clients and society.</p>
                                     </div>
                                     <a href="/career.html" class="btn btn--primary btn--right" style="margin-top: 24px;">
-                                        <span>Explore All Careers</span>
+                                        <span>All Careers</span>
                                         <svg width="24px" height="24px">
                                             <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
                                         </svg>
@@ -649,7 +664,7 @@
                                 <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
                             <div class="flex-between flex-align-center">
-                                <div class="form__group file-upload-wrapper p-small" data-text="Attach file">
+                                <div class="form__group file-upload-wrapper p-small" data-text="Attach">
                                     <input name="file-upload-field" type="file" class="file-upload-field" value="">
                                     <span class="error-message" id="file-upload-field-error">An error has occurred</span>
                                 </div>
@@ -661,24 +676,21 @@
                                 </button>
                             </div>
                         </form>
-                        <div class="successForm" id="successForm" style="margin: auto 0;display: none;">
+                        <div class="successForm" id="successForm">
                             <img src="/assets/img/done.svg" alt="">
                             <div class="section-texts" style="margin-top: 32px;">
                                 <h2>Thank you for submitting!</h2>
                                 <p>We will be in touch with you shortly</p>
                             </div>
                         </div>
+                        <div class="section-texts footer__left-text">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
                     </div>
                     <div class="footer__bottom">
                         <a href="/privacy-policy.html">Privacy Policy</a>
                         <ul class="socials unstyled">
-                            <li>
-                                <a href="">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="/assets/img/sprite-svg.svg#facebook"/>
-                                    </svg>
-                                </a>
-                            </li>
                             <li>
                                 <a href="">
                                     <svg width="24" height="24">
@@ -702,7 +714,6 @@
                             </li>
                         </ul>
                     </div>
-                    <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
                 </footer>
             </div>
         </div>

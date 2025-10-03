@@ -14,11 +14,26 @@
             color:$primary;
         }
     }
-
-    &__row > div{
+    &__row .col-1-1-2 > div{
         display: flex;
-        flex-direction: column;
         gap: 32px;
+        flex-direction: column;
+    }
+    @include breakpoint(tablet){
+        &__row .col-1-1-2{
+            gap: 64px !important;
+        }
+        &__row .col-1-1-2 > div{
+            gap: 64px;
+        }
+    }
+    @include breakpoint(mobile2){
+        &__row .col-1-1-2{
+            gap: 56px !important;
+        }
+        &__row .col-1-1-2 > div{
+            gap: 56px;
+        }
     }
 
 }

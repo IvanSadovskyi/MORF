@@ -9,14 +9,13 @@
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="stylesheet" href="assets/css/nprogress.css">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
         <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
         <link rel="stylesheet" href="assets/css/font.css">
 
         <link rel="stylesheet" href="assets/css/styles.css" media="all">
-        <!-- <link rel="stylesheet" href="module/owl-carousel/owl.carousel.min.css" media="all"> -->
-        <!-- <link rel="stylesheet" href="module/fancybox/jquery.fancybox.min.css" media="all"> -->
 
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -27,6 +26,17 @@
         <meta name="msapplication-TileColor" content="#175fff">
     </head>
     <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 200);
+            });
+        </script>
         <header class="header " data-header data-theme="light">
             <div class="header__wrap container">
                 <div class="header__left">
@@ -108,6 +118,11 @@
                 </div>
             </div>
         </nav>
+        <div class="main-bg">
+            <div class="main-bg__wrap" style="background-color: #f1f1f1;">
+                <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
+            </div>
+        </div>
         <div id="smooth-wrapper" class="page" data-scroller>
             <div id="smooth-content">
                 <main>
@@ -283,7 +298,7 @@
                                 <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
                             <div class="flex-between flex-align-center">
-                                <div class="form__group file-upload-wrapper p-small" data-text="Attach file">
+                                <div class="form__group file-upload-wrapper p-small" data-text="Attach">
                                     <input name="file-upload-field" type="file" class="file-upload-field" value="">
                                     <span class="error-message" id="file-upload-field-error">An error has occurred</span>
                                 </div>
@@ -295,24 +310,21 @@
                                 </button>
                             </div>
                         </form>
-                        <div class="successForm" id="successForm" style="margin: auto 0;display: none;">
+                        <div class="successForm" id="successForm">
                             <img src="/assets/img/done.svg" alt="">
                             <div class="section-texts" style="margin-top: 32px;">
                                 <h2>Thank you for submitting!</h2>
                                 <p>We will be in touch with you shortly</p>
                             </div>
                         </div>
+                        <div class="section-texts footer__left-text">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
                     </div>
                     <div class="footer__bottom">
                         <a href="/privacy-policy.html">Privacy Policy</a>
                         <ul class="socials unstyled">
-                            <li>
-                                <a href="">
-                                    <svg width="24" height="24">
-                                        <use xlink:href="/assets/img/sprite-svg.svg#facebook"/>
-                                    </svg>
-                                </a>
-                            </li>
                             <li>
                                 <a href="">
                                     <svg width="24" height="24">
@@ -336,7 +348,6 @@
                             </li>
                         </ul>
                     </div>
-                    <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
                 </footer>
             </div>
         </div>

@@ -65,7 +65,7 @@
         }
     }
     &-g16{
-        gap:16px
+        gap:16px !important
     }
     &-g64{
         gap: 64px;
@@ -75,16 +75,10 @@
         }
     }
     &-g96{
-        gap:96px;
+        gap:96px !important;
 
         @include breakpoint(laptop){
-            gap: 64px;
-        }
-        @include breakpoint(tablet){
-            gap: 32px;
-        }
-        @include breakpoint(mobile1){
-            gap: 16px;
+            gap: 64px !important;
         }
         & > div{
             flex-shrink: 1 !important;

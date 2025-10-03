@@ -19,8 +19,10 @@
                 position: absolute;
                 inset: 0;
             }
-            @media (hover: hover) {
-                transform: none !important;
+        }
+        @media (hover: hover) {
+            &:hover a{
+                transform: scale(1.08);
             }
         }
     }

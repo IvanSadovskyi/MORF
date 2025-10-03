@@ -88,6 +88,15 @@
             opacity: 1;
         }
     }
+    @include breakpoint(mobile1){
+        &__step:not(.selected){
+            opacity: 0;
+        }
+        &__step {
+            transition: opacity .1s ease;
+            opacity: 1;
+        }
+    }
     
     &__steps {
         width: 0;

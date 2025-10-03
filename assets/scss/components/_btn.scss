@@ -52,7 +52,7 @@
     }
 
     &.btn--arrow{
-    padding: 0 15px;
+    padding: 0 16px !important;
     }
     &.btn--medium.btn--arrow{
     padding: 8px 11px 4px;
@@ -63,6 +63,9 @@
 
     &.btn--right, &.btn--left{
     padding: 8px 16px 4px;
+    }
+    &.btn--right svg, &.btn--left svg{
+        margin-top: -4px;
     }
     &.btn--right span, &.btn--left span{
     padding: 0 16px;

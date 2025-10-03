@@ -7,9 +7,17 @@
     }
 }
 
-@include breakpoint(tablet, min){
-    .col-1-2-3.col--product{
+.product--row{
+    display: flex;
+    gap: 96px;
+    & .col--product{
         flex: 0 1 33.33333% !important;
         max-width: 33.33333% !important;
+    }
+    @include breakpoint(tablet){
+        gap: 64px;
+    }
+    @include breakpoint(mobile1){
+        gap: 16px;
     }
 }
