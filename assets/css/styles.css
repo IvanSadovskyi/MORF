@@ -326,7 +326,7 @@ fieldset {
   transition: all 0.5s;
 }
 .header:not(.header--contacts).scrolling-started[data-theme=light] {
-  background-color: rgba(241, 241, 241, 0.5);
+  background-color: rgba(245, 245, 245, 0.5);
 }
 .header:not(.header--contacts).scrolling-started[data-theme=dark] {
   background-color: rgba(0, 0, 0, 0.08);
@@ -336,7 +336,7 @@ fieldset {
           backdrop-filter: blur(32px);
 }
 .header.active {
-  background-color: white !important;
+  background-color: whitesmoke !important;
   position: fixed !important;
   transform: translateY(0);
 }
@@ -471,7 +471,7 @@ fieldset {
   inset: 0;
   height: 125vh;
   z-index: 1;
-  background-color: white;
+  background-color: #f5f5f5;
 }
 .nav__wrap {
   display: flex;
@@ -516,7 +516,7 @@ fieldset {
   .nav__wrap > .row {
     gap: 48px;
     max-width: none;
-    max-height: calc(100vh + 118px);
+    max-height: calc(100dvh + 118px);
     overflow-y: auto;
   }
   .nav__wrap > .row::-webkit-scrollbar {
@@ -827,7 +827,7 @@ body::-webkit-scrollbar {
 .container__wrap {
   z-index: 5;
   position: relative;
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
 }
 @media (max-width: 1365px) {
   .container {
@@ -848,7 +848,7 @@ body::-webkit-scrollbar {
 main {
   position: relative;
   z-index: 2;
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
 }
 
 .main-bg {
@@ -1789,16 +1789,16 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(27px, 119px);
+    transform: translate(39px, 97px);
   }
   25% {
-    transform: translate(361px, 114px);
+    transform: translate(13px, 270px);
   }
   50% {
-    transform: translate(326px, 299px);
+    transform: translate(172px, 374px);
   }
   75% {
-    transform: translate(28px, 34px);
+    transform: translate(7px, 388px);
   }
 }
 .illustration__shape:nth-child(1) {
@@ -1807,16 +1807,16 @@ div ~ .footer__bottom {
 
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(379px, 335px);
+    transform: translate(78px, 245px);
   }
   25% {
-    transform: translate(177px, 44px);
+    transform: translate(395px, 199px);
   }
   50% {
-    transform: translate(221px, 75px);
+    transform: translate(232px, 136px);
   }
   75% {
-    transform: translate(98px, 210px);
+    transform: translate(118px, 173px);
   }
 }
 .illustration__shape:nth-child(2) {
@@ -1825,16 +1825,16 @@ div ~ .footer__bottom {
 
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(219px, 90px);
+    transform: translate(293px, 269px);
   }
   25% {
-    transform: translate(59px, 147px);
+    transform: translate(24px, 318px);
   }
   50% {
-    transform: translate(360px, 395px);
+    transform: translate(155px, 153px);
   }
   75% {
-    transform: translate(41px, 290px);
+    transform: translate(205px, 314px);
   }
 }
 .illustration__shape:nth-child(3) {
@@ -1843,16 +1843,16 @@ div ~ .footer__bottom {
 
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(262px, 390px);
+    transform: translate(144px, 229px);
   }
   25% {
-    transform: translate(192px, 163px);
+    transform: translate(302px, 215px);
   }
   50% {
-    transform: translate(397px, 103px);
+    transform: translate(119px, 251px);
   }
   75% {
-    transform: translate(312px, 160px);
+    transform: translate(111px, 365px);
   }
 }
 .illustration__shape:nth-child(4) {
