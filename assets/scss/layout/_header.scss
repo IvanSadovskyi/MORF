@@ -26,7 +26,7 @@
     &__right a{
         transition: transform 0.25s;
     }
-    &__right a:hover{
+    &__right a:hover div{
         transform: scale(1.05);
     }
     & span{
@@ -43,7 +43,7 @@
         backdrop-filter: blur(32px);
     }
     &.active{
-        background-color: rgba($color: $background, $alpha: 1.0) !important;
+        // background-color: rgba($color: $background, $alpha: 1.0) !important;
         position: fixed !important;
         transform: translateY(0);
     }
@@ -188,6 +188,7 @@
     max-height: 10px;
     padding-bottom: 0;
     padding-top: 118px;
+    pointer-events: none;
     
     &.active{
         padding: 0 96px;
@@ -195,6 +196,7 @@
         padding-bottom: 96px;
         max-height: 100%;
         opacity: 1;
+        pointer-events: all;
     }
     &::before{
         content: "";

@@ -54,6 +54,9 @@
     &.btn--arrow{
     padding: 0 16px !important;
     }
+    &.btn--arrow svg{ 
+        margin-top: 0 !important;
+    }
     &.btn--medium.btn--arrow{
     padding: 8px 11px 4px;
     }

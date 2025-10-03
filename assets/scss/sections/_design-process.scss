@@ -91,9 +91,11 @@
     @include breakpoint(mobile1){
         &__step:not(.selected){
             opacity: 0;
+            transform: translateY(-10px);
         }
         &__step {
-            transition: opacity .1s ease;
+            transition: opacity .25s ease, transform .25s ease;
+            transform: translateY(0);
             opacity: 1;
         }
     }

@@ -319,7 +319,7 @@ fieldset {
 .header__right a {
   transition: transform 0.25s;
 }
-.header__right a:hover {
+.header__right a:hover div {
   transform: scale(1.05);
 }
 .header span {
@@ -336,7 +336,6 @@ fieldset {
           backdrop-filter: blur(32px);
 }
 .header.active {
-  background-color: whitesmoke !important;
   position: fixed !important;
   transform: translateY(0);
 }
@@ -457,6 +456,7 @@ fieldset {
   max-height: 10px;
   padding-bottom: 0;
   padding-top: 118px;
+  pointer-events: none;
 }
 .nav.active {
   padding: 0 96px;
@@ -464,6 +464,7 @@ fieldset {
   padding-bottom: 96px;
   max-height: 100%;
   opacity: 1;
+  pointer-events: all;
 }
 .nav::before {
   content: "";
@@ -1077,6 +1078,9 @@ div ~ .footer__bottom {
 }
 .btn.btn--arrow {
   padding: 0 16px !important;
+}
+.btn.btn--arrow svg {
+  margin-top: 0 !important;
 }
 .btn.btn--medium.btn--arrow {
   padding: 8px 11px 4px;
@@ -1789,16 +1793,16 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(39px, 97px);
+    transform: translate(45px, 70px);
   }
   25% {
-    transform: translate(13px, 270px);
+    transform: translate(32px, 105px);
   }
   50% {
-    transform: translate(172px, 374px);
+    transform: translate(55px, 34px);
   }
   75% {
-    transform: translate(7px, 388px);
+    transform: translate(238px, 195px);
   }
 }
 .illustration__shape:nth-child(1) {
@@ -1807,16 +1811,16 @@ div ~ .footer__bottom {
 
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(78px, 245px);
+    transform: translate(227px, 173px);
   }
   25% {
-    transform: translate(395px, 199px);
+    transform: translate(258px, 143px);
   }
   50% {
-    transform: translate(232px, 136px);
+    transform: translate(291px, 130px);
   }
   75% {
-    transform: translate(118px, 173px);
+    transform: translate(291px, 71px);
   }
 }
 .illustration__shape:nth-child(2) {
@@ -1825,16 +1829,16 @@ div ~ .footer__bottom {
 
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(293px, 269px);
+    transform: translate(72px, 165px);
   }
   25% {
-    transform: translate(24px, 318px);
+    transform: translate(222px, 308px);
   }
   50% {
-    transform: translate(155px, 153px);
+    transform: translate(303px, 180px);
   }
   75% {
-    transform: translate(205px, 314px);
+    transform: translate(331px, 302px);
   }
 }
 .illustration__shape:nth-child(3) {
@@ -1843,16 +1847,16 @@ div ~ .footer__bottom {
 
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(144px, 229px);
+    transform: translate(228px, 313px);
   }
   25% {
-    transform: translate(302px, 215px);
+    transform: translate(248px, 253px);
   }
   50% {
-    transform: translate(119px, 251px);
+    transform: translate(331px, 104px);
   }
   75% {
-    transform: translate(111px, 365px);
+    transform: translate(289px, 172px);
   }
 }
 .illustration__shape:nth-child(4) {
@@ -2247,6 +2251,10 @@ div ~ .footer__bottom {
   max-height: 302px;
 }
 
+.stm32 > .section-texts {
+  margin-bottom: 32px;
+}
+
 .design-process {
   display: flex;
   flex-direction: column;
@@ -2343,9 +2351,11 @@ div ~ .footer__bottom {
 @media (max-width: 767px) {
   .design-process__step:not(.selected) {
     opacity: 0;
+    transform: translateY(-10px);
   }
   .design-process__step {
-    transition: opacity 0.1s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(0);
     opacity: 1;
   }
 }
