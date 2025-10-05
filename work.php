@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base href="[[++site_url]]">
+        <title>MORF - Work</title>
+
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="#">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/nprogress.css">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="assets/css/font.css">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#175fff">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#175fff">
+    </head>
+    <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 200);
+            });
+        </script>
+        <header class="header " data-header data-theme="light">
+            <div class="header__wrap container">
+                <div class="header__left">
+                    <a href="/" class="logo">
+                        <svg width="103" height="30">
+                            <use xlink:href="/assets/img/sprite-svg.svg#logo"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header__center">
+                    <button type="button" class="header__menu-btn">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__right">
+                    <a href="/contacts">
+                        <span><strong>Hire us</strong></span>
+                        <div>
+                            <svg width="28" height="28">
+                                <use xlink:href="/assets/img/sprite-svg.svg#mail"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav__wrap">
+                <div class="row">
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Socials</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div class="nav__menu">
+                            <p>Menu</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a class="h1" href="/work"><strong>Work</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/about"><strong>About</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/contacts"><strong>Contacts</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/career"><strong>Career</strong></a>
+                                </li>
+                                <li class="privacy-policy"><a href="/privacy-policy" class="p-small privacy-policy">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Get in touch</p>
+                            <p><a class="menu-email" href="mailto:hey@morf.digital">hey@morf.digital</a></p>
+                        </div>
+                    </div>
+                    <div class="col-1 privacy-policy">
+                        <p><a class="privacy-policy p-small" href="/privacy-policy">Privacy policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="main-bg">
+            <div class="main-bg__wrap" style="background-color: #f5f5f5;">
+                <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
+            </div>
+        </div>
+        <div id="smooth-wrapper" class="page" data-scroller>
+            <div id="smooth-content">
+                <main>
+                    <section class="breadcrumbs-heading container" data-section="light">
+                        <span>Work</span>
+                        <h1><strong>We create</strong> <i>world-class</i><br><strong>products and experiences</strong></h1>
+                    </section>
+                    <section class="works container">
+                        <div class="btn-container--selected works__filters-js" data-section="light">
+                            <div class="btn-wrap--selected">
+                                <button id="des-process_all" type="button" class="btn btn--selected selected">All</button>
+                            </div>
+                            <div class="btn-wrap--selected">
+                                <button id="des-process_websites" type="button" class="btn btn--selected">Websites</button>
+                            </div>
+                            <div class="btn-wrap--selected">
+                                <button id="des-process_branding" type="button" class="btn btn--selected">Branding</button>
+                            </div>
+                            <div class="btn-wrap--selected">
+                                <button id="des-process_applications" type="button" class="btn btn--selected">Applications</button>
+                            </div>
+                        </div>
+                        <div class="row row-m32">
+                            <div class="col-1-2">
+                                <div class="case">
+                                    <div>
+                                        <h3><strong>NORAH</strong></h3>
+                                        <div class="hashtag">
+                                            <p>#Branding</p>
+                                            <p>#Websites</p>
+                                        </div>
+                                    </div>
+                                    <div class="embed-responsive embed-responsive--16-9">
+                                        <img src="/assets/img/cases/norah/norah-cover.jpg" alt="">
+                                    </div>
+                                    <a href="/case-norah" class="case__link"></a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="case">
+                                    <div>
+                                        <h3><strong>Griffith Observatory Rebranding</strong></h3>
+                                        <div class="hashtag">
+                                            <p>#Branding</p>
+                                        </div>
+                                    </div>
+                                    <div class="embed-responsive embed-responsive--16-9"><img src="/assets/img/cases/griffith-observatory-rebranding/griffith-cover.png" alt=""></div>
+                                    <a href="/case-griffith-observatory-rebranding" class="case__link"></a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="case">
+                                    <div>
+                                        <h3><strong>AZEUM Ground Transporttion</strong></h3>
+                                        <div class="hashtag">
+                                            <p>#Branding</p>
+                                            <p>#Websites</p>
+                                        </div>
+                                    </div>
+                                    <div class="embed-responsive embed-responsive--16-9"><img src="/assets/img/cases/azeum/azeum-cover.jpg" alt=""></div>
+                                    <a href="/case-azeum" class="case__link"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <button style="margin: 0 auto;" class="btn btn--primary">Load more</button>
+                    </section>
+                    <section class="who-we-are container" data-section="light">
+                        <div class="col-1-1-2">
+                            <div class="who-we-are__logo">
+                                    <svg width="228px"; viewBox="0 0 186 228">
+                                        <defs>
+                                            <filter id="goo">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur" id="blurFilter"/>
+                                            <feColorMatrix in="blur" mode="matrix"
+                                                values="1 0 0 0 0  
+                                                        0 1 0 0 0 
+                                                        0 0 1 0 0  
+                                                        0 0 0 3 -1" result="goo" id="gooMatrix"/>
+                                            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                                            </filter>
+                                        </defs>
+                                        <g filter="url(#goo)">
+                                        <g id="LetterGroup">
+                                        <path id="g1" d="M70.7003 0.5H88.5288C89.0403 0.5 89.4681 0.675039 89.8308 1.03433C90.1842 1.39362 90.3609 1.8174 90.3609 2.32409V105.007C90.3609 105.514 90.1842 105.947 89.8308 106.297C89.4774 106.656 89.0403 106.831 88.5381 106.831H70.7096C70.1981 106.831 69.7703 106.656 69.4169 106.297C69.0635 105.947 68.8868 105.514 68.8868 105.007V38.0228C68.8868 37.6174 68.7845 37.4148 68.5799 37.4148C68.3753 37.4148 68.1707 37.5714 67.9754 37.8754L51.821 63.0902C51.3095 63.9009 50.6027 64.3063 49.6912 64.3063H40.698C39.7865 64.3063 39.0704 63.9009 38.5682 63.0902L22.4138 37.8754C22.2092 37.5714 22.0046 37.4424 21.8093 37.4977C21.6047 37.553 21.5024 37.7741 21.5024 38.1794V105.007C21.5024 105.514 21.3257 105.947 20.9723 106.297C20.6189 106.656 20.1818 106.831 19.6795 106.831H1.82319C1.31167 106.831 0.883866 106.656 0.530459 106.297C0.177052 105.947 0.000348902 105.514 0.000348902 105.007V2.32409C-0.00895128 1.8174 0.167752 1.38441 0.521159 1.03433C0.883866 0.675039 1.31167 0.5 1.82319 0.5H19.6516C20.5631 0.5 21.2792 0.905353 21.7814 1.71606L44.6412 37.1108C44.9481 37.7188 45.2458 37.7188 45.5527 37.1108L68.5706 1.71606C69.0728 0.905353 69.7889 0.5 70.7003 0.5Z" fill="#175FFF"/>
+
+                                        <path id="g2" d="M125.878 102.059C119.935 98.8718 115.322 94.4221 112.03 88.7011C108.738 82.9801 107.092 76.3839 107.092 68.9218V37.9583C107.092 30.5975 108.738 24.075 112.03 18.4092C115.322 12.7343 119.945 8.33068 125.878 5.19841C131.812 2.06614 138.675 0.5 146.469 0.5C154.262 0.5 161.265 2.06614 167.208 5.19841C173.142 8.33068 177.764 12.7343 181.056 18.4092C184.348 24.0842 185.995 30.5975 185.995 37.9583V68.9218C185.995 76.3839 184.348 82.9986 181.056 88.7748C177.764 94.5419 173.142 99.0008 167.208 102.133C161.265 105.265 154.355 106.831 146.469 106.831C138.582 106.831 131.821 105.238 125.878 102.059ZM159.796 83.5513C163.191 80.069 164.883 75.4443 164.883 69.668V37.8109C164.883 32.0438 163.209 27.3915 159.87 23.8539C156.522 20.3255 152.058 18.5566 146.469 18.5566C140.879 18.5566 136.564 20.3255 133.216 23.8539C129.868 27.3823 128.203 32.0346 128.203 37.8109V69.668C128.203 75.4351 129.877 80.069 133.216 83.5513C136.555 87.0337 140.972 88.7748 146.469 88.7748C151.965 88.7748 156.401 87.0337 159.796 83.5513Z" fill="#175FFF"/>
+
+                                        <path id="g3" d="M56.3777 226.991L37.3309 184.917C37.1263 184.512 36.8194 184.309 36.4195 184.309H22.246C21.7345 184.309 21.4834 184.567 21.4834 185.065V226.53C21.4834 227.037 21.3067 227.47 20.9533 227.82C20.5999 228.179 20.1628 228.354 19.6606 228.354H1.82284C1.31133 228.354 0.883517 228.179 0.53011 227.82C0.176703 227.47 0 227.037 0 226.53V123.847C0 123.34 0.176703 122.907 0.53011 122.557C0.883517 122.207 1.31133 122.023 1.82284 122.023H45.4035C51.9043 122.023 57.6146 123.34 62.5437 125.975C67.4728 128.61 71.2766 132.35 73.9737 137.214C76.6614 142.079 78.0099 147.698 78.0099 154.073C78.0099 160.964 76.2801 166.861 72.8297 171.771C69.3701 176.681 64.5433 180.154 58.3493 182.172C57.8378 182.374 57.689 182.734 57.8936 183.231L78.6237 226.217C78.8284 226.622 78.9306 226.926 78.9306 227.129C78.9306 227.94 78.3726 228.345 77.2566 228.345H58.5075C57.4937 228.345 56.7776 227.894 56.3777 226.982V226.991ZM21.4834 141.167V167.146C21.4834 167.653 21.7345 167.902 22.246 167.902H42.2135C46.4823 167.902 49.9606 166.639 52.6576 164.106C55.3454 161.573 56.6939 158.284 56.6939 154.23C56.6939 150.177 55.3454 146.86 52.6576 144.281C49.9606 141.701 46.4823 140.411 42.2135 140.411H22.246C21.7345 140.411 21.4834 140.669 21.4834 141.167Z" fill="#175FFF"/>
+
+                                        <path id="g4" d="M107.082 138.578V123.847C107.082 123.34 107.259 122.907 107.612 122.557C107.966 122.207 108.403 122.023 108.905 122.023H179.158C179.67 122.023 180.098 122.198 180.451 122.557C180.805 122.917 180.981 123.34 180.981 123.847V226.53C180.981 227.037 180.805 227.47 180.451 227.82C180.098 228.179 179.67 228.354 179.158 228.354H161.33C160.818 228.354 160.391 228.179 160.037 227.82C159.684 227.47 159.507 227.037 159.507 226.53V184.604C159.507 184.097 159.256 183.849 158.745 183.849H125.98C125.468 183.849 125.041 183.673 124.687 183.314C124.334 182.964 124.157 182.531 124.157 182.024V167.294C124.157 166.787 124.334 166.363 124.687 166.004C125.041 165.654 125.478 165.469 125.98 165.469H158.745C159.256 165.469 159.507 165.221 159.507 164.714V141.167C159.507 140.66 159.256 140.411 158.745 140.411H108.914C108.412 140.411 107.975 140.236 107.621 139.877C107.268 139.527 107.091 139.094 107.091 138.587L107.082 138.578Z" fill="#175FFF"/>
+                                        </g>
+                                        <path id="myCircle" d="M93 39 A75 75 0 1 1 93 189 A75 75 0 1 1 93 39 Z" opacity="0" fill="#175FFF"/>
+                                        </g>
+                                        </svg>
+                            </div>
+                            <div>
+                                <div class="section-texts">
+                                    <h2 class="h1"><strong>Who we are?</strong></h2>
+                                    <h3>We Morph Ideas<br>Into Impact.</h3>
+                                </div>
+                                <a href="/about" class="btn btn--primary btn--right">
+                                    <span>About Us</span>
+                                    <svg width="24px" height="24px">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <footer class="footer container" data-footer data-theme="dark">
+                    <div class="footer__right">
+                        <div class="section-texts">
+                            <p>Contacts</p>
+                            <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
+                            <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today to discuss your project and take the next step towards success.</p>
+                            <a class="menu-email" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                        </div>
+                        <div class="section-texts">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="footer__left">
+                        <form class="form" id="form" action="" method="post">
+                            <div class="form__group">
+                                <p>Interested in</p>
+                                <div class="btn-container--selected" data-section="dark">
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Websites" checked>
+                                        <label for="Websites" class="btn btn--selected">
+                                            <span>Websites</span>
+                                        </label>
+                                    </div>
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Applications">
+                                        <label for="Applications" class="btn btn--selected">
+                                            <span>Applications</span>
+                                        </label>
+                                    </div>
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Branding">
+                                        <label for="Branding" class="btn btn--selected">
+                                            <span>Branding</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" name="name" id="name" placeholder="Name" required>
+                                <span class="error-message" id="name-error">An error has occurred</span>
+                            </div>
+                            <div class="form__group">
+                                <input class="" type="email" name="email" id="email" placeholder="Email" required>
+                                <span class="error-message" id="email-error">An error has occurred</span>
+                            </div>
+                            <div class="form__group">
+                                <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+                            </div>
+                            <div class="flex-between flex-align-center">
+                                <div class="form__group file-upload-wrapper p-small" data-text="Attach">
+                                    <input name="file-upload-field" type="file" class="file-upload-field" value="">
+                                    <span class="error-message" id="file-upload-field-error">An error has occurred</span>
+                                </div>
+                                <button class="btn btn--secondary btn--right" type="submit">
+                                    <span>Submit</span>
+                                    <svg width="24px" height="24px">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="successForm" id="successForm">
+                            <img src="/assets/img/done.svg" alt="">
+                            <div class="section-texts" style="margin-top: 32px;">
+                                <h2>Thank you for submitting!</h2>
+                                <p>We will be in touch with you shortly</p>
+                            </div>
+                        </div>
+                        <div class="section-texts footer__left-text">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <ul class="socials unstyled">
+                            <li>
+                                <a href="https://www.instagram.com/morf.digital/">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/morf.digital">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.behance.net/morfdgtl">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script type="module" src="/assets/libs/js/spline-viewer.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+
+        <script src="/assets/animations/displacement.js"></script>
+        <script src="/assets/animations/animation.js"></script>
+    </body>
+</html>

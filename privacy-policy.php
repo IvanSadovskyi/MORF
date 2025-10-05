@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base href="[[++site_url]]">
+        <title>MORF - Privacy policy</title>
+
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="#">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/nprogress.css">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="assets/css/font.css">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#175fff">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#175fff">
+    </head>
+    <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 200);
+            });
+        </script>
+        <header class="header " data-header data-theme="light">
+            <div class="header__wrap container">
+                <div class="header__left">
+                    <a href="/" class="logo">
+                        <svg width="103" height="30">
+                            <use xlink:href="/assets/img/sprite-svg.svg#logo"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header__center">
+                    <button type="button" class="header__menu-btn">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__right">
+                    <a href="/contacts">
+                        <span><strong>Hire us</strong></span>
+                        <div>
+                            <svg width="28" height="28">
+                                <use xlink:href="/assets/img/sprite-svg.svg#mail"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav__wrap">
+                <div class="row">
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Socials</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div class="nav__menu">
+                            <p>Menu</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a class="h1" href="/work"><strong>Work</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/about"><strong>About</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/contacts"><strong>Contacts</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/career"><strong>Career</strong></a>
+                                </li>
+                                <li class="privacy-policy"><a href="/privacy-policy" class="p-small privacy-policy">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Get in touch</p>
+                            <p><a class="menu-email" href="mailto:hey@morf.digital">hey@morf.digital</a></p>
+                        </div>
+                    </div>
+                    <div class="col-1 privacy-policy">
+                        <p><a class="privacy-policy p-small" href="/privacy-policy">Privacy policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="main-bg">
+            <div class="main-bg__wrap" style="background-color: #f5f5f5;">
+                
+            </div>
+        </div>
+        <div id="smooth-wrapper" class="page" data-scroller>
+            <div id="smooth-content">
+                <main>
+                    <section class="container privacy-policy">
+                        <div class="privacy-policy__heading">
+                            <span>Updated on July 9, 2025</span>
+                            <h1><strong>Privacy Policy<br>and Terms of Use</strong></h1>
+                        </div>
+                    </section>
+                    <section class="container privacy-policy">
+                        <div class="row row-g64 privacy-policy__row">
+                            <div class="col-1-1-2">
+                                <div>
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Privacy policy of MORF</strong></h2>
+                                        <p class="p-small">MORF Digiral Agency LLC operates the MORF website, which provides Services.</p>
+                                        <p class="p-small">This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal information if anyone decided to use our Services, the MORF website.</p>
+                                        <p class="p-small">If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The personal information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Information Collection and Use</strong></h2>
+                                        <p class="p-small">For a better experience while using our Services, we may require you to provide us with certain personally identifiable information, including but not limited to your name, phone number, and postal number. The information that we collect will be used to contact or identify you.</p>
+                                    </div>
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Log Data</strong></h2>
+                                        <p class="p-small">We want to inform you that whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser version, pages of our Service that you visit, the time and date you visit, the time spent on those pages, and other statistics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <footer class="footer container" data-footer data-theme="light">
+                    <div class="footer__bottom">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <ul class="socials unstyled">
+                            <li>
+                                <a href="https://www.instagram.com/morf.digital/">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/morf.digital">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.behance.net/morfdgtl">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script type="module" src="/assets/libs/js/spline-viewer.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>

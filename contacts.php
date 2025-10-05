@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base href="[[++site_url]]">
+        <title>MORF - Contacts</title>
+
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="#">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="assets/css/nprogress.css">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="assets/css/font.css">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#175fff">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+
+        <!-- <link rel="preload" href="/assets/animations/hero.splinecode.json" as="fetch" crossorigin="anonymous" /> -->
+        <meta name="msapplication-TileColor" content="#175fff">
+    </head>
+    <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 1000);
+            });
+        </script>
+        <style type="text/css">
+            .preloader{width: 100vw;height: 100vh;position: fixed;z-index: 8888;}
+            .preloader__wrap{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:60px;height:60px;z-index: 8889;}
+            .preloader::after{
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                content: "";
+                background-color: #f5f5f5;
+            }
+            @keyframes spin{
+                0%,100%{transform:translate(0)}
+                25%{transform:translate(160%)}
+                50%{transform:translate(160%, 160%)}
+                75%{transform:translate(0, 160%)}
+            }
+            .loader {
+                width: 60px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background: #175FFF;
+                clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+                animation: l1 1s infinite cubic-bezier(0.3,1,0,1);
+            }
+                @keyframes l1 {
+                33% {border-radius: 0;clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
+                66% {border-radius: 0;clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
+            }
+        </style>
+        <div class="preloader">
+            <div class="preloader__wrap">
+                
+                <div class="loader"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var hellopreloader = document.querySelector('.preloader');
+            function fadeOutnojquery(el) {
+                el.style.opacity = 1;
+                var interhellopreloader = setInterval(function() {
+                    el.style.opacity = parseFloat(el.style.opacity) - 0.05;
+                    if (el.style.opacity <= 0.05) {
+                        clearInterval(interhellopreloader);
+                        el.style.display = "none";
+                    }
+                }, 16);
+            }
+            window.onload = function(){
+                setTimeout(function(){
+                    fadeOutnojquery(hellopreloader);
+                },1000);
+            };
+        </script>
+        <header class="header header--contacts" data-header data-theme="dark">
+            <div class="header__wrap container">
+                <div class="header__left">
+                    <a href="/" class="logo">
+                        <svg width="103" height="30">
+                            <use xlink:href="/assets/img/sprite-svg.svg#logo"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header__center">
+                    <button type="button" class="header__menu-btn">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__right">
+                    <a href="/contacts">
+                        <span><strong>Hire us</strong></span>
+                        <div>
+                            <svg width="28" height="28">
+                                <use xlink:href="/assets/img/sprite-svg.svg#mail"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav__wrap">
+                <div class="row">
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Socials</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div class="nav__menu">
+                            <p>Menu</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a class="h1" href="/work"><strong>Work</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/about"><strong>About</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/contacts"><strong>Contacts</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/career"><strong>Career</strong></a>
+                                </li>
+                                <li class="privacy-policy"><a href="/privacy-policy" class="p-small privacy-policy">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Get in touch</p>
+                            <p><a class="menu-email" href="mailto:hey@morf.digital">hey@morf.digital</a></p>
+                        </div>
+                    </div>
+                    <div class="col-1 privacy-policy">
+                        <p><a class="privacy-policy p-small" href="/privacy-policy">Privacy policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="smooth-wrapper" class="page" data-scroller>
+            <div id="smooth-content">
+                <footer class="footer footer--contacts container" data-footer data-theme="dark">
+                    <spline-viewer url="/assets/animations/footer.splinecode.json"></spline-viewer>
+                    <div class="footer__right">
+                        <div class="section-texts">
+                            <p>Contacts</p>
+                            <h2 class="h1"><strong>Let's</strong> <i>talk</i></h2>
+                            <p style="margin-bottom: 24px;">Let's bring your vision to life. Contact us today to discuss your project and take the next step towards success.</p>
+                            <a class="menu-email" href="mailto:hey@morf.digital"><strong>hey@morf.digital</strong></a>
+                        </div>
+                        <div class="section-texts">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="footer__left">
+                        <form class="form" id="form" action="" method="post">
+                            <div class="form__group">
+                                <p>Interested in</p>
+                                <div class="btn-container--selected" data-section="dark">
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Websites" checked>
+                                        <label for="Websites" class="btn btn--selected">
+                                            <span>Websites</span>
+                                        </label>
+                                    </div>
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Applications">
+                                        <label for="Applications" class="btn btn--selected">
+                                            <span>Applications</span>
+                                        </label>
+                                    </div>
+                                    <div class="btn-wrap--selected">
+                                        <input type="checkbox" name="Interested" id="Branding">
+                                        <label for="Branding" class="btn btn--selected">
+                                            <span>Branding</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" name="name" id="name" placeholder="Name" required>
+                                <span class="error-message" id="name-error">An error has occurred</span>
+                            </div>
+                            <div class="form__group">
+                                <input class="" type="email" name="email" id="email" placeholder="Email" required>
+                                <span class="error-message" id="email-error">An error has occurred</span>
+                            </div>
+                            <div class="form__group">
+                                <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+                            </div>
+                            <div class="flex-between flex-align-center">
+                                <div class="form__group file-upload-wrapper p-small" data-text="Attach">
+                                    <input name="file-upload-field" type="file" class="file-upload-field" value="">
+                                    <span class="error-message" id="file-upload-field-error">An error has occurred</span>
+                                </div>
+                                <button class="btn btn--secondary btn--right" type="submit">
+                                    <span>Submit</span>
+                                    <svg width="24px" height="24px">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="successForm" id="successForm">
+                            <img src="/assets/img/done.svg" alt="">
+                            <div class="section-texts" style="margin-top: 32px;">
+                                <h2>Thank you for submitting!</h2>
+                                <p>We will be in touch with you shortly</p>
+                            </div>
+                        </div>
+                        <div class="section-texts footer__left-text">
+                            <p><strong>New York</strong></p>
+                            <p>555 Park Ave<br>New York, NY 10013<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <ul class="socials unstyled">
+                            <li>
+                                <a href="https://www.instagram.com/morf.digital/">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/morf.digital">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.behance.net/morfdgtl">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script type="module" src="/assets/libs/js/spline-viewer.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>
+
+
+

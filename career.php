@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base href="[[++site_url]]">
+        <title>MORF - Career</title>
+
+        <meta name="description" content="Описание страницы">
+        <meta name="keywords" content="#">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/nprogress.css">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Regular.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-Medium.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="/assets/fonts/TTCommons/woff2/TTCommons-DemiBold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="assets/css/font.css">
+
+        <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#175fff">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#175fff">
+    </head>
+    <body>
+        <script src="/assets/js/nprogress.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script>
+            $(document).ready (function () {
+                NProgress.start ();
+                NProgress.set (0.6);
+                setTimeout(function () {
+                    NProgress.done ();
+                }, 200);
+            });
+        </script>
+        <header class="header " data-header data-theme="light">
+            <div class="header__wrap container">
+                <div class="header__left">
+                    <a href="/" class="logo">
+                        <svg width="103" height="30">
+                            <use xlink:href="/assets/img/sprite-svg.svg#logo"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header__center">
+                    <button type="button" class="header__menu-btn">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="header__right">
+                    <a href="/contacts">
+                        <span><strong>Hire us</strong></span>
+                        <div>
+                            <svg width="28" height="28">
+                                <use xlink:href="/assets/img/sprite-svg.svg#mail"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav__wrap">
+                <div class="row">
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Socials</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div class="nav__menu">
+                            <p>Menu</p>
+                            <ul class="unstyled">
+                                <li>
+                                    <a class="h1" href="/work"><strong>Work</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/about"><strong>About</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/contacts"><strong>Contacts</strong></a>
+                                </li>
+                                <li>
+                                    <a class="h1" href="/career"><strong>Career</strong></a>
+                                </li>
+                                <li class="privacy-policy"><a href="/privacy-policy" class="p-small privacy-policy">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-1-2-3">
+                        <div>
+                            <p>Get in touch</p>
+                            <p><a class="menu-email" href="mailto:hey@morf.digital">hey@morf.digital</a></p>
+                        </div>
+                    </div>
+                    <div class="col-1 privacy-policy">
+                        <p><a class="privacy-policy p-small" href="/privacy-policy">Privacy policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="main-bg">
+            <div class="main-bg__wrap" style="background-color: #f5f5f5;">
+                
+            </div>
+        </div>
+        <div id="smooth-wrapper" class="page" data-scroller>
+            <div id="smooth-content">
+                <main>
+                    <section class="breadcrumbs-heading container" data-section="light">
+                        <span>Career</span>
+                        <h1><strong>Explore our current<br>open positions</strong></h1>
+                        <p>New York, NY</p>
+                    </section>
+                    <section class="vacancies content-grid container" data-section="light">
+                        <div class="content-grid__wrap row row-m48">
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                        <div class="section-texts">
+                                            <h2 class="h3"><strong>Senior UI/UX Designer</strong></h2>
+                                            <p>This role will play a critical part in adding new features and capabilities to the platform as well as helping mentor the very talented junior UI/UX designer on staff.</p>
+                                        </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Graphic Designer</strong></h2>
+                                        <p>As a Graphic Designer you will be responsible for the development and execution of internal and external facing design requests to highlight our full range of products.</p>
+                                    </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Front End Developer</strong></h2>
+                                        <p>The selected candidate will be tasked with for developing capabilities for our Design, Analytics, and Discovery tool sets on the frontend with VueJS framework. </p>
+                                    </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Human Resources Assistant</strong></h2>
+                                        <p>Assists with screening and scheduling applicants. Facilitates required documentation to employees of the company. Assists with new hire orientation.</p>
+                                    </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>Project Manager</strong></h2>
+                                        <p>An experienced Project Manager who will play a key role in running motivated teams in the execution of outsourced manufacturing for multiple clients.</p>
+                                    </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1-2">
+                                <div class="vacancies__content">
+                                    <div class="section-texts">
+                                        <h2 class="h3"><strong>3D Artist</strong></h2>
+                                        <p>Create and push the craft of real-time and pre-rendered character animation. Collaborate with the Animation team to create memorable, emotive characters</p>
+                                    </div>
+                                    <a href="/vacancy" class="btn btn--primary btn--arrow">
+                                        <svg width="24px" height="24px">
+                                            <use xlink:href="/assets/img/sprite-svg.svg#bold-arrow-right"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <footer class="footer container" data-footer data-theme="light">
+                    <div class="footer__bottom">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <ul class="socials unstyled">
+                            <li>
+                                <a href="https://www.instagram.com/morf.digital/">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/morf.digital">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.behance.net/morfdgtl">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script type="module" src="/assets/libs/js/spline-viewer.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+        <script src="/assets/libs/js/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </body>
+</html>
