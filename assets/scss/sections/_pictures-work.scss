@@ -41,6 +41,18 @@
 }
 .picture{
     position: relative;
+    border-radius: 16px;
+    
+    & img{
+        border-radius: 16px;
+    }
+
+    &-bs img{
+        box-shadow: 4px 4px 101.4px -2px rgba(0,0,0,0.09);
+    }
+    &-bser{
+        box-shadow: 4px 4px 101.4px -2px rgba(0,0,0,0.09);
+    }
 
     @include breakpoint(mobile1, min){
         &--t150{

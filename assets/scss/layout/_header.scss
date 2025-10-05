@@ -23,14 +23,14 @@
             transition: all .5s;
         }
     }
-    &__right a{
-        transition: transform 0.25s;
+    &__right a div{
+        transition: transform 0.2s;
     }
     &__right a:hover div{
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
     & span{
-        transition: all .5s;
+        transition: all .2s;
     }
 
     &:not(.header--contacts).scrolling-started[data-theme="light"]{

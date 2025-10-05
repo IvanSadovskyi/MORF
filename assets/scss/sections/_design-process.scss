@@ -49,6 +49,7 @@
             height: 1px;
             background-color: $divider;
             bottom: 0;
+            z-index: -1;
         }
     }
     &__step{
@@ -82,9 +83,11 @@
     @include breakpoint(mobile1, min){
         &__wrap:not(.selected){
             opacity: 0;
+            transform: translateY(-10px);
         }
         &__wrap {
-            transition: opacity .2s ease;
+            transition: opacity .25s ease, transform .25s ease;
+            transform: translateY(0);
             opacity: 1;
         }
     }

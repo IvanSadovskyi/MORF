@@ -279,9 +279,57 @@ $animation-duration: 20s; // можно менять
     50%     { transform: translate(#{random(400)}px,#{random(400)}px); }
     75%     { transform: translate(#{random(400)}px,#{random(400)}px); }
   }
-  .illustration__shape:nth-child(#{$i}) {
-    animation: move-#{$i} 24s infinite ease-in-out;
-  }
+//   .illustration__shape:nth-child(#{$i}) {
+//     animation: move-#{$i} 15s infinite ease-in-out;
+//   }
+}
+.illustration__container--1{
+    .illustration__shape {
+        &:nth-child(1) {
+            animation: move-1 15s infinite ease-in-out;
+        }
+        &:nth-child(2) {
+            animation: move-2 15s infinite ease-in-out;
+        }
+        &:nth-child(3) {
+            animation: move-3 15s infinite ease-in-out;
+        }
+        &:nth-child(4) {
+            animation: move-4 15s infinite ease-in-out;
+        }
+    }
+}
+.illustration__container--2{
+    .illustration__shape {
+        &:nth-child(1) {
+            animation: move-4 15s infinite ease-in-out;
+        }
+        &:nth-child(2) {
+            animation: move-2 15s infinite ease-in-out;
+        }
+        &:nth-child(3) {
+            animation: move-1 15s infinite ease-in-out;
+        }
+        &:nth-child(4) {
+            animation: move-3 15s infinite ease-in-out;
+        }
+    }
+}
+.illustration__container--3{
+    .illustration__shape {
+        &:nth-child(1) {
+            animation: move-2 15s infinite ease-in-out;
+        }
+        &:nth-child(2) {
+            animation: move-3 15s infinite ease-in-out;
+        }
+        &:nth-child(3) {
+            animation: move-4 15s infinite ease-in-out;
+        }
+        &:nth-child(4) {
+            animation: move-1 15s infinite ease-in-out;
+        }
+    }
 }
 
 /* ---------------------------
@@ -295,7 +343,7 @@ $animation-duration: 20s; // можно менять
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #2765F5, #44A0FF);
+      background: linear-gradient(135deg, #14CCFF, #52DAFF);
     }
 
     /* shape 2 - tall rounded rect */
@@ -303,7 +351,7 @@ $animation-duration: 20s; // можно менять
       width: 140px;
       height: 290px;
       border-radius: 30px;
-      background: linear-gradient(180deg, #FA4011, #FF7A4D);
+      background: linear-gradient(180deg, #1386D9, #0D629E);
       transform-origin: center;
     }
 
@@ -313,7 +361,7 @@ $animation-duration: 20s; // можно менять
       height: 0;
       border-left: 95px solid transparent;
       border-right: 95px solid transparent;
-      border-bottom: 190px solid #7311FA;
+      border-bottom: 190px solid #9900FF;
       /* triangle is positioned by transform, so keep width/height 0 */
     }
 
@@ -322,7 +370,7 @@ $animation-duration: 20s; // можно менять
       width: 280px;
       height: 130px;
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      background: linear-gradient(90deg, #FA9911, #FFD07A);
+      background: linear-gradient(90deg, #2885FF, #2885FF);
     }
 
     /* общие задержки для варианта */
@@ -346,7 +394,7 @@ $animation-duration: 20s; // можно менять
       width: 220px;
       height: 180px;
       border-radius: 50% 40% 60% 50% / 55% 60% 40% 45%;
-      background: linear-gradient(135deg, #00C2A8, #60F0D8);
+      background: linear-gradient(135deg, #B909FF, #DC82FF);
       transform-origin: center;
     }
 
@@ -355,7 +403,7 @@ $animation-duration: 20s; // можно менять
       width: 300px;
       height: 90px;
       border-radius: 99px;
-      background: linear-gradient(90deg, #FF4EB2, #FF8AD6);
+      background: linear-gradient(90deg, #FF4400, #FF4400);
     }
 
     /* shape 3 - rotated rounded rect */
@@ -363,7 +411,7 @@ $animation-duration: 20s; // можно менять
       width: 180px;
       height: 120px;
       border-radius: 24px;
-      background: linear-gradient(180deg, #3A3DFF, #7A7FFF);
+      background: linear-gradient(180deg, #9B22CA, #6f0c95);
       transform: rotate(20deg);
     }
 
@@ -371,7 +419,7 @@ $animation-duration: 20s; // можно менять
     &:nth-child(4) {
       width: 160px;
       height: 160px;
-      background: linear-gradient(135deg, #FFD400, #FFB84D);
+      background: linear-gradient(135deg, #2885FF, #5fa4ff);
       transform: rotate(45deg);
       border-radius: 12px;
     }
@@ -399,7 +447,7 @@ $animation-duration: 20s; // можно менять
       border-top-right-radius: 110px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      background: linear-gradient(180deg, #8E44FF, #B76BFF);
+      background: linear-gradient(180deg, #FF4D00, #FF4D00);
     }
 
     /* shape 2 - inverted triangle (point up) */
@@ -408,7 +456,7 @@ $animation-duration: 20s; // можно менять
       height: 0;
       border-left: 120px solid transparent;
       border-right: 120px solid transparent;
-      border-top: 210px solid #11C3FA;
+      border-top: 210px solid #FFFF00;
     }
 
     /* shape 3 - star-ish polygon via clip-path */
@@ -427,7 +475,7 @@ $animation-duration: 20s; // можно менять
         2% 35%,
         39% 35%
       );
-      background: linear-gradient(135deg, #FF6A00, #FFCF6A);
+      background: linear-gradient(135deg, #FFFF00, #FF952B);
     }
 
     /* shape 4 - slim vertical pill */
@@ -435,7 +483,7 @@ $animation-duration: 20s; // можно менять
       width: 80px;
       height: 320px;
       border-radius: 40px;
-      background: linear-gradient(180deg, #00A86B, #60E3A8);
+      background: linear-gradient(180deg, #FF4D00, #FFFF87);
     }
 
     @for $i from 1 through $num-shapes {
@@ -491,6 +539,9 @@ $animation-duration: 20s; // можно менять
 }
 .embed-responsive--1-1::before{
     padding-top:100%
+}
+.embed-responsive--5-4::before{
+    padding-top:77.3%
 }
 .hashtag{
     display: flex;

@@ -85,6 +85,11 @@
                 display: none;
             }
         }
+        @include breakpoint(mobile1, min){
+            & > :first-child{
+                max-width: 470px;
+            }
+        }
     }
 
     &__bottom {

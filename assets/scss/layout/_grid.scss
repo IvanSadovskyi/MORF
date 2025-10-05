@@ -51,8 +51,13 @@ section{
   background-color: transparent;
   z-index: 2;
 }
-body::-webkit-scrollbar{
-    display: none !important;
+body::-webkit-scrollbar-corner{
+    // display: none !important;
+    background-color: red;
+    color:red;
+}
+body{
+    scroll-behavior: smooth;
 }
 
 .container {
