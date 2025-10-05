@@ -801,19 +801,48 @@ section:last-child {
     margin-bottom: 0;
   }
 }
+@media (max-width: 767px) {
+  section {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  section:last-child {
+    padding-bottom: 64px;
+    margin-bottom: 0;
+  }
+}
 
 .page {
   background-color: transparent;
   z-index: 2;
 }
 
-body::-webkit-scrollbar-corner {
-  background-color: red;
-  color: red;
+:root {
+  --sb-track: #f5f5f5;
+  --sb-thumb: #888;
+  --sb-size: 14px;
 }
 
-body {
-  scroll-behavior: smooth;
+::-webkit-scrollbar {
+  width: var(--sb-size);
+  height: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  min-height: 24px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--sb-track);
 }
 
 .container {
@@ -824,6 +853,7 @@ body {
   padding-right: 32px;
   padding-left: 32px;
   max-width: 1664px;
+  transition: padding 0.5s;
 }
 @media (min-width: 1366px) {
   .container--1300 {
@@ -847,7 +877,8 @@ body {
 }
 @media (max-width: 576px) {
   .container {
-    max-width: 407px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -1740,6 +1771,28 @@ div ~ .footer__bottom {
   }
 }
 
+.introduction {
+  display: flex;
+  gap: 96px;
+}
+
+.introduction__wrap:first-child {
+  width: 33.333%;
+}
+
+.introduction__wrap:last-child {
+  width: 66.666%;
+}
+
+@media (max-width: 767px) {
+  .introduction {
+    gap: 16px;
+    flex-direction: column;
+  }
+  .introduction__wrap {
+    width: 100% !important;
+  }
+}
 .illustration {
   position: relative;
 }
@@ -1803,58 +1856,58 @@ div ~ .footer__bottom {
 /* Ключевые кадры. random() вычисляется при сборке. */
 @keyframes move-1 {
   0%, 100% {
-    transform: translate(198px, 224px);
+    transform: translate(121px, 327px);
   }
   25% {
-    transform: translate(93px, 353px);
+    transform: translate(124px, 176px);
   }
   50% {
-    transform: translate(206px, 216px);
+    transform: translate(211px, 235px);
   }
   75% {
-    transform: translate(188px, 400px);
+    transform: translate(296px, 247px);
   }
 }
 @keyframes move-2 {
   0%, 100% {
-    transform: translate(343px, 269px);
+    transform: translate(380px, 240px);
   }
   25% {
-    transform: translate(188px, 293px);
+    transform: translate(201px, 325px);
   }
   50% {
-    transform: translate(214px, 88px);
+    transform: translate(211px, 239px);
   }
   75% {
-    transform: translate(360px, 249px);
+    transform: translate(96px, 323px);
   }
 }
 @keyframes move-3 {
   0%, 100% {
-    transform: translate(18px, 109px);
+    transform: translate(319px, 140px);
   }
   25% {
-    transform: translate(213px, 191px);
+    transform: translate(76px, 268px);
   }
   50% {
-    transform: translate(177px, 174px);
+    transform: translate(205px, 99px);
   }
   75% {
-    transform: translate(58px, 56px);
+    transform: translate(91px, 321px);
   }
 }
 @keyframes move-4 {
   0%, 100% {
-    transform: translate(286px, 376px);
+    transform: translate(252px, 220px);
   }
   25% {
-    transform: translate(92px, 309px);
+    transform: translate(303px, 372px);
   }
   50% {
-    transform: translate(357px, 336px);
+    transform: translate(170px, 63px);
   }
   75% {
-    transform: translate(346px, 294px);
+    transform: translate(236px, 254px);
   }
 }
 .illustration__container--1 .illustration__shape:nth-child(1) {
@@ -2279,8 +2332,7 @@ div ~ .footer__bottom {
 }
 @media (max-width: 767px) {
   .about-us__logo {
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
 }
 .about-us__logo svg {
@@ -2532,7 +2584,7 @@ div ~ .footer__bottom {
 }
 @media (max-width: 1023px) {
   .pictures, .pictures__wrap {
-    gap: 16px;
+    gap: 32px;
   }
 }
 @media (max-width: 767px) {
@@ -2621,6 +2673,23 @@ div ~ .footer__bottom {
 @media (max-width: 767px) {
   .product--row {
     gap: 16px;
+  }
+}
+
+.product-swiper__container {
+  max-width: 1662px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+@media (max-width: 1365px) {
+  .product-swiper__container {
+    max-width: 1302px;
+  }
+}
+@media (max-width: 767px) {
+  .product-swiper__container {
+    max-width: none;
+    padding: 0;
   }
 }
 

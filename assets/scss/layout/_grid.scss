@@ -45,20 +45,50 @@ section{
             margin-bottom: 0;
         }
     }
+    @include breakpoint(mobile1){
+        margin-top: 64px;
+        margin-bottom: 64px;
+
+        &:last-child{
+            padding-bottom: 64px;
+            margin-bottom: 0;
+        }
+    }
 }
 
 .page {
   background-color: transparent;
   z-index: 2;
 }
-body::-webkit-scrollbar-corner{
-    // display: none !important;
-    background-color: red;
-    color:red;
+
+:root {
+    --sb-track: #f5f5f5;
+    --sb-thumb: #888;
+    --sb-size: 14px;
 }
-body{
-    scroll-behavior: smooth;
+
+::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
 }
+
+::-webkit-scrollbar-track {
+    background: var(--sb-track);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb);
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    min-height: 24px;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--sb-track);
+}
+
 
 .container {
   position: relative;
@@ -68,6 +98,7 @@ body{
   padding-right: $gap;
   padding-left: $gap;
   max-width: $max-width-container-desktop;
+  transition: padding 0.5s;
 
   @include breakpoint(laptop, min){
     &--1300{
@@ -87,7 +118,8 @@ body{
     max-width: $max-width-container-tablet;
   }
   @include breakpoint(mobile2){
-    max-width: $max-width-container-mobile;
+    padding-left: calc($gap / 2);
+    padding-right: calc($gap / 2);
   }
 }
 

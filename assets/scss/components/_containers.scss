@@ -194,7 +194,25 @@
     }
 }
 
-
+.introduction{
+    display: flex;
+    gap: 96px;
+}
+.introduction__wrap:first-child{
+    width: 33.333%;
+}
+.introduction__wrap:last-child{
+    width: 66.666%;
+}
+@include breakpoint(mobile1){
+    .introduction{
+        gap: 16px;
+        flex-direction: column;
+    }
+    .introduction__wrap{
+        width: 100% !important;
+    }
+}
 
 
 

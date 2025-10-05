@@ -18,9 +18,6 @@ let smoother = ScrollSmoother.create({
 
 
 
-gsap.registerPlugin(ScrollTrigger);
-
-
 /*const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
 if(document.querySelector(".hero-title")){
 // Функция для получения адаптивных значений
@@ -333,8 +330,9 @@ window.addEventListener("scroll", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", HorizontalScrollSteps());
-function HorizontalScrollSteps(){
+document.addEventListener("DOMContentLoaded", HorizontalScrollSteps);
+
+function HorizontalScrollSteps() {
     const container2 = document.querySelector(".design-process__content");
     if (!container2) return;
 
@@ -342,6 +340,32 @@ function HorizontalScrollSteps(){
 
     function getStart() {
         return "-=" + ((window.innerHeight / 2) - (container2.offsetHeight / 2)) + " top";
+    }
+
+    function calculateTotalWidth() {
+        const wrap = document.querySelector(
+            ".design-process__steps.selected > .design-process__row:last-child > .design-process__wrap"
+        );
+        if (!wrap) return 0;
+
+        const stepElements = wrap.querySelectorAll(".design-process__step");
+        const stepCount = stepElements.length;
+        if (stepCount === 0) return 0;
+
+        const wrapStyle = getComputedStyle(wrap);
+        const gap = parseFloat(wrapStyle.gap) || 0;
+
+        let totalWidth = 0;
+        stepElements.forEach(step => {
+            totalWidth += step.offsetWidth;
+        });
+
+        totalWidth += gap * (stepCount - 1);
+
+        const firstStepStyle = getComputedStyle(stepElements[0]);
+        totalWidth += parseFloat(firstStepStyle.marginLeft) || 0;
+
+        return totalWidth;
     }
 
     function initHorizontalScroll() {
@@ -353,11 +377,9 @@ function HorizontalScrollSteps(){
         // не инициализируем если ширина <= 1024
         if (window.innerWidth <= 1024) return;
 
-        function getScrollAmount() {
-            return container2.scrollWidth - window.innerWidth;
-        }
-
-        const scrollAmount = getScrollAmount();
+        const totalWidth = calculateTotalWidth();
+        const scrollAmount = totalWidth - window.innerWidth + 50;
+        console.log(scrollAmount - 32)
         if (scrollAmount > 0) {
             gsap.to(steps, {
                 x: () => -scrollAmount,
@@ -368,7 +390,7 @@ function HorizontalScrollSteps(){
                     start: getStart,
                     pin: true,
                     scrub: 1,
-                    end: () => "+=" + getScrollAmount(),
+                    end: () => "+=" + scrollAmount,
                     invalidateOnRefresh: true,
                     pinSpacing: true
                 }
@@ -383,6 +405,7 @@ function HorizontalScrollSteps(){
         ScrollTrigger.refresh();
     });
 }
+
 
 
 if (!header.classList.contains("header--contacts")){
@@ -706,4 +729,39 @@ window.addEventListener('load', async () => {
     const viewer = await waitUntil(() => document.querySelector('spline-viewer'));
     const logo   = await waitUntil(() => viewer.shadowRoot?.getElementById('logo'));
     logo.remove();
+});
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    if(!document.querySelector(".product-swiper")) return
+    const swiper = new Swiper('.product-swiper', {
+    slidesPerView: 1.3,
+    centeredSlides: true,
+    spaceBetween: 16,
+    breakpoints: {
+        768: {
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 32
+        },
+        1024: {
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 64
+        },
+        1366: {
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 96
+        }
+    },
+    });
 });

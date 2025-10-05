@@ -3,8 +3,7 @@
 .about-us{
     @include breakpoint(mobile1){
         &__logo{
-            display: flex;
-            justify-content: center;
+            text-align:center;
         }
     }
     &__logo svg{

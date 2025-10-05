@@ -24,7 +24,7 @@
     }
     @include breakpoint(tablet){
         &, &__wrap{
-            gap: 16px;
+            gap: 32px;
         }
     }
     @include breakpoint(mobile1){

@@ -12,8 +12,7 @@
         margin-bottom: 2px;
     }
     &__row{
-        // display: flex;
-        // gap: 48px;
+
         position: relative;
         @include breakpoint(mobile1, min){
             min-width: 1632px;
