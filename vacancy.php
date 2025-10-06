@@ -177,7 +177,7 @@
                         </div>
                     </section>
                     <section class="container vacancies-form" data-section="light">
-                        <form class="form" id="form" action="" method="post" style="max-width: 750px;">
+                        <form class="form" id="form" action="" method="post" enctype="multipart/form-data" data-contact-form style="max-width: 750px;">
                             <div class="form__group">
                                 <input type="text" name="name" id="name" placeholder="Name" required>
                                 <span class="error-message" id="name-error">An error has occurred</span>
@@ -193,9 +193,10 @@
                             <div class="cover-letter">
                                 <textarea rows="1" name="cover-letter" id="cover-letter" placeholder="Cover letter" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
+                            <div class="form__notice" data-form-status role="status" aria-live="polite"></div>
                             <div class="flex-between flex-align-center">
                                 <div class="form__group file-upload-wrapper p-small" data-text="Attach CV">
-                                    <input name="file-upload-field" type="file " class="file-upload-field" value="">
+                                    <input name="file-upload-field" type="file" class="file-upload-field" value="">
                                     <span class="error-message" id="file-upload-field-error">An error has occurred</span>
                                 </div>
                                 <button class="btn btn--primary btn--right" type="submit">

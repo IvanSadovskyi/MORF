@@ -765,3 +765,124 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     });
 });
+
+(() => {
+    const forms = document.querySelectorAll('[data-contact-form]');
+    if (!forms.length) {
+        return;
+    }
+
+    const endpoint = '/contact-handler.php';
+
+    const resetStatus = (node) => {
+        if (!node) {
+            return;
+        }
+        node.textContent = '';
+        node.classList.remove('is-visible', 'form__notice--error', 'form__notice--success');
+    };
+
+    const updateStatus = (node, type, message) => {
+        if (!node) {
+            return;
+        }
+        node.textContent = message;
+        node.classList.add('is-visible');
+        if (type === 'error') {
+            node.classList.add('form__notice--error');
+            node.classList.remove('form__notice--success');
+        } else if (type === 'success') {
+            node.classList.add('form__notice--success');
+            node.classList.remove('form__notice--error');
+        }
+    };
+
+    forms.forEach((form) => {
+        const statusNode = form.querySelector('[data-form-status]');
+        const successNode = form.parentElement ? form.parentElement.querySelector('.successForm') : null;
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            if (form.dataset.submitting === 'true') {
+                return;
+            }
+
+            form.dataset.submitting = 'true';
+            resetStatus(statusNode);
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            const buttonLabel = submitButton ? submitButton.querySelector('span') : null;
+            const originalButtonText = buttonLabel ? buttonLabel.textContent : '';
+
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
+            if (buttonLabel) {
+                buttonLabel.textContent = 'Sending...';
+            }
+
+            const formData = new FormData(form);
+            const interestedInputs = form.querySelectorAll('input[name="Interested"]:checked');
+            if (interestedInputs.length) {
+                formData.delete('Interested');
+                const interestedValues = Array.from(interestedInputs).map((input) => input.value || input.id || 'N/A');
+                formData.append('Interested', interestedValues.join(', '));
+            }
+
+            formData.append('page_title', document.title || '');
+            formData.append('page_url', window.location.href);
+
+            const handleError = (message) => {
+                updateStatus(statusNode, 'error', message);
+                if (successNode) {
+                    successNode.classList.remove('done');
+                }
+                form.classList.remove('is-hidden');
+            };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                let payload = null;
+                try {
+                    payload = await response.json();
+                } catch (jsonError) {
+                    payload = null;
+                }
+
+                if (!response.ok) {
+                    throw new Error(payload && payload.message ? payload.message : 'Unable to submit the form right now.');
+                }
+
+                if (!payload || typeof payload.success === 'undefined') {
+                    throw new Error('Unexpected response from the server.');
+                }
+
+                if (payload.success) {
+                    form.reset();
+                    if (successNode) {
+                        successNode.classList.add('done');
+                        form.classList.add('is-hidden');
+                    } else {
+                        updateStatus(statusNode, 'success', payload.message || 'Thank you! We will be in touch soon.');
+                    }
+                } else {
+                    handleError(payload.message || 'We could not send your message. Please try again in a moment.');
+                }
+            } catch (error) {
+                handleError(error instanceof Error ? error.message : 'We could not send your message. Please try again later.');
+            } finally {
+                if (buttonLabel) {
+                    buttonLabel.textContent = originalButtonText || 'Submit';
+                }
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+                form.dataset.submitting = 'false';
+            }
+        });
+    });
+})();

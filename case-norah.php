@@ -264,24 +264,24 @@
                         </div>
                     </div>
                     <div class="footer__left">
-                        <form class="form" id="form" action="" method="post">
+                        <form class="form" id="form" action="" method="post" enctype="multipart/form-data" data-contact-form>
                             <div class="form__group">
                                 <p>Interested in</p>
                                 <div class="btn-container--selected" data-section="dark">
                                     <div class="btn-wrap--selected">
-                                        <input type="checkbox" name="Interested" id="Websites" checked>
+                                        <input type="checkbox" name="Interested" id="Websites" value="Websites" checked>
                                         <label for="Websites" class="btn btn--selected">
                                             <span>Websites</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="checkbox" name="Interested" id="Applications">
+                                        <input type="checkbox" name="Interested" id="Applications" value="Applications">
                                         <label for="Applications" class="btn btn--selected">
                                             <span>Applications</span>
                                         </label>
                                     </div>
                                     <div class="btn-wrap--selected">
-                                        <input type="checkbox" name="Interested" id="Branding">
+                                        <input type="checkbox" name="Interested" id="Branding" value="Branding">
                                         <label for="Branding" class="btn btn--selected">
                                             <span>Branding</span>
                                         </label>
@@ -299,6 +299,7 @@
                             <div class="form__group">
                                 <textarea rows="1" name="project-description" id="project-description" placeholder="Project description" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
+                            <div class="form__notice" data-form-status role="status" aria-live="polite"></div>
                             <div class="flex-between flex-align-center">
                                 <div class="form__group file-upload-wrapper p-small" data-text="Attach">
                                     <input name="file-upload-field" type="file" class="file-upload-field" value="">

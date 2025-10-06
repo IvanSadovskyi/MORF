@@ -1492,6 +1492,35 @@ div ~ .footer__bottom {
   opacity: 1;
 }
 
+.form__notice {
+  display: none;
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background-color: rgba(23, 95, 255, 0.08);
+  color: #175fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.form__notice.is-visible {
+  display: block;
+}
+
+.form__notice--error {
+  background-color: rgba(215, 44, 72, 0.12);
+  color: #d72c48;
+}
+
+.form__notice--success {
+  background-color: rgba(46, 204, 113, 0.12);
+  color: #2ecc71;
+}
+
+.form.is-hidden {
+  display: none;
+}
+
 .logo {
   display: flex;
   flex-shrink: 0;
