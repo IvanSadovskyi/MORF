@@ -131,17 +131,17 @@
                                 <p class="h3">Crafting a Luxury Organic Beauty Brand Identity</p>
                             </div>
                             <div class="picture embed-responsive embed-responsive--1-1">
-                                <img src="/assets/img/cases/norah/norah-1.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-1.jpg" alt="">
                             </div>
                         </div>
                         <div class="picture--t150">
                             <div class="picture embed-responsive embed-responsive--1-1">
-                                <img src="/assets/img/cases/norah/norah-2.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-2.jpg" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-3.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-3.jpg" alt="">
                     </section>
                     <div class="work-texts container">
                         <div class="introduction">
@@ -154,7 +154,7 @@
                     <section class="work-texts container">
                         <div class="row row-g96 row-nw">
                             <div class="col-1-2 embed-responsive embed-responsive--16-9" style="margin-bottom: 0;">
-                                <img src="/assets/img/cases/norah/norah-4.png" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-4.png" alt="">
                             </div>
                             <div class="col-1-2 section-texts" style="margin-bottom: 0; display: flex; justify-content: center; flex-direction: column;">
                                 <h2><strong>Logotype</strong></h2>
@@ -163,70 +163,70 @@
                         </div>
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-5.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-5.jpg" alt="">
                     </section>
                     <section class="pictures container">
                         <div class="pictures__wrap">
                             <div class="picture embed-responsive embed-responsive--1-1">
-                                <img src="/assets/img/cases/norah/norah-6.png" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-6.png" alt="">
                             </div>
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-8.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-8.jpg" alt="">
                             </div>
                         </div>
                         <div class="pictures__wrap">
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-7.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-7.jpg" alt="">
                             </div>
                             <div class="picture embed-responsive embed-responsive--1-1">
-                                <img src="/assets/img/cases/norah/norah-9.png" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-9.png" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-10.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-10.jpg" alt="">
                     </section>
                     <section class="pictures pictures--50 container" data-section="light">
                         <div>
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-11.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-11.jpg" alt="">
                             </div>
                         </div>
                         <div>
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-12.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-12.jpg" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-13.png" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-13.png" alt="">
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-14.png" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-14.png" alt="">
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-15.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-15.jpg" alt="">
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-16.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-16.jpg" alt="">
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-17.png" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-17.png" alt="">
                     </section>
                     <section class="pictures pictures--50 container" data-section="light">
                         <div>
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-18.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-18.jpg" alt="">
                             </div>
                         </div>
                         <div>
                             <div class="picture embed-responsive embed-responsive--3-4">
-                                <img src="/assets/img/cases/norah/norah-19.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-19.jpg" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="container picture">
-                        <img src="/assets/img/cases/norah/norah-20.jpg" alt="">
+                        <img src="/assets/img/cases/NORAH/norah-20.jpg" alt="">
                     </section>
                     <div class="container">
                         <div style="width: 100%; height: 2px;background-color: #E0E0E0;"></div>

@@ -272,7 +272,7 @@
                     <section class="other-project container">
                         <div class="row row-g96 row-nw">
                             <div class="col-1-2">
-                                <img src="/assets/img/cases/norah/norah-cover.jpg" alt="">
+                                <img src="/assets/img/cases/NORAH/norah-cover.jpg" alt="">
                             </div>
                             <div class="col-1-2">
                                 <div class="other-project__wrap">
