@@ -689,17 +689,6 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
 });
 
-if(document.getElementById("form")){
-    document.getElementById("form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        this.classList.add("done");
-        document.getElementById("successForm").classList.add("done");
-        if(document.querySelector(".vacancies-form")){
-            document.querySelector(".vacancies-form").classList.add("done")
-        }
-    });
-}
-
 ScrollTrigger.create({
     start: "top top",
     onUpdate: (self) => {
@@ -799,7 +788,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     forms.forEach((form) => {
         const statusNode = form.querySelector('[data-form-status]');
-        const successNode = form.parentElement ? form.parentElement.querySelector('.successForm') : null;
+        const immediateSuccess = form.nextElementSibling;
+        const successNode = immediateSuccess && immediateSuccess.classList && immediateSuccess.classList.contains('successForm')
+            ? immediateSuccess
+            : (form.parentElement ? form.parentElement.querySelector('.successForm') : null);
+        const sectionContainer = form.closest('.vacancies-form');
 
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -809,6 +802,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             form.dataset.submitting = 'true';
             resetStatus(statusNode);
+            if (successNode) {
+                successNode.classList.remove('done');
+            }
+            form.classList.remove('is-hidden');
+            if (sectionContainer) {
+                sectionContainer.classList.remove('done');
+            }
 
             const submitButton = form.querySelector('button[type="submit"]');
             const buttonLabel = submitButton ? submitButton.querySelector('span') : null;
@@ -838,6 +838,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     successNode.classList.remove('done');
                 }
                 form.classList.remove('is-hidden');
+                if (sectionContainer) {
+                    sectionContainer.classList.remove('done');
+                }
             };
 
             try {
@@ -861,7 +864,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     throw new Error('Unexpected response from the server.');
                 }
 
-                if (payload.success) {
+                const isSuccess = payload.success === true;
+
+                if (isSuccess) {
                     form.reset();
                     if (successNode) {
                         successNode.classList.add('done');
@@ -869,8 +874,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else {
                         updateStatus(statusNode, 'success', payload.message || 'Thank you! We will be in touch soon.');
                     }
+                    if (sectionContainer) {
+                        sectionContainer.classList.add('done');
+                    }
                 } else {
-                    handleError(payload.message || 'We could not send your message. Please try again in a moment.');
+                    const errorMessage = payload.message || 'We could not send your message. Please try again in a moment.';
+                    handleError(errorMessage);
                 }
             } catch (error) {
                 handleError(error instanceof Error ? error.message : 'We could not send your message. Please try again later.');

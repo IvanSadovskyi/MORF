@@ -119,7 +119,7 @@ if (!empty($_FILES['file-upload-field']['name'])) {
     ];
 }
 
-$recipient = 'ofsadovsky@gmail.com';
+$recipient = 'hey@morf.digital';
 $subject   = 'New enquiry from the MORF website';
 if ($interested !== '') {
     $subject .= " ({$interested})";
