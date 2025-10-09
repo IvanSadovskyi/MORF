@@ -7,6 +7,7 @@
     const svgRoot = heroTitle && heroTitle.tagName.toLowerCase() === 'svg'
         ? heroTitle
         : (heroTitle ? heroTitle.querySelector('svg') : null);
+    const headingBlock = document.querySelector('.breadcrumbs-heading');
 
     if (!hero || !heroMain || !heroTitle || !svgRoot) {
         return;
@@ -157,9 +158,12 @@
         return stageOneScale + (finalScale - stageOneScale) * t;
     };
 
-    const fadeForProgress = function (progress) {
-        const fadeStart = 0.78;
-        const fadeEnd = 0.92;
+    const fadeForProgress = function (progress, hasHeading) {
+        if (hasHeading) {
+            return 1;
+        }
+        const fadeStart = 0.965;
+        const fadeEnd = 1;
         if (progress <= fadeStart) {
             return 1;
         }
@@ -169,12 +173,27 @@
         return 1 - (progress - fadeStart) / (fadeEnd - fadeStart);
     };
 
+    const fadeForHeading = function () {
+        if (!headingBlock) {
+            return 1;
+        }
+        const rect = headingBlock.getBoundingClientRect();
+        if (rect.bottom > 0) {
+            return 1;
+        }
+        const fadeWindow = Math.max(80, Math.min(200, rect.height || 120));
+        const depth = Math.min(fadeWindow, Math.abs(rect.bottom));
+        return Math.max(0, 1 - depth / fadeWindow);
+    };
+
     let rafId = 0;
     const render = function () {
         const progress = measureProgress();
         const scale = scaleForProgress(progress);
         applyScale(scale);
-        const opacity = fadeForProgress(progress);
+        const opacityProgress = fadeForProgress(progress, Boolean(headingBlock));
+        const opacityHeading = fadeForHeading();
+        const opacity = Math.min(opacityProgress, opacityHeading);
         heroTitle.style.opacity = String(opacity);
         heroTitle.classList.toggle('is-hidden', opacity <= 0.001);
         rafId = window.requestAnimationFrame(render);
