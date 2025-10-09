@@ -6,13 +6,18 @@ const scrollRoot = document.querySelector('[data-scroller]')
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
-let smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
-    smooth: 1,
-    // effects: true,
-    normalizeScroll: false
-});
+const disableSmoother = document.body && document.body.hasAttribute('data-disable-smoother');
+let smoother = null;
+
+if (!disableSmoother) {
+    smoother = ScrollSmoother.create({
+        wrapper: '#smooth-wrapper',
+        content: '#smooth-content',
+        smooth: 1,
+        // effects: true,
+        normalizeScroll: false
+    });
+}
 
 
 
