@@ -92,9 +92,9 @@
                 },1000);
             };
         </script>
-        <header class="header " data-header data-theme="dark">
+<header class="header " data-header data-theme="dark">
             <div class="header__wrap container">
-                <div class="header__left">
+                <div class="header__left header__left--delayed">
                     <a href="/" class="logo">
                         <svg width="103" height="30">
                             <use xlink:href="/assets/img/sprite-svg.svg#logo"/>

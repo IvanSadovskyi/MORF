@@ -8,6 +8,7 @@
         ? heroTitle
         : (heroTitle ? heroTitle.querySelector('svg') : null);
     const headingBlock = document.querySelector('.breadcrumbs-heading');
+    const headerLeft = document.querySelector('.header__left--delayed');
 
     if (!hero || !heroMain || !heroTitle || !svgRoot) {
         return;
@@ -52,7 +53,9 @@
             '.hero-main{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:visible;}',
             '.hero-title{max-width:min(92vw,92vh);width:min(92vw,92vh);height:auto;display:block;pointer-events:none;will-change:auto;}',
             '.hero-title.is-svg{transform:none!important;}',
-            '.hero-title.is-hidden{visibility:hidden;opacity:0;}'
+            '.hero-title.is-hidden{visibility:hidden;opacity:0;}',
+            '.header__left--delayed{opacity:0;pointer-events:none;transition:opacity 0.25s ease;}',
+            '.hero-art-hidden .header__left--delayed{opacity:1;pointer-events:auto;}'
         ].join('');
         document.head.appendChild(style);
     };
@@ -195,7 +198,12 @@
         const opacityHeading = fadeForHeading();
         const opacity = Math.min(opacityProgress, opacityHeading);
         heroTitle.style.opacity = String(opacity);
-        heroTitle.classList.toggle('is-hidden', opacity <= 0.001);
+        const isHidden = opacity <= 0.001;
+        heroTitle.classList.toggle('is-hidden', isHidden);
+        document.body.classList.toggle('hero-art-hidden', isHidden);
+        if (!isHidden && headerLeft && document.body.classList.contains('hero-art-hidden')) {
+            document.body.classList.remove('hero-art-hidden');
+        }
         rafId = window.requestAnimationFrame(render);
     };
 
