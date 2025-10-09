@@ -5,7 +5,7 @@
         <base href="[[++site_url]]">
         <title>MORF - Privacy policy</title>
 
-        <meta name="description" content="Описание страницы">
+        <meta name="description" content="Page Description">
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -72,13 +72,13 @@
                             <p>Socials</p>
                             <ul class="unstyled">
                                 <li>
-                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                    <a href="https://www.instagram.com/morf.digital/" target="_blank" rel="noopener noreferrer">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                    <a href="https://dribbble.com/morf-digital" target="_blank" rel="noopener noreferrer">Dribbble</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                    <a href="https://www.behance.net/morfdgtl" target="_blank" rel="noopener noreferrer">Behance</a>
                                 </li>
                             </ul>
                         </div>
@@ -135,8 +135,8 @@
                                 <div>
                                     <div class="section-texts">
                                         <h2 class="h3"><strong>Privacy policy of MORF</strong></h2>
-                                        <p class="p-small">MORF Digiral Agency LLC operates the MORF website, which provides Services.</p>
-                                        <p class="p-small">This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal information if anyone decided to use our Services, the MORF website.</p>
+                                        <p class="p-small">MORF Digital Agency LLC operates the MORF website, which provides Services.<br>
+                                        This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal information if anyone decided to use our Services, the MORF website.</p>
                                         <p class="p-small">If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The personal information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
                                     </div>
                                 </div>
@@ -159,21 +159,21 @@
                         <a href="/privacy-policy">Privacy Policy</a>
                         <ul class="socials unstyled">
                             <li>
-                                <a href="https://www.instagram.com/morf.digital/">
+                                <a href="https://www.instagram.com/morf.digital/" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
                                     </svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://dribbble.com/morf.digital">
+                                <a href="https://dribbble.com/morf-digital" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
                                     </svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.behance.net/morfdgtl">
+                                <a href="https://www.behance.net/morfdgtl" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
                                     </svg>

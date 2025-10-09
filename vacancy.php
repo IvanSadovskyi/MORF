@@ -5,7 +5,7 @@
         <base href="[[++site_url]]">
         <title>MORF - Vacancy</title>
 
-        <meta name="description" content="Описание страницы">
+        <meta name="description" content="Page Description">
         <meta name="keywords" content="#">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -72,13 +72,13 @@
                             <p>Socials</p>
                             <ul class="unstyled">
                                 <li>
-                                    <a href="https://www.instagram.com/morf.digital/">Instagram</a>
+                                    <a href="https://www.instagram.com/morf.digital/" target="_blank" rel="noopener noreferrer">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="https://dribbble.com/morf.digital">Dribbble</a>
+                                    <a href="https://dribbble.com/morf-digital" target="_blank" rel="noopener noreferrer">Dribbble</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.behance.net/morfdgtl">Behance</a>
+                                    <a href="https://www.behance.net/morfdgtl" target="_blank" rel="noopener noreferrer">Behance</a>
                                 </li>
                             </ul>
                         </div>
@@ -221,21 +221,21 @@
                         <a href="/privacy-policy">Privacy Policy</a>
                         <ul class="socials unstyled">
                             <li>
-                                <a href="https://www.instagram.com/morf.digital/">
+                                <a href="https://www.instagram.com/morf.digital/" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#instagram"/>
                                     </svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://dribbble.com/morf.digital">
+                                <a href="https://dribbble.com/morf-digital" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#Dribbble"/>
                                     </svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.behance.net/morfdgtl">
+                                <a href="https://www.behance.net/morfdgtl" target="_blank" rel="noopener noreferrer">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/img/sprite-svg.svg#behance"/>
                                     </svg>
