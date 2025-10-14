@@ -1,6 +1,13 @@
 'use strict';
 
 (function () {
+    // === Tweaks you asked for ===
+    // Slow zoom x2 (i.e., progress fed into zoom curve is halved)
+    const ZOOM_SPEED_MULTIPLIER = 0.1; // 0.5 => 2x slower zoom
+
+    // Make content start scrolling ~25% earlier (shorter sticky height)
+    const STICKY_LENGTH_MULTIPLIER = 0.75; // 0.75 => 25% earlier
+
     const hero = document.querySelector('.hero');
     const heroMain = hero ? hero.querySelector('.hero-main') : null;
     const heroTitle = heroMain ? heroMain.querySelector('.hero-title') : null;
@@ -149,7 +156,8 @@
     let extraScroll = 0;
 
     const updateLayout = function () {
-        extraScroll = computeExtraScroll();
+        // Apply 25% earlier content scroll by shortening sticky length
+        extraScroll = computeExtraScroll() * STICKY_LENGTH_MULTIPLIER;
         const computedHeight = (window.innerHeight || document.documentElement.clientHeight || 0) + extraScroll;
         hero.style.minHeight = computedHeight + 'px';
         hero.style.height = computedHeight + 'px';
@@ -326,9 +334,11 @@
 
     window.addEventListener('wheel', cancelProgrammaticScroll, { passive: true });
     window.addEventListener('touchstart', cancelProgrammaticScroll, { passive: true });
+
     const render = function () {
         const now = performance.now();
         let progress = measureProgress();
+
         if (forcedCompletion) {
             const elapsed = now - forcedCompletion.startedAt;
             const t = clamp01(forcedCompletion.duration > 0 ? elapsed / forcedCompletion.duration : 1);
@@ -339,18 +349,24 @@
                 forcedCompletion = null;
             }
         }
-        const scale = scaleForProgress(progress);
+
+        // Feed a slower progress only into zoom (keeps fades/toggles timing intact)
+        const zoomProgress = clamp01(progress * ZOOM_SPEED_MULTIPLIER);
+        const scale = scaleForProgress(zoomProgress);
         applyScale(scale);
+
         const opacityProgress = fadeForProgress(progress, Boolean(headingBlock));
         const opacityHeading = fadeForHeading();
         const opacity = Math.min(opacityProgress, opacityHeading);
         heroTitle.style.opacity = String(opacity);
+
         const isHidden = opacity <= 0.001;
         heroTitle.classList.toggle('is-hidden', isHidden);
         document.body.classList.toggle('hero-art-hidden', isHidden);
         if (!isHidden && headerLeft && document.body.classList.contains('hero-art-hidden')) {
             document.body.classList.remove('hero-art-hidden');
         }
+
         rafId = window.requestAnimationFrame(render);
     };
 
