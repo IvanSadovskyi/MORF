@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+﻿@use '../abstracts' as *;
 
 .footer {
     padding-top: 128px;
@@ -137,7 +137,7 @@
         min-width: 100%;
         min-height: 100%;
         transform: translate(-50%, -50%);
-        object-fit: cover; /* ключевой момент */
+        object-fit: cover; /* key point */
         z-index: 0;
 
         @include breakpoint(desktop, min){

@@ -153,7 +153,7 @@
                                         </div>
                                     </div>
                                     <div class="embed-responsive embed-responsive--16-9">
-                                        <img src="/assets/img/cases/NORAH/norah-cover.jpg" alt="">
+                                        <img src="/assets/img/cases/norah/norah-cover.jpg" alt="">
                                     </div>
                                     <a href="/case-norah" class="case__link"></a>
                                 </div>

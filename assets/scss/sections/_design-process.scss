@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+﻿@use '../abstracts' as *;
 
 .design-process{
     display: flex;
@@ -114,7 +114,7 @@
     
     &__steps.selected {
         overflow: visible;
-        flex: 0 0 100vw; // каждый шаг на ширину экрана
+        flex: 0 0 100vw; // each step spans the viewport width
         height: 100%;
         position: relative;
         opacity: 1;

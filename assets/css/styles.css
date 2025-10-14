@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 h1, .h1 {
   font-size: 64px;
   line-height: 80px;
@@ -139,7 +139,7 @@ ul:not(.unstyled) li {
   padding-left: 20px;
 }
 ul:not(.unstyled) li::before {
-  content: "•";
+  content: "â€¢";
   position: absolute;
   top: 0;
   left: 0;
@@ -689,7 +689,7 @@ fieldset {
   transition-delay: 0.7s;
 }
 
-/* задержка для постепенного появления */
+/* delay for gradual appearance */
 @media (min-width: 742px) {
   .nav.active .col-1-2-3:nth-child(3) div > p:nth-child(1) {
     transition-delay: 0.1s;
@@ -1061,7 +1061,7 @@ div ~ .footer__bottom {
   min-height: 100%;
   transform: translate(-50%, -50%);
   -o-object-fit: cover;
-     object-fit: cover; /* ключевой момент */
+     object-fit: cover; /* key point */
   z-index: 0;
 }
 @media (min-width: 1921px) {
@@ -1862,7 +1862,7 @@ div ~ .footer__bottom {
   }
 }
 
-/* Базовый контейнер */
+/* Base container */
 .illustration__container {
   position: relative;
   width: 500px;
@@ -1872,7 +1872,7 @@ div ~ .footer__bottom {
   filter: blur(75px);
 }
 
-/* Базовые фигуры */
+/* Base shapes */
 .illustration__shape {
   position: absolute;
   top: 0;
@@ -1882,7 +1882,7 @@ div ~ .footer__bottom {
   animation: move 20s infinite ease-in-out;
 }
 
-/* Ключевые кадры. random() вычисляется при сборке. */
+/* Keyframes. random() is evaluated during build. */
 @keyframes move-1 {
   0%, 100% {
     transform: translate(121px, 327px);
@@ -1979,7 +1979,7 @@ div ~ .footer__bottom {
 }
 
 /* ---------------------------
-   Вариант 1 — плавные крупные формы
+   Variant 1 - smooth large shapes
    (circle, tall-rect, triangle, hexagon)
    --------------------------- */
 .illustration__container--1 .illustration__shape {
@@ -1987,7 +1987,7 @@ div ~ .footer__bottom {
   /* shape 2 - tall rounded rect */
   /* shape 3 - triangle (point down) */
   /* shape 4 - hexagon via clip-path */
-  /* общие задержки для варианта */
+  /* shared delays for the variant */
 }
 .illustration__container--1 .illustration__shape:nth-child(1) {
   width: 160px;
@@ -2030,9 +2030,9 @@ div ~ .footer__bottom {
 }
 
 /* ---------------------------
-   Вариант 2 — мягкие «блоб»-формы и ромб
+   Variant 2 - soft "blob" shapes and a rhombus
    (blob, pill, rotated-rect, diamond)
-   цвета отличные от варианта 1
+   colors different from variant 1
    --------------------------- */
 .illustration__container--2 .illustration__shape {
   /* shape 1 - blob (big, high border-radius) */
@@ -2081,9 +2081,9 @@ div ~ .footer__bottom {
 }
 
 /* ---------------------------
-   Вариант 3 — острые/геометрические формы
+   Variant 3 - sharp/geometric shapes
    (semi-circle, inverted-triangle, star-like polygon, slim-pill)
-   цвета отличные от варианта 1 и 2
+   colors different from variant 1 and 2
    --------------------------- */
 .illustration__container--3 .illustration__shape {
   /* shape 1 - semicircle (top) */
@@ -2852,3 +2852,4 @@ a.privacy-policy {
   transform: scale(1);
   padding: 0 24px;
 }/*# sourceMappingURL=styles.css.map */
+

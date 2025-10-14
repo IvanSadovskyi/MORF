@@ -1,4 +1,4 @@
-const btnMenu = document.querySelector(".header__menu-btn");
+﻿const btnMenu = document.querySelector(".header__menu-btn");
 const menu = document.querySelector('.nav')
 const header = document.querySelector('[data-header]')
 const sections = [...document.querySelectorAll('[data-section]')]
@@ -25,7 +25,7 @@ if (!disableSmoother) {
 
 /*const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
 if(document.querySelector(".hero-title")){
-// Функция для получения адаптивных значений
+// Function for retrieving responsive values
 function getResponsiveValues() {
     const viewportWidth = window.innerWidth;
     
@@ -87,13 +87,13 @@ function getResponsiveValues() {
     }
 }
 
-// Переменные для отслеживания состояния
+// State tracking variables
 let currentAnimation = null;
 let isAnimating = false;
 
-// Главная функция создания анимации
+// Main animation creation function
 function createHeroAnimation() {
-    // Убиваем предыдущие анимации
+    // Kill previous animations
     if (currentAnimation) {
         currentAnimation.kill();
         currentAnimation = null;
@@ -107,7 +107,7 @@ function createHeroAnimation() {
 
     const values = getResponsiveValues();
 
-    // Сброс стилей
+    // Reset styles
     gsap.set(".hero-title", {
         scaleX: 1,
         scaleY: 1,
@@ -121,7 +121,7 @@ function createHeroAnimation() {
         clearProps: "transform"
     });
 
-    // Специальная логика для мобильных
+    // Mobile-specific logic
     if (isMobile) {
         createMobileAnimation(values);
     } else {
@@ -129,7 +129,7 @@ function createHeroAnimation() {
     }
 }
 
-// Анимация для десктопа/планшета
+// Animation for desktop/tablet
 function createDesktopAnimation(values) {
     currentAnimation = gsap.timeline({
         scrollTrigger: {
@@ -187,7 +187,7 @@ function createDesktopAnimation(values) {
     });
 }
 
-// Упрощенная анимация для мобильных
+// Simplified animation for mobile
 function createMobileAnimation(values) {
     let hasTriggered = false;
 
@@ -196,8 +196,8 @@ function createMobileAnimation(values) {
             trigger: ".hero",
             start: "top top",
             end: values.endPoint,
-            scrub: false, // Отключаем scrub для мобильных
-            pin: false, // Отключаем pin для мобильных
+            scrub: false, // Disable scrub for mobile
+            pin: false, // Disable pin for mobile
             pinSpacing: false,
             invalidateOnRefresh: true,
             
@@ -205,7 +205,7 @@ function createMobileAnimation(values) {
                 if (!hasTriggered) {
                     hasTriggered = true;
                     
-                    // Быстрая анимация увеличения
+                    // Quick scale-up animation
                     gsap.to(".hero-title", {
                         scaleX: values.scaleX,
                         scaleY: values.scaleY,
@@ -214,7 +214,7 @@ function createMobileAnimation(values) {
                         ease: "power2.out"
                     });
                     
-                    // Подъем контейнера
+                    // Lift the container
                     gsap.to(".container__wrap", { 
                         y: values.containerY, 
                         duration: 0.4, 
@@ -227,7 +227,7 @@ function createMobileAnimation(values) {
             onLeaveBack: () => {
                 hasTriggered = false;
                 
-                // Возврат в исходное состояние
+                // Return to the initial state
                 gsap.to(".hero-title", {
                     scaleX: 1,
                     scaleY: 1,
@@ -246,30 +246,30 @@ function createMobileAnimation(values) {
     });
 }
 
-// Функция для правильной инициализации
+// Proper initialization function
 function initHeroAnimation() {
-    // Ждем полной загрузки DOM
+    // Wait for the DOM to finish loading
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', createHeroAnimation);
     } else {
-        // Небольшая задержка для стабилизации
+        // Small delay for stabilization
         setTimeout(createHeroAnimation, 100);
     }
 }
 
-// Оптимизированный обработчик ресайза
+// Optimized resize handler
 let resizeTimeout;
 let lastWidth = window.innerWidth;
 
 window.addEventListener('resize', () => {
-    // Игнорируем изменения только высоты (мобильные браузеры)
+    // Ignore height-only changes (mobile browsers)
     if (Math.abs(window.innerWidth - lastWidth) < 10) return;
     
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
         lastWidth = window.innerWidth;
         
-        // Полная перезагрузка для стабильности
+        // Full reload for stability
         ScrollTrigger.killAll();
         
         setTimeout(() => {
@@ -280,16 +280,16 @@ window.addEventListener('resize', () => {
     }, 300);
 });
 
-// Дополнительная стабилизация для мобильных
+// Additional stabilization for mobile
 if (isMobile) {
-    // Предотвращение bounce эффекта
+    // Prevent the bounce effect
     document.body.addEventListener('touchmove', (e) => {
         if (e.target === document.body) {
             e.preventDefault();
         }
     }, { passive: false });
     
-    // Обработка изменения ориентации
+    // Handle orientation changes
     window.addEventListener('orientationchange', () => {
         setTimeout(() => {
             ScrollTrigger.refresh();
@@ -298,10 +298,10 @@ if (isMobile) {
     });
 }
 
-// Инициализация
+// Initialization
 initHeroAnimation();
 
-// Debug функция
+// Debug function
 window.refreshHeroAnimation = () => {
     ScrollTrigger.killAll();
     setTimeout(() => {
@@ -374,12 +374,12 @@ function HorizontalScrollSteps() {
     }
 
     function initHorizontalScroll() {
-        // убиваем старый скролл
+        // Kill the existing scroll
         ScrollTrigger.getAll().forEach(st => {
             if (st.vars.id === "design-process-scroll") st.kill();
         });
 
-        // не инициализируем если ширина <= 1024
+        // Skip initialization if width <= 1024
         if (window.innerWidth <= 1024) return;
 
         const totalWidth = calculateTotalWidth();
@@ -460,7 +460,7 @@ document.querySelectorAll(".nav a").forEach(link =>{
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // делегирование клика по кнопкам внутри контейнеров
+    // Delegate clicks on buttons inside containers
     document.querySelectorAll(".des-process-selected-js").forEach(function (container) {
         container.addEventListener("click", function (event) {
             const button = event.target.closest("button");
@@ -470,13 +470,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // клик по первой кнопке (инициализация)
+    // Click the first button (initialization)
     const firstButton = document.querySelector(".des-process-selected-js button");
     if (firstButton) {
         firstButton.click();
     }
 
-    // отслеживание изменения размера окна
+    // Track window resize
     let resizeTimeout;
     window.addEventListener("resize", function () {
         clearTimeout(resizeTimeout);
@@ -513,7 +513,7 @@ function processSteps(button) {
     const steps = Array.from(contentContainer.querySelectorAll('.design-process__steps[data-id="' + CSS.escape(id) + '"]'));
     steps.forEach(function (step) {
         step.classList.add("selected");
-        // удаляем все классы selected перед применением новой логики
+        // Remove all selected classes before applying new logic
         step.querySelectorAll(".design-process__row > .design-process__wrap").forEach(function (wrap) {
             wrap.classList.remove("selected");
         });
@@ -545,21 +545,21 @@ function applyResponsiveSelection(button) {
         const rows = Array.from(step.querySelectorAll(".design-process__row"));
         
         if (isMobile) {
-            // на мобильных (<768px) добавляем selected к каждому design-process__step с интервалом
+            // On mobile (<768px) add selected to each design-process__step with an interval
             const allSteps = Array.from(step.querySelectorAll(".design-process__step"));
             allSteps.forEach(function (stepEl, stepIndex) {
                 setTimeout(function () {
                     stepEl.classList.add("selected");
                 }, stepIndex * 100);
             });
-            // убираем selected с wrap
+            // Remove selected from wrap
             rows.forEach(function (row) {
                 row.querySelectorAll(".design-process__wrap").forEach(function (wrap) {
                     wrap.classList.remove("selected");
                 });
             });
         } else {
-            // на десктопе (>768px) добавляем selected к design-process__wrap с интервалом по row
+            // On desktop (>768px) add selected to design-process__wrap with a row-based interval
             rows.forEach(function (row, index) {
                 setTimeout(function () {
                     row.querySelectorAll(".design-process__wrap").forEach(function (wrap) {
@@ -567,7 +567,7 @@ function applyResponsiveSelection(button) {
                     });
                 }, index * 180);
             });
-            // убираем selected с step
+            // Remove selected from step
             step.querySelectorAll(".design-process__step").forEach(function (stepEl) {
                 stepEl.classList.remove("selected");
             });
@@ -900,3 +900,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 })();
+

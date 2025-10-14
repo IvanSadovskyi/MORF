@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+﻿@use '../abstracts' as *;
 
 .row {
     display: flex;
@@ -259,7 +259,7 @@
 $container-size: 500px;
 $pad: 50px;
 $num-shapes: 4;
-$animation-duration: 20s; // можно менять
+$animation-duration: 20s; // can be adjusted
 
 @mixin random-position {
   $max: ($container-size - ($pad * 2));
@@ -268,7 +268,7 @@ $animation-duration: 20s; // можно менять
   transform: translate(#{$x}px, #{$y}px);
 }
 
-/* Базовый контейнер */
+/* Base container */
 .illustration__container {
   position: relative;
   width: $container-size;
@@ -279,7 +279,7 @@ $animation-duration: 20s; // можно менять
   filter: blur(75px)
 }
 
-/* Базовые фигуры */
+/* Base shapes */
 .illustration__shape {
   position: absolute;
   top: 0;
@@ -289,7 +289,7 @@ $animation-duration: 20s; // можно менять
   animation: move $animation-duration infinite ease-in-out;
 }
 
-/* Ключевые кадры. random() вычисляется при сборке. */
+/* Keyframes. random() is evaluated during build. */
 @for $i from 1 through 4 {
   @keyframes move-#{$i} {
     0%,100% { transform: translate(#{random(400)}px,#{random(400)}px); }
@@ -351,7 +351,7 @@ $animation-duration: 20s; // можно менять
 }
 
 /* ---------------------------
-   Вариант 1 — плавные крупные формы
+   Variant 1 - smooth large shapes
    (circle, tall-rect, triangle, hexagon)
    --------------------------- */
 .illustration__container--1 {
@@ -391,7 +391,7 @@ $animation-duration: 20s; // можно менять
       background: linear-gradient(90deg, #2885FF, #2885FF);
     }
 
-    /* общие задержки для варианта */
+    /* shared delays for the variant */
     @for $i from 1 through $num-shapes {
       &:nth-child(#{$i}) {
         animation-delay: ($i - 1) * -($animation-duration / $num-shapes);
@@ -401,9 +401,9 @@ $animation-duration: 20s; // можно менять
 }
 
 /* ---------------------------
-   Вариант 2 — мягкие «блоб»-формы и ромб
+   Variant 2 - soft "blob" shapes and a rhombus
    (blob, pill, rotated-rect, diamond)
-   цвета отличные от варианта 1
+   colors different from variant 1
    --------------------------- */
 .illustration__container--2 {
   .illustration__shape {
@@ -451,9 +451,9 @@ $animation-duration: 20s; // можно менять
 }
 
 /* ---------------------------
-   Вариант 3 — острые/геометрические формы
+   Variant 3 - sharp/geometric shapes
    (semi-circle, inverted-triangle, star-like polygon, slim-pill)
-   цвета отличные от варианта 1 и 2
+   colors different from variant 1 and 2
    --------------------------- */
 .illustration__container--3 {
   .illustration__shape {
